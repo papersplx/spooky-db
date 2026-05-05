@@ -1,0 +1,23 @@
+# Downloads and Wine prefix
+downloads/
+wine_spooky/
+*.zip
+*.exe
+
+# Node modules
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Large data files (use git-lfs or external storage)
+data/presets/presets_all.json
+data/presets/by_collection/
+spooky2-search/public/data/
+
+# Logs and temp files
+*.log
+*.tmp
+__pycache__/
+.pytest_cache/
