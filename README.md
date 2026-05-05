@@ -2,6 +2,8 @@
 
 A React + Vite SPA that provides full-text search over Spooky2 frequency presets.
 
+**Live site**: https://papersplx.github.io/spooky-db/
+
 ## Project Summary
 
 A React + Vite SPA that provides full-text search over Spooky2 frequency presets. Data is extracted from the Spooky2 installer's `Preset Collections/` directory and served as static JSON.
