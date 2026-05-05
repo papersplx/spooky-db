@@ -2,45 +2,57 @@
  * Data loading utilities for presets JSON.
  */
 
+const DATA_BASE_URL = 'https://github.com/papersplx/spooky-db/releases/download/data-v1';
+
 /**
  * Load the combined presets data with progress tracking.
  * @param {Function} onProgress - Callback(progress) with 0-1 progress
  */
 export async function loadAllPresets(onProgress) {
-  try {
-    const response = await fetch('/data/presets_all.json');
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
+  const urls = [
+    `${DATA_BASE_URL}/presets_all.json`,
+  ];
 
-    const contentLength = response.headers.get('content-length');
-    const total = contentLength ? parseInt(contentLength, 10) : 0;
-
-    if (onProgress && total > 0 && response.body) {
-      let loaded = 0;
-      const reader = response.body.getReader();
-      const chunks = [];
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-        loaded += value.length;
-        onProgress(loaded / total);
+  let lastError;
+  for (const url of urls) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
       }
 
-      const blob = new Blob(chunks);
-      const text = await blob.text();
-      const data = JSON.parse(text);
-      return data.programs;
-    }
+      const contentLength = response.headers.get('content-length');
+      const total = contentLength ? parseInt(contentLength, 10) : 0;
 
-    const data = await response.json();
-    return data.programs;
-  } catch (error) {
-    console.error('Failed to load presets:', error);
-    throw error;
+      if (onProgress && total > 0 && response.body) {
+        let loaded = 0;
+        const reader = response.body.getReader();
+        const chunks = [];
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          loaded += value.length;
+          onProgress(loaded / total);
+        }
+
+        const blob = new Blob(chunks);
+        const text = await blob.text();
+        const data = JSON.parse(text);
+        return data.programs;
+      }
+
+      const data = await response.json();
+      return data.programs;
+    } catch (error) {
+      lastError = error;
+      continue;
+    }
   }
+
+  console.error('Failed to load presets:', lastError);
+  throw lastError;
 }
 
 /**
