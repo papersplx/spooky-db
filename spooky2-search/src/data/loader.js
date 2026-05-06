@@ -3,7 +3,7 @@
  * Uses Render API for search to avoid large JSON and CORS issues.
  */
 
-const API_BASE = 'https://spooky2-search.onrender.com';
+const API_BASE = 'https://spooky-db.onrender.com';
 
 /**
  * Load programs via API.
