@@ -234,16 +234,15 @@ function App() {
           />
         </aside>
 
-        <section className="search-results">
-          <SearchBox query={searchQuery} onSearch={handleSearch} />
-          <div className="results-header">
-            <StatsBar
-              total={filtered.length}
-              query={searchQuery}
-            />
-            {isSearchPending && <div className="search-spinner" />}
-          </div>
-          <ResultsList
+          <section className="search-results">
+            <SearchBox query={searchQuery} onSearch={handleSearch} />
+            <div className="results-header">
+              <StatsBar
+                total={filtered.length}
+                query={searchQuery}
+              />
+            </div>
+            <ResultsList
             programs={filtered}
             selected={selected}
             onSelect={handleSelectProgram}
