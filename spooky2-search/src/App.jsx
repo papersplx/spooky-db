@@ -160,6 +160,11 @@ function App() {
     setSelected(null);
   };
 
+  const handleClearFilters = () => {
+    setSelectedCollections([]);
+    setSelectedModes([]);
+  };
+
   const handlePageChange = (newPage) => {
     const offset = (newPage - 1) * 20;
     setIsSearchPending(true);
