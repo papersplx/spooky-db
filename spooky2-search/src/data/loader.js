@@ -1,93 +1,64 @@
 /**
  * Data loading utilities for presets JSON.
+ * Uses Render API for search to avoid large JSON and CORS issues.
  */
 
-const DATA_BASE_URL = 'https://github.com/papersplx/spooky-db/releases/download/data-v1';
+const API_BASE = 'https://spooky2-search.onrender.com';
 
 /**
- * Load the combined presets data with progress tracking.
- * @param {Function} onProgress - Callback(progress) with 0-1 progress
+ * Load programs via API.
  */
 export async function loadAllPresets(onProgress) {
-  const urls = [
-    '/data/presets_all.json',
-    `${DATA_BASE_URL}/presets_all.json`,
-  ];
-
-  let lastError;
-  for (const url of urls) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const contentLength = response.headers.get('content-length');
-      const total = contentLength ? parseInt(contentLength, 10) : 0;
-
-      if (onProgress && total > 0 && response.body) {
-        let loaded = 0;
-        const reader = response.body.getReader();
-        const chunks = [];
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          chunks.push(value);
-          loaded += value.length;
-          onProgress(loaded / total);
-        }
-
-        const blob = new Blob(chunks);
-        const text = await blob.text();
-        const data = JSON.parse(text);
-        return data.programs;
-      }
-
-      const data = await response.json();
-      return data.programs;
-    } catch (error) {
-      lastError = error;
-      continue;
-    }
-  }
-
-  console.error('Failed to load presets:', lastError);
-  throw lastError;
-}
-
-/**
- * Load presets by collection (for lazy loading).
- * @param {string} collection - Collection name like "Factory/Detox/Contact"
- */
-export async function loadCollectionPresets(collection) {
-  const safeName = collection.replace('/', '_').replace('\\', '_');
-  const response = await fetch(`/data/by_collection/${safeName}.json`);
-  if (!response.ok) {
-    throw new Error(`Failed to load collection ${collection}`);
-  }
-  const data = await response.json();
-  return data.programs;
-}
-
-/**
- * Get list of available collections from the data file.
- */
-export async function getCollectionsList() {
+  if (onProgress) onProgress(0.5);
   try {
-    const response = await fetch('/data/presets_all.json');
-    const data = await response.json();
-
-    // Extract unique collections
-    const collections = new Set();
-    for (const prog of data.programs) {
-      if (prog.collection) {
-        collections.add(prog.collection);
-      }
+    const response = await fetch(`${API_BASE}/search?limit=50000`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
     }
-    return Array.from(collections).sort();
+    const results = await response.json();
+    if (onProgress) onProgress(1);
+    return results;
   } catch (error) {
-    console.error('Failed to get collections:', error);
-    return [];
+    console.error('Failed to load presets from API:', error);
+    throw error;
   }
+}
+
+/**
+ * Search programs via API.
+ */
+export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100 } = {}) {
+  const params = new URLSearchParams();
+  if (q) params.append('q', q);
+  if (mode.length > 0) mode.forEach(m => params.append('mode', m));
+  if (collection.length > 0) collection.forEach(c => params.append('collection', c));
+  params.append('limit', limit);
+
+  const response = await fetch(`${API_BASE}/search?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(`Search failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+/**
+ * Get a single program by ID.
+ */
+export async function getProgram(id) {
+  const response = await fetch(`${API_BASE}/program?id=${encodeURIComponent(id)}`);
+  if (!response.ok) {
+    throw new Error(`Failed to load program: ${response.status}`);
+  }
+  return response.json();
+}
+
+/**
+ * Get all collections with counts.
+ */
+export async function getCollections() {
+  const response = await fetch(`${API_BASE}/collections`);
+  if (!response.ok) {
+    throw new Error(`Failed to load collections: ${response.status}`);
+  }
+  return response.json();
 }
