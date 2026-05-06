@@ -47,6 +47,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState(initialState.page);
 
   const skipURLUpdate = useRef(false);
+  const searchParamsRef = useRef({});
+  const abortControllerRef = useRef(null);
 
   useEffect(() => {
     const fetchCollections = async () => {
@@ -87,25 +89,51 @@ function App() {
 
   useEffect(() => {
     if (loading) return;
+
+    const params = {
+      q: searchQuery,
+      mode: selectedModes,
+      collection: selectedCollections,
+      page: currentPage,
+    };
+
+    searchParamsRef.current = params;
+
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
     setIsSearchPending(true);
     const timer = setTimeout(async () => {
       try {
         const response = await searchPrograms({
-          q: searchQuery,
-          mode: selectedModes,
-          collection: selectedCollections,
+          q: params.q,
+          mode: params.mode,
+          collection: params.collection,
           limit: 20,
-          offset: (currentPage - 1) * 20,
+          offset: (params.page - 1) * 20,
         });
-        setFiltered(response.results.map(p => ({ item: p })));
-        setTotalResults(response.total);
+        if (!controller.signal.aborted) {
+          setFiltered(response.results.map(p => ({ item: p })));
+          setTotalResults(response.total);
+        }
       } catch (err) {
-        setError(err.message);
+        if (!controller.signal.aborted) {
+          setError(err.message);
+        }
       } finally {
-        setIsSearchPending(false);
+        if (!controller.signal.aborted) {
+          setIsSearchPending(false);
+        }
       }
     }, 300);
-    return () => clearTimeout(timer);
+
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [searchQuery, selectedCollections, selectedModes, loading, currentPage]);
 
   useEffect(() => {

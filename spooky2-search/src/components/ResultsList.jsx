@@ -6,14 +6,12 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
   const pageSize = 20;
 
   const totalPages = Math.ceil(totalResults / pageSize);
-  const startIndex = (currentPage - 1) * pageSize;
-  const pageItems = programs.slice(startIndex, startIndex + pageSize);
 
   const displayList = useMemo(() => {
-    return pageItems.map(result => ({
+    return programs.map(result => ({
       program: result.item || result,
     }));
-  }, [pageItems]);
+  }, [programs]);
 
   const goToPage = (page) => {
     const newPage = Math.max(1, Math.min(page, totalPages));
