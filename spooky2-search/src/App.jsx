@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import Fuse from 'fuse.js';
 import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
@@ -40,27 +41,20 @@ function App() {
   const [collectionsList, setCollectionsList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [filtered, setFiltered] = useState([]);
-  const [isSearchPending, setIsSearchPending] = useState(false);
 
   const skipURLUpdate = useRef(false);
-  const workerRef = useRef(null);
-  const searchQueryRef = useRef(searchQuery);
+  const fuseRef = useRef(null);
 
-  useEffect(() => {
-    searchQueryRef.current = searchQuery;
-  }, [searchQuery]);
-
-  useEffect(() => {
-    workerRef.current = new Worker('/searchWorker.js');
-    workerRef.current.onmessage = (e) => {
-      const { results, query } = e.data;
-      if (query === searchQueryRef.current) {
-        setFiltered(results);
-        setIsSearchPending(false);
-      }
-    };
-    return () => workerRef.current?.terminate();
-  }, []);
+  const fuseOptions = useMemo(() => ({
+    keys: [
+      { name: 'name', weight: 0.7 },
+      { name: 'description', weight: 0.3 },
+      { name: 'collection', weight: 0.2 },
+      { name: 'loaded_programs', weight: 0.3 },
+    ],
+    threshold: 0.3,
+    includeScore: true,
+  }), []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,6 +63,7 @@ function App() {
           setLoadProgress(progress);
         });
         setPrograms(allPrograms);
+        fuseRef.current = new Fuse(allPrograms, fuseOptions);
         const collections = [...new Set(allPrograms.map(p => p.collection))].sort();
         setCollectionsList(collections);
         const counts = {};
@@ -83,18 +78,22 @@ function App() {
       }
     };
     fetchData();
-  }, []);
+  }, [fuseOptions]);
 
   useEffect(() => {
-    if (programs.length === 0) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsSearchPending(true);
-    workerRef.current?.postMessage({
-      programs,
-      query: searchQuery,
-      selectedCollections,
-      selectedModes,
-    });
+    if (!fuseRef.current) return;
+
+    let results = fuseRef.current.search(searchQuery);
+
+    if (selectedCollections.length > 0) {
+      results = results.filter(r => selectedCollections.includes(r.item.collection));
+    }
+
+    if (selectedModes.length > 0) {
+      results = results.filter(r => selectedModes.includes(r.item.mode));
+    }
+
+    setFiltered(results.map(r => ({ item: r.item, score: r.score })));
   }, [programs, searchQuery, selectedCollections, selectedModes]);
 
   useEffect(() => {
@@ -177,7 +176,7 @@ function App() {
       <div className="error">
         <h2>Error loading data</h2>
         <p>{error}</p>
-        <p>Make sure the extraction script has been run and data files are in public/data/</p>
+        <p>Make sure the data files are available at {window.location.origin}/data/presets_all.json</p>
       </div>
     );
   }
@@ -188,9 +187,9 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>Spooky2 Frequency Search</h1>
-        <p className="subtitle">
-          Search {programs.length.toLocaleString()} frequency programs from Spooky2 preset collections
-        </p>
+          <p className="subtitle">
+            Search {programs.length.toLocaleString()} frequency programs from Spooky2 preset collections
+          </p>
       </header>
 
       <main className="main">
@@ -214,23 +213,22 @@ function App() {
               total={filtered.length}
               query={searchQuery}
             />
-            {isSearchPending && <div className="search-spinner" />}
           </div>
           <ResultsList
             programs={filtered}
             selected={selected}
             onSelect={handleSelectProgram}
             onClearSelection={handleClearSelection}
-            isSearchPending={isSearchPending}
+            isSearchPending={false}
           />
-          </section>
-        </main>
+        </section>
+      </main>
 
       {selected && (
         <div className="detail-backdrop" onClick={handleClearSelection} />
       )}
 
-        {selected && (
+      {selected && (
           <aside className="detail-panel" onClick={(e) => e.stopPropagation()}>
             <ProgramDetail
               program={selected}
@@ -239,7 +237,7 @@ function App() {
               onSearchProgram={handleSearchForProgram}
             />
           </aside>
-        )}
+      )}
 
       <footer className="footer">
         <p>
