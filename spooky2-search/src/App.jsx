@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-import Fuse from 'fuse.js';
+import { useState, useEffect, useRef } from 'react';
 import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
 import StatsBar from './components/StatsBar';
-import { loadAllPresets } from './data/loader';
+import { searchPrograms, getProgram, getCollections } from './data/loader';
 import './App.css';
 
 function getStateFromURL() {
@@ -14,6 +13,7 @@ function getStateFromURL() {
     searchQuery: params.get('q') || 'Longevity',
     selectedModes: params.getAll('mode').length > 0 ? params.getAll('mode') : ['Remote'],
     selectedCollections: params.getAll('collection'),
+    selectedProgramId: params.get('program') || null,
   };
 }
 
@@ -30,71 +30,67 @@ function updateURL(state) {
 function App() {
   const initialState = getStateFromURL();
 
-  const [programs, setPrograms] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [loadProgress, setLoadProgress] = useState(0);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
   const [searchQuery, setSearchQuery] = useState(initialState.searchQuery);
   const [selectedCollections, setSelectedCollections] = useState(initialState.selectedCollections);
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
   const [collectionsList, setCollectionsList] = useState([]);
-  const [collectionCounts, setCollectionCounts] = useState({});
   const [filtered, setFiltered] = useState([]);
+  const [isSearchPending, setIsSearchPending] = useState(false);
+  const [totalPrograms, setTotalPrograms] = useState(0);
 
   const skipURLUpdate = useRef(false);
-  const fuseRef = useRef(null);
-
-  const fuseOptions = useMemo(() => ({
-    keys: [
-      { name: 'name', weight: 0.7 },
-      { name: 'description', weight: 0.3 },
-      { name: 'collection', weight: 0.2 },
-      { name: 'loaded_programs', weight: 0.3 },
-    ],
-    threshold: 0.3,
-    includeScore: true,
-  }), []);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCollections = async () => {
       try {
-        const allPrograms = await loadAllPresets((progress) => {
-          setLoadProgress(progress);
-        });
-        setPrograms(allPrograms);
-        fuseRef.current = new Fuse(allPrograms, fuseOptions);
-        const collections = [...new Set(allPrograms.map(p => p.collection))].sort();
+        const collections = await getCollections();
         setCollectionsList(collections);
-        const counts = {};
-        allPrograms.forEach(p => {
-          counts[p.collection] = (counts[p.collection] || 0) + 1;
-        });
-        setCollectionCounts(counts);
+        setTotalPrograms(collections.reduce((sum, c) => sum + parseInt(c.count), 0));
       } catch (err) {
         setError(err.message);
       } finally {
         setLoading(false);
       }
     };
-    fetchData();
-  }, [fuseOptions]);
+
+    const loadInitialProgram = async () => {
+      if (initialState.selectedProgramId) {
+        try {
+          const program = await getProgram(initialState.selectedProgramId);
+          setSelected(program);
+        } catch (err) {
+          console.error('Failed to load program from URL:', err);
+        }
+      }
+    };
+
+    fetchCollections();
+    loadInitialProgram();
+  }, []);
 
   useEffect(() => {
-    if (!fuseRef.current) return;
-
-    let results = fuseRef.current.search(searchQuery);
-
-    if (selectedCollections.length > 0) {
-      results = results.filter(r => selectedCollections.includes(r.item.collection));
-    }
-
-    if (selectedModes.length > 0) {
-      results = results.filter(r => selectedModes.includes(r.item.mode));
-    }
-
-    setFiltered(results.map(r => ({ item: r.item, score: r.score })));
-  }, [programs, searchQuery, selectedCollections, selectedModes]);
+    if (loading) return;
+    setIsSearchPending(true);
+    const timer = setTimeout(async () => {
+      try {
+        const results = await searchPrograms({
+          q: searchQuery,
+          mode: selectedModes,
+          collection: selectedCollections,
+          limit: 50000,
+        });
+        setFiltered(results);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsSearchPending(false);
+      }
+    }, 300); // Debounce search
+    return () => clearTimeout(timer);
+  }, [searchQuery, selectedCollections, selectedModes, loading]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -163,10 +159,7 @@ function App() {
     return (
       <div className="loading">
         <div className="spinner"></div>
-        <p>Loading frequency database...</p>
-        {loadProgress > 0 && (
-          <p className="progress">{Math.round(loadProgress * 100)}%</p>
-        )}
+        <p>Loading...</p>
       </div>
     );
   }
@@ -174,21 +167,20 @@ function App() {
   if (error) {
     return (
       <div className="error">
-        <h2>Error loading data</h2>
+        <h2>Error</h2>
         <p>{error}</p>
-        <p>Make sure the data files are available at {window.location.origin}/data/presets_all.json</p>
       </div>
     );
   }
 
-  const modes = [...new Set(programs.map(p => p.mode).filter(Boolean))].sort();
+  const modes = [...new Set(filtered.map(p => p.mode).filter(Boolean))].sort();
 
   return (
     <div className="app">
       <header className="header">
         <h1>Spooky2 Frequency Search</h1>
           <p className="subtitle">
-            Search {programs.length.toLocaleString()} frequency programs from Spooky2 preset collections
+            Search {totalPrograms.toLocaleString()} frequency programs from Spooky2 preset collections
           </p>
       </header>
 
@@ -196,7 +188,6 @@ function App() {
         <aside className="sidebar">
           <FilterPanel
             collections={collectionsList}
-            collectionCounts={collectionCounts}
             selectedCollections={selectedCollections}
             onToggleCollection={handleSelectCollection}
             modes={modes}
@@ -213,13 +204,14 @@ function App() {
               total={filtered.length}
               query={searchQuery}
             />
+            {isSearchPending && <div className="search-spinner" />}
           </div>
           <ResultsList
             programs={filtered}
             selected={selected}
             onSelect={handleSelectProgram}
             onClearSelection={handleClearSelection}
-            isSearchPending={false}
+            isSearchPending={isSearchPending}
           />
         </section>
       </main>
@@ -232,7 +224,7 @@ function App() {
           <aside className="detail-panel" onClick={(e) => e.stopPropagation()}>
             <ProgramDetail
               program={selected}
-              programs={programs}
+              programs={filtered}
               onClose={handleClearSelection}
               onSearchProgram={handleSearchForProgram}
             />
