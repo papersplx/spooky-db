@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
+import StatsBar from './StatsBar';
 import './ResultsList.css';
 
-function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending, totalResults, onPageChange }) {
+function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending, totalResults, onPageChange, searchQuery }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 20;
 
@@ -83,6 +84,10 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
   return (
     <div className="results-list">
       <div className="results-header">
+        <StatsBar
+          total={totalResults}
+          query={searchQuery}
+        />
         {isSearchPending && <div className="search-spinner" />}
       </div>
 

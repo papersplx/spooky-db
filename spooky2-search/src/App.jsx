@@ -3,7 +3,6 @@ import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
-import StatsBar from './components/StatsBar';
 import { searchPrograms, getProgram, getCollections } from './data/loader';
 import './App.css';
 
@@ -239,12 +238,6 @@ function App() {
 
           <section className="search-results">
             <SearchBox query={searchQuery} onSearch={handleSearch} />
-            <div className="results-header">
-              <StatsBar
-                total={filtered.length}
-                query={searchQuery}
-              />
-            </div>
             <ResultsList
             programs={filtered}
             selected={selected}
@@ -253,6 +246,7 @@ function App() {
             isSearchPending={isSearchPending}
             totalResults={totalResults}
             onPageChange={handlePageChange}
+            searchQuery={searchQuery}
           />
           </section>
       </main>
