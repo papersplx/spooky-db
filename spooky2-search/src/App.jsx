@@ -40,6 +40,7 @@ function App() {
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
   const [collectionsList, setCollectionsList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
+  const [modesList, setModesList] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [isSearchPending, setIsSearchPending] = useState(false);
@@ -53,12 +54,15 @@ function App() {
         const collections = await getCollections();
         const counts = {};
         const names = new Set();
-        collections.forEach(({ collection, count }) => {
+        const modes = new Set();
+        collections.forEach(({ collection, count, mode }) => {
           names.add(collection);
           counts[collection] = (counts[collection] || 0) + parseInt(count);
+          if (mode) modes.add(mode);
         });
         setCollectionsList([...names].sort());
         setCollectionCounts(counts);
+        setModesList([...modes].sort());
       } catch (err) {
         setError(err.message);
       } finally {
@@ -100,7 +104,7 @@ function App() {
       } finally {
         setIsSearchPending(false);
       }
-    }, 300); // Debounce search
+    }, 300);
     return () => clearTimeout(timer);
   }, [searchQuery, selectedCollections, selectedModes, loading, initialState.page]);
 
@@ -210,8 +214,6 @@ function App() {
     );
   }
 
-  const modes = [...new Set(filtered.map(p => p.mode).filter(Boolean))].sort();
-
   return (
     <div className="app">
       <header className="header">
@@ -225,9 +227,10 @@ function App() {
         <aside className="sidebar">
           <FilterPanel
             collections={collectionsList}
+            collectionCounts={collectionCounts}
             selectedCollections={selectedCollections}
             onToggleCollection={handleSelectCollection}
-            modes={modes}
+            modes={modesList}
             selectedModes={selectedModes}
             onToggleMode={handleSelectMode}
             onClearFilters={handleClearFilters}
@@ -251,7 +254,7 @@ function App() {
             totalResults={totalResults}
             onPageChange={handlePageChange}
           />
-        </section>
+          </section>
       </main>
 
       {selected && (
