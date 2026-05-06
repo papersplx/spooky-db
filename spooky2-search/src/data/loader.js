@@ -10,6 +10,7 @@ const DATA_BASE_URL = 'https://github.com/papersplx/spooky-db/releases/download/
  */
 export async function loadAllPresets(onProgress) {
   const urls = [
+    '/data/presets_all.json',
     `${DATA_BASE_URL}/presets_all.json`,
   ];
 
