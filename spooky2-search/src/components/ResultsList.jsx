@@ -82,13 +82,9 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
 
   return (
     <div className="results-list">
-          <div className="results-header">
-            <StatsBar
-              total={totalResults}
-              query={searchQuery}
-            />
-            {isSearchPending && <div className="search-spinner" />}
-          </div>
+      <div className="results-header">
+        {isSearchPending && <div className="search-spinner" />}
+      </div>
 
       <div className="results-items">
         {displayList.length === 0 ? (
