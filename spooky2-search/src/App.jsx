@@ -37,6 +37,7 @@ function App() {
   const [selectedCollections, setSelectedCollections] = useState(initialState.selectedCollections);
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
   const [collectionsList, setCollectionsList] = useState([]);
+  const [collectionCounts, setCollectionCounts] = useState({});
   const [filtered, setFiltered] = useState([]);
   const [isSearchPending, setIsSearchPending] = useState(false);
   const [totalPrograms, setTotalPrograms] = useState(0);
@@ -47,8 +48,14 @@ function App() {
     const fetchCollections = async () => {
       try {
         const collections = await getCollections();
-        setCollectionsList(collections);
-        setTotalPrograms(collections.reduce((sum, c) => sum + parseInt(c.count), 0));
+        const counts = {};
+        const names = new Set();
+        collections.forEach(({ collection, count }) => {
+          names.add(collection);
+          counts[collection] = (counts[collection] || 0) + parseInt(count);
+        });
+        setCollectionsList([...names].sort());
+        setCollectionCounts(counts);
       } catch (err) {
         setError(err.message);
       } finally {
