@@ -80,7 +80,7 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
-          limit: 50000,
+          limit: 20,
         });
         setFiltered(results);
       } catch (err) {
