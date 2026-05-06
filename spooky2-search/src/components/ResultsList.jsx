@@ -1,14 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import StatsBar from './StatsBar';
 import './ResultsList.css';
 
-function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending, totalResults, onPageChange, searchQuery }) {
-  const [currentPage, setCurrentPage] = useState(1);
+function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending, totalResults, onPageChange, searchQuery, currentPage }) {
   const pageSize = 20;
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [programs]);
 
   const totalPages = Math.ceil(totalResults / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
@@ -22,7 +17,6 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
 
   const goToPage = (page) => {
     const newPage = Math.max(1, Math.min(page, totalPages));
-    setCurrentPage(newPage);
     if (onPageChange) onPageChange(newPage);
   };
 

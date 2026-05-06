@@ -44,6 +44,7 @@ function App() {
   const [totalResults, setTotalResults] = useState(0);
   const [isSearchPending, setIsSearchPending] = useState(false);
   const [totalPrograms, setTotalPrograms] = useState(0);
+  const [currentPage, setCurrentPage] = useState(initialState.page);
 
   const skipURLUpdate = useRef(false);
 
@@ -94,7 +95,7 @@ function App() {
           mode: selectedModes,
           collection: selectedCollections,
           limit: 20,
-          offset: (initialState.page - 1) * 20,
+          offset: (currentPage - 1) * 20,
         });
         setFiltered(response.results.map(p => ({ item: p })));
         setTotalResults(response.total);
@@ -105,7 +106,7 @@ function App() {
       }
     }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery, selectedCollections, selectedModes, loading, initialState.page]);
+  }, [searchQuery, selectedCollections, selectedModes, loading, currentPage]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -114,6 +115,7 @@ function App() {
       setSearchQuery(state.searchQuery);
       setSelectedModes(state.selectedModes);
       setSelectedCollections(state.selectedCollections);
+      setCurrentPage(state.page);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -129,11 +131,13 @@ function App() {
       selectedModes,
       selectedCollections,
       selectedProgramId: selected?.id || null,
+      page: currentPage,
     });
-  }, [searchQuery, selectedModes, selectedCollections, selected]);
+  }, [searchQuery, selectedModes, selectedCollections, selected, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
+    setCurrentPage(1);
   };
 
   const handleSelectCollection = (collection) => {
@@ -142,6 +146,7 @@ function App() {
         ? prev.filter(c => c !== collection)
         : [...prev, collection]
     );
+    setCurrentPage(1);
   };
 
   const handleSelectMode = (mode) => {
@@ -150,6 +155,7 @@ function App() {
         ? prev.filter(m => m !== mode)
         : [...prev, mode]
     );
+    setCurrentPage(1);
   };
 
   const handleSelectProgram = (program) => {
@@ -159,6 +165,7 @@ function App() {
   const handleSearchForProgram = (programName) => {
     setSearchQuery(programName);
     setSelected(null);
+    setCurrentPage(1);
   };
 
   const handleClearSelection = () => {
@@ -168,31 +175,11 @@ function App() {
   const handleClearFilters = () => {
     setSelectedCollections([]);
     setSelectedModes([]);
+    setCurrentPage(1);
   };
 
   const handlePageChange = (newPage) => {
-    const offset = (newPage - 1) * 20;
-    setIsSearchPending(true);
-    searchPrograms({
-      q: searchQuery,
-      mode: selectedModes,
-      collection: selectedCollections,
-      limit: 20,
-      offset: offset,
-    }).then(response => {
-      setFiltered(response.results.map(p => ({ item: p })));
-      setTotalResults(response.total);
-      window.history.pushState({}, '', `?${new URLSearchParams({
-        q: searchQuery,
-        mode: selectedModes,
-        collection: selectedCollections,
-        page: newPage,
-      }).toString()}`);
-    }).catch(err => {
-      setError(err.message);
-    }).finally(() => {
-      setIsSearchPending(false);
-    });
+    setCurrentPage(newPage);
   };
 
   if (loading) {
@@ -245,6 +232,7 @@ function App() {
             onClearSelection={handleClearSelection}
             isSearchPending={isSearchPending}
             totalResults={totalResults}
+            currentPage={currentPage}
             onPageChange={handlePageChange}
             searchQuery={searchQuery}
           />
