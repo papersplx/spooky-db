@@ -39,6 +39,7 @@ function App() {
   const [collectionsList, setCollectionsList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [filtered, setFiltered] = useState([]);
+  const [totalResults, setTotalResults] = useState(0);
   const [isSearchPending, setIsSearchPending] = useState(false);
   const [totalPrograms, setTotalPrograms] = useState(0);
 
@@ -83,13 +84,15 @@ function App() {
     setIsSearchPending(true);
     const timer = setTimeout(async () => {
       try {
-        const results = await searchPrograms({
+        const response = await searchPrograms({
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
           limit: 20,
+          offset: 0,
         });
-        setFiltered(results.map(p => ({ item: p })));
+        setFiltered(response.results.map(p => ({ item: p })));
+        setTotalResults(response.total);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -157,9 +160,23 @@ function App() {
     setSelected(null);
   };
 
-  const handleClearFilters = () => {
-    setSelectedCollections([]);
-    setSelectedModes([]);
+  const handlePageChange = (newPage) => {
+    const offset = (newPage - 1) * 20;
+    setIsSearchPending(true);
+    searchPrograms({
+      q: searchQuery,
+      mode: selectedModes,
+      collection: selectedCollections,
+      limit: 20,
+      offset: offset,
+    }).then(response => {
+      setFiltered(response.results.map(p => ({ item: p })));
+      setTotalResults(response.total);
+    }).catch(err => {
+      setError(err.message);
+    }).finally(() => {
+      setIsSearchPending(false);
+    });
   };
 
   if (loading) {
@@ -219,6 +236,7 @@ function App() {
             onSelect={handleSelectProgram}
             onClearSelection={handleClearSelection}
             isSearchPending={isSearchPending}
+            totalResults={totalResults}
           />
         </section>
       </main>

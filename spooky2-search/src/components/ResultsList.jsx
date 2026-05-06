@@ -1,16 +1,14 @@
 import { useState, useEffect, useMemo } from 'react';
 import './ResultsList.css';
 
-function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending }) {
+function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchPending, totalResults, onPageChange }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 20;
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentPage(1);
   }, [programs]);
 
-  const totalResults = programs.length;
   const totalPages = Math.ceil(totalResults / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
   const pageItems = programs.slice(startIndex, startIndex + pageSize);
@@ -22,7 +20,9 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
   }, [pageItems]);
 
   const goToPage = (page) => {
-    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+    const newPage = Math.max(1, Math.min(page, totalPages));
+    setCurrentPage(newPage);
+    if (onPageChange) onPageChange(newPage);
   };
 
   const renderPagination = () => {
