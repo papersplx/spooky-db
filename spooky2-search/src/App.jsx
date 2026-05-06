@@ -14,6 +14,7 @@ function getStateFromURL() {
     selectedModes: params.getAll('mode').length > 0 ? params.getAll('mode') : ['Remote'],
     selectedCollections: params.getAll('collection'),
     selectedProgramId: params.get('program') || null,
+    page: parseInt(params.get('page') || '1'),
   };
 }
 
@@ -23,6 +24,7 @@ function updateURL(state) {
   state.selectedModes.forEach(m => params.append('mode', m));
   state.selectedCollections.forEach(c => params.append('collection', c));
   if (state.selectedProgramId) params.set('program', state.selectedProgramId);
+  if (state.page && state.page !== 1) params.set('page', state.page);
   const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
   window.history.pushState(state, '', newURL);
 }
@@ -89,7 +91,7 @@ function App() {
           mode: selectedModes,
           collection: selectedCollections,
           limit: 20,
-          offset: 0,
+          offset: (initialState.page - 1) * 20,
         });
         setFiltered(response.results.map(p => ({ item: p })));
         setTotalResults(response.total);
@@ -100,7 +102,7 @@ function App() {
       }
     }, 300); // Debounce search
     return () => clearTimeout(timer);
-  }, [searchQuery, selectedCollections, selectedModes, loading]);
+  }, [searchQuery, selectedCollections, selectedModes, loading, initialState.page]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -177,6 +179,12 @@ function App() {
     }).then(response => {
       setFiltered(response.results.map(p => ({ item: p })));
       setTotalResults(response.total);
+      window.history.pushState({}, '', `?${new URLSearchParams({
+        q: searchQuery,
+        mode: selectedModes,
+        collection: selectedCollections,
+        page: newPage,
+      }).toString()}`);
     }).catch(err => {
       setError(err.message);
     }).finally(() => {
@@ -242,6 +250,7 @@ function App() {
             onClearSelection={handleClearSelection}
             isSearchPending={isSearchPending}
             totalResults={totalResults}
+            onPageChange={handlePageChange}
           />
         </section>
       </main>
