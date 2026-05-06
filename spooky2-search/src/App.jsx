@@ -82,7 +82,7 @@ function App() {
           collection: selectedCollections,
           limit: 20,
         });
-        setFiltered(results);
+        setFiltered(results.map(p => ({ item: p })));
       } catch (err) {
         setError(err.message);
       } finally {
