@@ -207,6 +207,7 @@ function App() {
   };
 
   const handlePageChange = (newPage) => {
+    console.log('handlePageChange called with:', newPage);
     setCurrentPage(newPage);
     skipURLUpdate.current = true;
     updateURL({
