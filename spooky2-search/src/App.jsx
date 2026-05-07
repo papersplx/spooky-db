@@ -192,6 +192,19 @@ function App() {
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
   };
 
+  // Debug: trace all pushState calls
+  useEffect(() => {
+    const originalPushState = window.history.pushState;
+    window.history.pushState = function(state, title, url) {
+      console.log('pushState called with url:', url);
+      console.trace('pushState trace');
+      return originalPushState.call(this, state, title, url);
+    };
+    return () => {
+      window.history.pushState = originalPushState;
+    };
+  }, []);
+
   function updateURL(state) {
     const params = new URLSearchParams();
     if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
