@@ -161,7 +161,7 @@ function App() {
       selectedProgramId: selected?.id || null,
       page: currentPage,
     });
-  }, [searchQuery, selectedModes, selectedCollections, selected, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections, selected]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
