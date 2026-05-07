@@ -24,7 +24,7 @@ function SearchBox({ query, onSearch }) {
   }, [value, onSearch]);
 
   return (
-    <div className="search-box">
+    <div className="search-box-wrapper">
       <input
         type="text"
         className="search-input"
