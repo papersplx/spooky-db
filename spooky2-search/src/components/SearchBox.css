@@ -22,16 +22,19 @@
 
 .clear-btn {
   position:absolute;
-  right:0.5rem;
+  right:0.75rem;
   top:50%;
   transform:translateY(-50%);
   background:none;
   border:none;
-  font-size:1.25rem;
   color:var(--text-secondary);
   cursor:pointer;
   padding:0;
-  line-height:1;
+  width:1rem;
+  height:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .clear-btn:hover {

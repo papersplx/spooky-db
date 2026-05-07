@@ -39,7 +39,9 @@ function SearchBox({ query, onSearch }) {
           onClick={() => setValue('')}
           aria-label="Clear search"
         >
-          ×
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4.575L1.575 0.15L0.15 1.575L4.575 6L0.15 10.425L1.575 11.85L6 7.425L10.425 11.85L11.85 10.425L7.425 6L11.85 1.575L10.425 0.15L6 4.575Z" fill="currentColor"/>
+          </svg>
         </button>
       )}
     </div>
