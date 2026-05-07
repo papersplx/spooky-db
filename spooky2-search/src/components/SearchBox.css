@@ -1,7 +1,5 @@
-.search-box-wrapper {
+.search-box {
   position:relative;
-  display:flex;
-  align-items:center;
   margin-bottom:1rem;
 }
 
@@ -14,7 +12,6 @@
   background:var(--bg-secondary);
   color:var(--text-primary);
   transition:border-color 0.2s, box-shadow 0.2s;
-  box-sizing:border-box;
 }
 
 .search-input:focus {
@@ -25,7 +22,7 @@
 
 .clear-btn {
   position:absolute;
-  right:0.75rem;
+  right:0.5rem;
   top:50%;
   transform:translateY(-50%);
   background:none;
@@ -34,11 +31,7 @@
   color:var(--text-secondary);
   cursor:pointer;
   padding:0;
-  width:1.25rem;
-  height:1.25rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  line-height:1;
 }
 
 .clear-btn:hover {
