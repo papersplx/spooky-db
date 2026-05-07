@@ -39,8 +39,8 @@ function SearchBox({ query, onSearch }) {
           onClick={() => setValue('')}
           aria-label="Clear search"
         >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 4.575L1.575 0.15L0.15 1.575L4.575 6L0.15 10.425L1.575 11.85L6 7.425L10.425 11.85L11.85 10.425L7.425 6L11.85 1.575L10.425 0.15L6 4.575Z" fill="currentColor"/>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 5.67L2.67 1.34L1.34 2.67L5.67 7L1.34 11.33L2.67 12.66L7 8.33L11.33 12.66L12.66 11.33L8.33 7L12.66 2.67L11.33 1.34L7 5.67Z" fill="currentColor"/>
           </svg>
         </button>
       )}
