@@ -8,7 +8,6 @@ function SearchBox({ query, onSearch }) {
   const DEBOUNCE_MS = 300;
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setValue(query || '');
   }, [query]);
 
@@ -34,15 +33,13 @@ function SearchBox({ query, onSearch }) {
         onChange={(e) => setValue(e.target.value)}
         autoFocus
       />
-      {value && (
-        <button
-          className="clear-btn"
-          onClick={() => setValue('')}
-          aria-label="Clear search"
-        >
-          ×
-        </button>
-      )}
+      <button
+        className={`clear-btn ${value ? 'visible' : ''}`}
+        onClick={() => setValue('')}
+        aria-label="Clear search"
+      >
+        ×
+      </button>
     </div>
   );
 }
