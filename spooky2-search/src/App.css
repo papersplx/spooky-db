@@ -176,6 +176,7 @@ body {
   padding: 1rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 0.5rem;
 }
 
 /* Pagination */
