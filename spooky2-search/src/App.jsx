@@ -25,6 +25,8 @@ function updateURL(state) {
   if (state.selectedProgramId) params.set('program', state.selectedProgramId);
   if (state.page && state.page !== 1) params.set('page', state.page);
   const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
+  console.log('updateURL called with state:', state, 'newURL:', newURL);
+  console.trace('updateURL trace');
   window.history.pushState(state, '', newURL);
 }
 
@@ -149,21 +151,8 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  useEffect(() => {
-    if (skipURLUpdate.current) {
-      skipURLUpdate.current = false;
-      return;
-    }
-    updateURL({
-      searchQuery,
-      selectedModes,
-      selectedCollections,
-      selectedProgramId: selected?.id || null,
-      page: currentPage,
-    });
-  }, [searchQuery, selectedModes, selectedCollections, selected]);
-
   const handleSearch = (query) => {
+    console.log('handleSearch called, setting page to 1');
     setSearchQuery(query);
     setCurrentPage(1);
   };
