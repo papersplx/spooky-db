@@ -208,6 +208,14 @@ function App() {
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
+    skipURLUpdate.current = true;
+    updateURL({
+      searchQuery,
+      selectedModes,
+      selectedCollections,
+      selectedProgramId: selected?.id || null,
+      page: newPage,
+    });
   };
 
   if (loading) {
