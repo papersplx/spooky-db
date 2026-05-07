@@ -28,7 +28,6 @@
   transform:translateY(-50%);
   background:none;
   border:none;
-  color:var(--text-secondary);
   cursor:pointer;
   padding:0;
   width:0.875rem;
@@ -36,16 +35,29 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 0.15s;
 }
 
-.clear-btn.visible {
-  opacity:1;
-  pointer-events:auto;
+.clear-btn::before,
+.clear-btn::after {
+  content:'';
+  position:absolute;
+  width:100%;
+  height:2px;
+  background:var(--text-secondary);
+  top:50%;
+  left:0;
+  transition:background 0.15s;
 }
 
-.clear-btn:hover {
-  color:var(--text-primary);
+.clear-btn::before {
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.clear-btn::after {
+  transform:translateY(-50%) rotate(-45deg);
+}
+
+.clear-btn:hover::before,
+.clear-btn:hover::after {
+  background:var(--text-primary);
 }
