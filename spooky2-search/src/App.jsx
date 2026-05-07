@@ -199,7 +199,14 @@ function App() {
     if (state.selectedProgramId) params.set('program', state.selectedProgramId);
     if (state.page && state.page !== 1) params.set('page', state.page);
     const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
-    window.location.href = newURL;
+    const currentURL = window.location.pathname + window.location.search;
+    console.log('updateURL called with state:', state, 'newURL:', newURL, 'currentURL:', currentURL);
+    if (currentURL === newURL) {
+      console.log('URL already set, skipping');
+      return;
+    }
+    console.log('PUSHING STATE:', newURL);
+    window.history.pushState(state, '', newURL);
   }
 
   if (loading) {
