@@ -27,7 +27,7 @@ function updateURL(state) {
   const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
   console.log('updateURL called with state:', state, 'newURL:', newURL);
   console.trace('updateURL trace');
-  window.history.pushState(state, '', newURL);
+  window.history.replaceState(state, '', newURL);
 }
 
 function App() {
@@ -136,7 +136,7 @@ function App() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [searchQuery, selectedCollections, selectedModes, loading, currentPage]);
+  }, [searchQuery, selectedCollections, selectedModes, loading]);
 
   useEffect(() => {
     const handlePopState = () => {
