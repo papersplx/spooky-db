@@ -12,6 +12,7 @@
   background:var(--bg-secondary);
   color:var(--text-primary);
   transition:border-color 0.2s, box-shadow 0.2s;
+  box-sizing:border-box;
 }
 
 .search-input:focus {
@@ -35,6 +36,14 @@
   display:flex;
   align-items:center;
   justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.15s;
+}
+
+.clear-btn.visible {
+  opacity:1;
+  pointer-events:auto;
 }
 
 .clear-btn:hover {
