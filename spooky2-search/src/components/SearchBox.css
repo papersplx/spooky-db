@@ -1,11 +1,11 @@
 .search-box {
-  position: relative;
+  position:relative;
   margin-bottom:1rem;
 }
 
 .search-input {
   width:100%;
-  padding:0.75rem 2.5rem 0.75rem 1rem;
+  padding:0.75rem 2rem 0.75rem 1rem;
   font-size:1rem;
   border:2px solid var(--border);
   border-radius:8px;
@@ -23,18 +23,18 @@
 
 .clear-btn {
   position:absolute;
-  right:0.75rem;
+  right:0.6rem;
   top:50%;
   transform:translateY(-50%);
   background:none;
   border:none;
-  font-size:1.25rem;
+  font-size:1.5rem;
   color:var(--text-secondary);
   cursor:pointer;
   padding:0;
   line-height:1;
-  width:1.25rem;
-  height:1.25rem;
+  width:1.5rem;
+  height:1.5rem;
   display:flex;
   align-items:center;
   justify-content:center;
