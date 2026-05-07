@@ -1,19 +1,17 @@
 .search-box {
-  display:flex;
-  align-items:center;
-  margin-bottom:1rem;
   position:relative;
+  margin-bottom:1rem;
 }
 
 .search-input {
-  flex:1;
+  width:100%;
   padding:0.75rem 2.5rem 0.75rem 1rem;
   font-size:1rem;
   border:2px solid var(--border);
   border-radius:8px;
   background:var(--bg-secondary);
   color:var(--text-primary);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:border-color 0.2s, box-shadow 0.2s;
   box-sizing:border-box;
 }
 
@@ -26,26 +24,20 @@
 .clear-btn {
   position:absolute;
   right:0.75rem;
+  top:50%;
+  transform:translateY(-50%);
   background:none;
   border:none;
-  font-size:1.25rem;
+  font-size:1.5rem;
   color:var(--text-secondary);
   cursor:pointer;
   padding:0;
   line-height:1;
-  width:1.25rem;
-  height:1.25rem;
+  width:1.5rem;
+  height:1.5rem;
   display:flex;
   align-items:center;
   justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 0.15s;
-}
-
-.clear-btn.visible {
-  opacity:1;
-  pointer-events:auto;
 }
 
 .clear-btn:hover {

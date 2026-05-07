@@ -33,13 +33,15 @@ function SearchBox({ query, onSearch }) {
         onChange={(e) => setValue(e.target.value)}
         autoFocus
       />
-      <button
-        className={`clear-btn ${value ? 'visible' : ''}`}
-        onClick={() => setValue('')}
-        aria-label="Clear search"
-      >
-        ×
-      </button>
+      {value && (
+        <button
+          className="clear-btn"
+          onClick={() => setValue('')}
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+      )}
     </div>
   );
 }
