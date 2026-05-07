@@ -127,13 +127,13 @@
 }
 
 .no-results .clear-btn {
-  padding: 0.5rem 1rem;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 0;
+  padding:1rem 1rem;
+  background:var(--accent);
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin-left:0;
 }
 
 .pagination {
