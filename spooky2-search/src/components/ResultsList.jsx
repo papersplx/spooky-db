@@ -14,7 +14,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
   }, [programs]);
 
   const goToPage = (page) => {
-    const newPage = Math.max(1, Math.min(page, totalPages));
+    const newPage = totalPages > 0 ? Math.max(1, Math.min(page, totalPages)) : page;
     if (onPageChange) onPageChange(newPage);
   };
 
