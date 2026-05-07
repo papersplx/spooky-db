@@ -1,10 +1,12 @@
 .search-box {
-  position: relative;
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .search-input {
-  width: 100%;
+  flex: 1;
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-size: 1rem;
   border: 2px solid var(--border);
@@ -22,9 +24,7 @@
 
 .clear-btn {
   position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0.75rem;
   background: none;
   border: none;
   font-size: 1.25rem;
@@ -32,6 +32,11 @@
   cursor: pointer;
   padding: 0;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .clear-btn:hover {
