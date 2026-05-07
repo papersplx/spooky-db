@@ -173,10 +173,9 @@ body {
   background: var(--accent);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 1rem;
 }
 
 /* Pagination */
