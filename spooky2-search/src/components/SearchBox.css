@@ -32,14 +32,16 @@
   transform:translateY(-50%);
   background:none;
   border:none;
+  font-size:1.25rem;
+  color:var(--text-secondary);
   cursor:pointer;
   padding:0;
-  width:0.875rem;
-  height:0.875rem;
+  width:1.25rem;
+  height:1.25rem;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--text-secondary);
+  line-height:1;
 }
 
 .clear-btn:hover {
