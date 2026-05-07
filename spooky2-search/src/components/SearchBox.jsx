@@ -4,6 +4,7 @@ import './SearchBox.css';
 function SearchBox({ query, onSearch }) {
   const [value, setValue] = useState(query || '');
   const debounceRef = useRef(null);
+  const wrapperRef = useRef(null);
 
   const DEBOUNCE_MS = 300;
 
@@ -23,8 +24,16 @@ function SearchBox({ query, onSearch }) {
     return () => clearTimeout(debounceRef.current);
   }, [value, onSearch]);
 
+  const handleClear = () => {
+    setValue('');
+    if (wrapperRef.current) {
+      const input = wrapperRef.current.querySelector('input');
+      if (input) input.focus();
+    }
+  };
+
   return (
-    <div className="search-box">
+    <div className="search-box" ref={wrapperRef}>
       <input
         type="text"
         className="search-input"
@@ -33,15 +42,13 @@ function SearchBox({ query, onSearch }) {
         onChange={(e) => setValue(e.target.value)}
         autoFocus
       />
-      {value && (
-        <button
-          className="clear-btn"
-          onClick={() => setValue('')}
-          aria-label="Clear search"
-        >
-          ×
-        </button>
-      )}
+      <button
+        className={`clear-btn ${value ? 'visible' : ''}`}
+        onClick={handleClear}
+        aria-label="Clear search"
+      >
+        ×
+      </button>
     </div>
   );
 }
