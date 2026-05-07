@@ -17,19 +17,6 @@ function getStateFromURL() {
   };
 }
 
-function updateURL(state) {
-  const params = new URLSearchParams();
-  if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
-  state.selectedModes.forEach(m => params.append('mode', m));
-  state.selectedCollections.forEach(c => params.append('collection', c));
-  if (state.selectedProgramId) params.set('program', state.selectedProgramId);
-  if (state.page && state.page !== 1) params.set('page', state.page);
-  const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
-  console.log('updateURL called with state:', state, 'newURL:', newURL);
-  console.trace('updateURL trace');
-  window.history.replaceState(state, '', newURL);
-}
-
 function App() {
   const initialState = getStateFromURL();
 
@@ -48,7 +35,6 @@ function App() {
   const [totalPrograms, setTotalPrograms] = useState(0);
   const [currentPage, setCurrentPage] = useState(initialState.page);
 
-  const skipURLUpdate = useRef(false);
   const searchParamsRef = useRef({});
   const abortControllerRef = useRef(null);
 
@@ -136,11 +122,10 @@ function App() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [searchQuery, selectedCollections, selectedModes, loading]);
+  }, [searchQuery, selectedCollections, selectedModes, loading, currentPage]);
 
   useEffect(() => {
     const handlePopState = () => {
-      skipURLUpdate.current = true;
       const state = getStateFromURL();
       setSearchQuery(state.searchQuery);
       setSelectedModes(state.selectedModes);
@@ -152,9 +137,9 @@ function App() {
   }, []);
 
   const handleSearch = (query) => {
-    console.log('handleSearch called, setting page to 1');
     setSearchQuery(query);
     setCurrentPage(1);
+    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
   };
 
   const handleSelectCollection = (collection) => {
@@ -164,6 +149,7 @@ function App() {
         : [...prev, collection]
     );
     setCurrentPage(1);
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
   };
 
   const handleSelectMode = (mode) => {
@@ -173,40 +159,48 @@ function App() {
         : [...prev, mode]
     );
     setCurrentPage(1);
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
   };
 
   const handleSelectProgram = (program) => {
     setSelected(program);
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: program.id, page: currentPage });
   };
 
   const handleSearchForProgram = (programName) => {
     setSearchQuery(programName);
     setSelected(null);
     setCurrentPage(1);
+    updateURL({ searchQuery: programName, selectedModes, selectedCollections, selectedProgramId: null, page: 1 });
   };
 
   const handleClearSelection = () => {
     setSelected(null);
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: null, page: currentPage });
   };
 
   const handleClearFilters = () => {
     setSelectedCollections([]);
     setSelectedModes([]);
     setCurrentPage(1);
+    updateURL({ searchQuery, selectedModes:[], selectedCollections:[], selectedProgramId: null, page: 1 });
   };
 
   const handlePageChange = (newPage) => {
-    console.log('handlePageChange called with:', newPage);
     setCurrentPage(newPage);
-    skipURLUpdate.current = true;
-    updateURL({
-      searchQuery,
-      selectedModes,
-      selectedCollections,
-      selectedProgramId: selected?.id || null,
-      page: newPage,
-    });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
   };
+
+  function updateURL(state) {
+    const params = new URLSearchParams();
+    if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
+    state.selectedModes.forEach(m => params.append('mode', m));
+    state.selectedCollections.forEach(c => params.append('collection', c));
+    if (state.selectedProgramId) params.set('program', state.selectedProgramId);
+    if (state.page && state.page !== 1) params.set('page', state.page);
+    const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
+    window.location.href = newURL;
+  }
 
   if (loading) {
     return (
