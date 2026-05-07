@@ -1,4 +1,12 @@
 // CACHE_BUST_2026_05_07_21
+// Debug: trace all pushState calls
+const _originalPushState = window.history.pushState;
+window.history.pushState = function(state, title, url) {
+  console.log('pushState called with url:', url);
+  console.trace('pushState trace');
+  return _originalPushState.call(this, state, title, url);
+};
+
 import { useState, useEffect, useRef } from 'react';
 import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
