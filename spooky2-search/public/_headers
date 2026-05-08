@@ -1,0 +1,13 @@
+# Cache content-hashed assets for 1 week
+/assets/*
+  Cache-Control: public, max-age=604800, immutable
+
+# Don't cache HTML files (they reference the hashed assets)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Cache other static files for 1 week
+/*.svg
+  Cache-Control: public, max-age=604800
+/*.ico
+  Cache-Control: public, max-age=604800
