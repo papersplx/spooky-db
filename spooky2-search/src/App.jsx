@@ -217,6 +217,9 @@ function App() {
   }, []);
 
   function updateURL(state) {
+    if (state.page === 1) {
+      console.trace('updateURL with page:1 trace');
+    }
     const params = new URLSearchParams();
     if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
     state.selectedModes.forEach(m => params.append('mode', m));
@@ -226,7 +229,6 @@ function App() {
     const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
     const currentURL = window.location.pathname + window.location.search;
     console.log('updateURL called with state:', state, 'newURL:', newURL, 'currentURL:', currentURL);
-    console.trace('updateURL trace');
     if (currentURL === newURL) {
       console.log('URL already set, skipping');
       return;
