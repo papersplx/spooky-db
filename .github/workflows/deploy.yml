@@ -26,7 +26,7 @@ jobs:
     - name: Build
       run: cd spooky2-search && npm run build
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         path: spooky2-search/dist
   deploy:
