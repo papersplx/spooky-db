@@ -188,6 +188,7 @@ function App() {
   };
 
   const handleClearSelection = () => {
+    console.log('handleClearSelection called, currentPage:', currentPage);
     setSelected(null);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: null, page: currentPage });
   };
