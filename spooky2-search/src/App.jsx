@@ -8,13 +8,15 @@ import './App.css';
 
 function getStateFromURL() {
   const params = new URLSearchParams(window.location.search);
-  return {
+  const state = {
     searchQuery: params.get('q') || 'Longevity',
     selectedModes: params.getAll('mode').length > 0 ? params.getAll('mode') : ['Remote'],
     selectedCollections: params.getAll('collection'),
     selectedProgramId: params.get('program') || null,
-    page: parseInt(params.get('page') || '1'),
+    page: parseInt(params.get('page') || 1),
   };
+  console.log('getStateFromURL:', state);
+  return state;
 }
 
 function App() {
@@ -163,8 +165,7 @@ function App() {
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    setCurrentPage(1);
-    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
+    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: currentPage });
   };
 
   const handleSelectCollection = (collection) => {

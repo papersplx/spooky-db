@@ -4,52 +4,23 @@ import './SearchBox.css';
 const SearchBox = forwardRef(({ query, onSearch }, ref) => {
   const [value, setValue] = useState(query || '');
   const wrapperRef = useRef(null);
-  const isInitialized = useRef(false);
-  const debounceRef = useRef(null);
   const onSearchRef = useRef(onSearch);
-  const initialQueryRef = useRef(query);
 
   onSearchRef.current = onSearch;
 
   useImperativeHandle(ref, () => ({
-    cancelDebounce: () => {
-      if (debounceRef.current) {
-        clearTimeout(debounceRef.current);
-        debounceRef.current = null;
-      }
-    }
+    cancelDebounce: () => {}
   }));
 
   useEffect(() => {
-    if (!isInitialized.current) {
-      isInitialized.current = true;
-      return;
-    }
     setValue(query || '');
   }, [query]);
 
-  useEffect(() => {
-    if (!isInitialized.current) return;
-
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-
-    if (value === initialQueryRef.current) {
-      initialQueryRef.current = null;
-      return;
-    }
-
-    debounceRef.current = setTimeout(() => {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
       onSearchRef.current(value);
-    }, 300);
-
-    return () => {
-      if (debounceRef.current) {
-        clearTimeout(debounceRef.current);
-      }
-    };
-  }, [value]);
+    }
+  };
 
   const handleClear = () => {
     setValue('');
@@ -67,6 +38,7 @@ const SearchBox = forwardRef(({ query, onSearch }, ref) => {
         placeholder="Search frequencies by name or description..."
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyDown}
         autoFocus
       />
       <button
