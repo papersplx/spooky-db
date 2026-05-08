@@ -18,7 +18,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
     if (onPageChange) onPageChange(newPage);
   };
 
-  const renderPagination = () => {
+  const renderPagination = (showPageNumbers = true) => {
     if (totalPages <= 1) return null;
     const pages = [];
     const maxVisible = 5;
@@ -28,20 +28,22 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
       startPage = Math.max(1, endPage - maxVisible + 1);
     }
 
-    if (startPage > 1) {
-      pages.push(1);
-      if (startPage > 2) pages.push('...');
-    }
-    for (let i = startPage; i <= endPage; i++) {
-      pages.push(i);
-    }
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) pages.push('...');
-      pages.push(totalPages);
+    if (showPageNumbers) {
+      if (startPage > 1) {
+        pages.push(1);
+        if (startPage > 2) pages.push('...');
+      }
+      for (let i = startPage; i <= endPage; i++) {
+        pages.push(i);
+      }
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) pages.push('...');
+        pages.push(totalPages);
+      }
     }
 
     return (
-      <div className="pagination">
+      <div className={`pagination ${showPageNumbers ? '' : 'compact'}`}>
         <button
           className="page-btn"
           disabled={currentPage === 1}
@@ -49,20 +51,24 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
         >
           Previous
         </button>
-        {pages.map((page, idx) => (
-          typeof page === 'number' ? (
-            <button
-              key={idx}
-              type="button"
-              className={`page-btn ${page === currentPage ? 'active' : ''}`}
-              onClick={() => goToPage(page)}
-            >
-              {page}
-            </button>
-          ) : (
-            <span key={idx} className="page-ellipsis">...</span>
-          )
-        ))}
+        {showPageNumbers ? (
+          pages.map((page, idx) => (
+            typeof page === 'number' ? (
+              <button
+                key={idx}
+                type="button"
+                className={`page-btn ${page === currentPage ? 'active' : ''}`}
+                onClick={() => goToPage(page)}
+              >
+                {page}
+              </button>
+            ) : (
+              <span key={idx} className="page-ellipsis">...</span>
+            )
+          ))
+        ) : (
+          <span className="page-info">Page {currentPage} of {totalPages}</span>
+        )}
         <button
           className="page-btn"
           disabled={currentPage === totalPages}
@@ -83,6 +89,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
           currentPage={currentPage}
           pageSize={pageSize}
         />
+        {totalPages > 1 && renderPagination(false)}
         {isSearchPending && <div className="search-spinner" />}
       </div>
 
@@ -125,7 +132,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
         )}
       </div>
 
-      {renderPagination()}
+      {renderPagination(true)}
     </div>
   );
 }
