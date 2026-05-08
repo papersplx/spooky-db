@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
@@ -41,8 +41,8 @@ function App() {
   const pageSize = 20;
   const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 1 week in ms
 
-  const getCacheKey = (query, modes, collections) => {
-    return JSON.stringify({ q: query, modes, collections });
+  const getCacheKey = (query, modes, collections, page) => {
+    return JSON.stringify({ q: query, modes, collections, page });
   };
 
   const getCachedResults = (key) => {
@@ -72,7 +72,7 @@ function App() {
     }
   };
 
-  const [allResults, setAllResults] = useState([]);
+  const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
     const fetchCollections = async () => {
@@ -120,11 +120,11 @@ function App() {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
-    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections);
+    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections, currentPage);
     const cached = getCachedResults(cacheKey);
 
     if (cached) {
-      setAllResults(cached.results);
+      setFiltered(cached.results);
       setTotalResults(cached.total);
       setIsSearchPending(false);
       return;
@@ -137,17 +137,17 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
-          limit: 5000,
-          offset: 0,
+          limit: pageSize,
+          offset: (currentPage - 1) * pageSize,
         }, controller.signal);
         const results = result.results || [];
-        setCachedResults(cacheKey, results, result.total || results.length);
-        setAllResults(results);
-        setTotalResults(result.total || results.length);
+        setCachedResults(cacheKey, results, result.total || 0);
+        setFiltered(results);
+        setTotalResults(result.total || 0);
       } catch (err) {
         if (err.name !== 'AbortError') {
           console.error('Search failed:', err);
-          setAllResults([]);
+          setFiltered([]);
         }
       } finally {
         setIsSearchPending(false);
@@ -159,13 +159,7 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections]);
-
-  const filtered = useMemo(() => {
-    if (allResults.length === 0) return [];
-    const start = (currentPage - 1) * pageSize;
-    return allResults.slice(start, start + pageSize);
-  }, [allResults, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
