@@ -1,13 +1,4 @@
-// CACHE_BUST_2026_05_07_21
-// Debug: trace all pushState calls
-const _originalPushState = window.history.pushState;
-window.history.pushState = function(state, title, url) {
-  console.log('pushState called with url:', url);
-  console.trace('pushState trace');
-  return _originalPushState.call(this, state, title, url);
-};
-
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
@@ -84,75 +75,12 @@ function App() {
     loadInitialProgram();
   }, []);
 
-  useEffect(() => {
-    if (loading) return;
-
-    const state = getStateFromURL();
-    const params = {
-      q: state.searchQuery,
-      mode: state.selectedModes,
-      collection: state.selectedCollections,
-      page: state.page,
-    };
-
-    searchParamsRef.current = params;
-
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
-    const controller = new AbortController();
-    abortControllerRef.current = controller;
-
-    setIsSearchPending(true);
-    const timer = setTimeout(async () => {
-      try {
-        const response = await searchPrograms({
-          q: params.q,
-          mode: params.mode,
-          collection: params.collection,
-          limit: 20,
-          offset: (params.page - 1) * 20,
-        });
-        if (!controller.signal.aborted) {
-          setFiltered(response.results.map(p => ({ item: p })));
-          setTotalResults(response.total);
-          setCurrentPage(params.page);
-        }
-      } catch (err) {
-        if (!controller.signal.aborted) {
-          setError(err.message);
-        }
-      } finally {
-        if (!controller.signal.aborted) {
-          setIsSearchPending(false);
-        }
-      }
-    }, 300);
-
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
-  }, [searchQuery, selectedCollections, selectedModes, loading]);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      const state = getStateFromURL();
-      setSearchQuery(state.searchQuery);
-      setSelectedModes(state.selectedModes);
-      setSelectedCollections(state.selectedCollections);
-      setCurrentPage(state.page);
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  const handleSearch = (query) => {
+  const handleSearch = useCallback((query) => {
     console.log('handleSearch called, setting page to 1');
     setSearchQuery(query);
     setCurrentPage(1);
     updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
-  };
+  }, [searchQuery, selectedModes, selectedCollections, selected]);
 
   const handleSelectCollection = (collection) => {
     setSelectedCollections(prev =>
@@ -205,19 +133,6 @@ function App() {
     setCurrentPage(newPage);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
   };
-
-  // Debug: trace all pushState calls
-  useEffect(() => {
-    const originalPushState = window.history.pushState;
-    window.history.pushState = function(state, title, url) {
-      console.log('pushState called with url:', url);
-      console.trace('pushState trace');
-      return originalPushState.call(this, state, title, url);
-    };
-    return () => {
-      window.history.pushState = originalPushState;
-    };
-  }, []);
 
   function updateURL(state) {
     if (state.page === 1) {

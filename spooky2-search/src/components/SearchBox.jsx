@@ -3,25 +3,25 @@ import './SearchBox.css';
 
 function SearchBox({ query, onSearch }) {
   const [value, setValue] = useState(query || '');
-  const debounceRef = useRef(null);
   const wrapperRef = useRef(null);
-
-  const DEBOUNCE_MS = 300;
+  const isInitialized = useRef(false);
 
   useEffect(() => {
+    if (!isInitialized.current) {
+      isInitialized.current = true;
+      return;
+    }
     setValue(query || '');
   }, [query]);
 
   useEffect(() => {
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-
-    debounceRef.current = setTimeout(() => {
+    if (!isInitialized.current) return;
+    
+    const debounceRef = setTimeout(() => {
       onSearch(value);
-    }, DEBOUNCE_MS);
+    }, 300);
 
-    return () => clearTimeout(debounceRef.current);
+    return () => clearTimeout(debounceRef);
   }, [value, onSearch]);
 
   const handleClear = () => {
