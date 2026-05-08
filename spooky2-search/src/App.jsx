@@ -39,6 +39,40 @@ function App() {
   const searchBoxRef = useRef(null);
 
   const pageSize = 20;
+  const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 1 week in ms
+
+  const getCacheKey = (query, modes, collections) => {
+    return JSON.stringify({ q: query, modes, collections });
+  };
+
+  const getCachedResults = (key) => {
+    try {
+      const cached = localStorage.getItem(`search_cache_${key}`);
+      if (!cached) return null;
+      const data = JSON.parse(cached);
+      if (Date.now() - data.timestamp > CACHE_TTL) {
+        localStorage.removeItem(`search_cache_${key}`);
+        return null;
+      }
+      return data;
+    } catch {
+      return null;
+    }
+  };
+
+  const setCachedResults = (key, results, total) => {
+    try {
+      localStorage.setItem(`search_cache_${key}`, JSON.stringify({
+        results,
+        total,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      console.warn('Cache write failed:', e);
+    }
+  };
+
+  const [allResults, setAllResults] = useState([]);
 
   useEffect(() => {
     const fetchCollections = async () => {
@@ -86,6 +120,16 @@ function App() {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
+    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections);
+    const cached = getCachedResults(cacheKey);
+
+    if (cached) {
+      setAllResults(cached.results);
+      setTotalResults(cached.total);
+      setIsSearchPending(false);
+      return;
+    }
+
     const doSearch = async () => {
       setIsSearchPending(true);
       try {
@@ -93,15 +137,17 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
-          limit: pageSize,
-          offset: (currentPage - 1) * pageSize,
+          limit: 5000,
+          offset: 0,
         }, controller.signal);
-        setFiltered(result.results || []);
-        setTotalResults(result.total || 0);
+        const results = result.results || [];
+        setCachedResults(cacheKey, results, result.total || results.length);
+        setAllResults(results);
+        setTotalResults(result.total || results.length);
       } catch (err) {
         if (err.name !== 'AbortError') {
           console.error('Search failed:', err);
-          setFiltered([]);
+          setAllResults([]);
         }
       } finally {
         setIsSearchPending(false);
@@ -113,7 +159,13 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections]);
+
+  const filtered = useMemo(() => {
+    if (allResults.length === 0) return [];
+    const start = (currentPage - 1) * pageSize;
+    return allResults.slice(start, start + pageSize);
+  }, [allResults, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
