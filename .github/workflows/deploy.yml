@@ -28,6 +28,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
+        name: github-pages
         path: spooky2-search/dist
   deploy:
     needs: build
