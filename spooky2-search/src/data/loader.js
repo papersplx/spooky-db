@@ -28,7 +28,7 @@ export async function loadAllPresets(onProgress) {
  * Search programs via API.
  * Returns { results: [...], total: N }
  */
-export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100, offset = 0 } = {}) {
+export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100, offset = 0 } = {}, signal) {
   const params = new URLSearchParams();
   if (q) params.append('q', q);
   if (mode.length > 0) mode.forEach(m => params.append('mode', m));
@@ -36,7 +36,7 @@ export async function searchPrograms({ q = '', mode = [], collection = [], limit
   params.append('limit', limit);
   params.append('offset', offset);
 
-  const response = await fetch(`${API_BASE}/search?${params.toString()}`);
+  const response = await fetch(`${API_BASE}/search?${params.toString()}`, { signal });
   if (!response.ok) {
     throw new Error(`Search failed: ${response.status}`);
   }

@@ -191,6 +191,7 @@ body {
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--border);
   background: var(--bg-secondary);
+  color: var(--text-primary);
   cursor: pointer;
   border-radius: 3px;
 }

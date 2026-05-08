@@ -53,6 +53,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
           typeof page === 'number' ? (
             <button
               key={idx}
+              type="button"
               className={`page-btn ${page === currentPage ? 'active' : ''}`}
               onClick={() => goToPage(page)}
             >
@@ -79,6 +80,8 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
         <StatsBar
           total={totalResults}
           query={searchQuery}
+          currentPage={currentPage}
+          pageSize={pageSize}
         />
         {isSearchPending && <div className="search-spinner" />}
       </div>

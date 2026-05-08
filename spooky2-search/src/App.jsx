@@ -37,6 +37,9 @@ function App() {
 
   const searchParamsRef = useRef({});
   const abortControllerRef = useRef(null);
+  const searchBoxRef = useRef(null);
+
+  const pageSize = 20;
 
   useEffect(() => {
     const fetchCollections = async () => {
@@ -45,14 +48,17 @@ function App() {
         const counts = {};
         const names = new Set();
         const modes = new Set();
+        let total = 0;
         collections.forEach(({ collection, count, mode }) => {
           names.add(collection);
           counts[collection] = (counts[collection] || 0) + parseInt(count);
           if (mode) modes.add(mode);
+          total += parseInt(count);
         });
         setCollectionsList([...names].sort());
         setCollectionCounts(counts);
         setModesList([...modes].sort());
+        setTotalPrograms(total);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -60,7 +66,11 @@ function App() {
       }
     };
 
-    const loadInitialProgram = async () => {
+    fetchCollections();
+  }, []);
+
+  useEffect(() => {
+    const loadProgram = async () => {
       if (initialState.selectedProgramId) {
         try {
           const program = await getProgram(initialState.selectedProgramId);
@@ -70,17 +80,47 @@ function App() {
         }
       }
     };
-
-    fetchCollections();
-    loadInitialProgram();
+    loadProgram();
   }, []);
 
-  const handleSearch = useCallback((query) => {
-    console.log('handleSearch called, setting page to 1');
+  useEffect(() => {
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    const doSearch = async () => {
+      setIsSearchPending(true);
+      try {
+        const result = await searchPrograms({
+          q: searchQuery,
+          mode: selectedModes,
+          collection: selectedCollections,
+          limit: pageSize,
+          offset: (currentPage - 1) * pageSize,
+        }, controller.signal);
+        setFiltered(result.results || []);
+        setTotalResults(result.total || 0);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.error('Search failed:', err);
+          setFiltered([]);
+        }
+      } finally {
+        setIsSearchPending(false);
+      }
+    };
+
+    doSearch();
+
+    return () => {
+      controller.abort();
+    };
+  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
+
+  const handleSearch = (query) => {
     setSearchQuery(query);
     setCurrentPage(1);
     updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
-  }, [searchQuery, selectedModes, selectedCollections, selected]);
+  };
 
   const handleSelectCollection = (collection) => {
     setSelectedCollections(prev =>
@@ -103,7 +143,6 @@ function App() {
   };
 
   const handleSelectProgram = (program) => {
-    console.log('handleSelectProgram called, currentPage:', currentPage);
     setSelected(program);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: program.id, page: currentPage });
   };
@@ -116,7 +155,6 @@ function App() {
   };
 
   const handleClearSelection = () => {
-    console.log('handleClearSelection called, currentPage:', currentPage);
     setSelected(null);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: null, page: currentPage });
   };
@@ -129,15 +167,14 @@ function App() {
   };
 
   const handlePageChange = (newPage) => {
-    console.log('handlePageChange called with:', newPage);
+    if (searchBoxRef.current) {
+      searchBoxRef.current.cancelDebounce();
+    }
     setCurrentPage(newPage);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
   };
 
   function updateURL(state) {
-    if (state.page === 1) {
-      console.trace('updateURL with page:1 trace');
-    }
     const params = new URLSearchParams();
     if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
     state.selectedModes.forEach(m => params.append('mode', m));
@@ -145,8 +182,6 @@ function App() {
     if (state.selectedProgramId) params.set('program', state.selectedProgramId);
     if (state.page && state.page !== 1) params.set('page', state.page);
     const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
-    console.log('updateURL called with state:', state, 'newURL:', newURL, 'currentURL:', window.location.pathname + window.location.search);
-    console.log('PUSHING STATE:', newURL);
     window.history.pushState(state, '', newURL);
   }
 
@@ -192,7 +227,7 @@ function App() {
         </aside>
 
           <section className="search-results">
-            <SearchBox query={searchQuery} onSearch={handleSearch} />
+            <SearchBox ref={searchBoxRef} query={searchQuery} onSearch={handleSearch} />
             <ResultsList
             programs={filtered}
             selected={selected}

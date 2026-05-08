@@ -1,10 +1,23 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
 import './SearchBox.css';
 
-function SearchBox({ query, onSearch }) {
+const SearchBox = forwardRef(({ query, onSearch }, ref) => {
   const [value, setValue] = useState(query || '');
   const wrapperRef = useRef(null);
   const isInitialized = useRef(false);
+  const debounceRef = useRef(null);
+  const onSearchRef = useRef(onSearch);
+
+  onSearchRef.current = onSearch;
+
+  useImperativeHandle(ref, () => ({
+    cancelDebounce: () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+        debounceRef.current = null;
+      }
+    }
+  }));
 
   useEffect(() => {
     if (!isInitialized.current) {
@@ -16,13 +29,21 @@ function SearchBox({ query, onSearch }) {
 
   useEffect(() => {
     if (!isInitialized.current) return;
-    
-    const debounceRef = setTimeout(() => {
-      onSearch(value);
+
+    if (debounceRef.current) {
+      clearTimeout(debounceRef.current);
+    }
+
+    debounceRef.current = setTimeout(() => {
+      onSearchRef.current(value);
     }, 300);
 
-    return () => clearTimeout(debounceRef);
-  }, [value, onSearch]);
+    return () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+    };
+  }, [value]);
 
   const handleClear = () => {
     setValue('');
@@ -51,6 +72,8 @@ function SearchBox({ query, onSearch }) {
       </button>
     </div>
   );
-}
+});
+
+SearchBox.displayName = 'SearchBox';
 
 export default SearchBox;
