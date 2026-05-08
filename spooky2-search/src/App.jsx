@@ -29,7 +29,7 @@ function App() {
   const [collectionsList, setCollectionsList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [modesList, setModesList] = useState([]);
-  const [filtered, setFiltered] = useState([]);
+  const [allResults, setAllResults] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [isSearchPending, setIsSearchPending] = useState(false);
   const [totalPrograms, setTotalPrograms] = useState(0);
@@ -38,54 +38,27 @@ function App() {
   const searchParamsRef = useRef({});
   const abortControllerRef = useRef(null);
   const searchBoxRef = useRef(null);
+  const cacheRef = useRef(new Map());
 
   const pageSize = 20;
 
-  useEffect(() => {
-    const fetchCollections = async () => {
-      try {
-        const collections = await getCollections();
-        const counts = {};
-        const names = new Set();
-        const modes = new Set();
-        let total = 0;
-        collections.forEach(({ collection, count, mode }) => {
-          names.add(collection);
-          counts[collection] = (counts[collection] || 0) + parseInt(count);
-          if (mode) modes.add(mode);
-          total += parseInt(count);
-        });
-        setCollectionsList([...names].sort());
-        setCollectionCounts(counts);
-        setModesList([...modes].sort());
-        setTotalPrograms(total);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCollections();
-  }, []);
-
-  useEffect(() => {
-    const loadProgram = async () => {
-      if (initialState.selectedProgramId) {
-        try {
-          const program = await getProgram(initialState.selectedProgramId);
-          setSelected(program);
-        } catch (err) {
-          console.error('Failed to load program from URL:', err);
-        }
-      }
-    };
-    loadProgram();
-  }, []);
+  const getCacheKey = (query, modes, collections) => {
+    return JSON.stringify({ q: query, modes, collections });
+  };
 
   useEffect(() => {
     const controller = new AbortController();
     abortControllerRef.current = controller;
+
+    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections);
+    const cached = cacheRef.current.get(cacheKey);
+
+    if (cached) {
+      setAllResults(cached.results);
+      setTotalResults(cached.total);
+      setIsSearchPending(false);
+      return;
+    }
 
     const doSearch = async () => {
       setIsSearchPending(true);
@@ -94,15 +67,17 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
-          limit: pageSize,
-          offset: (currentPage - 1) * pageSize,
+          limit: 100000,
+          offset: 0,
         }, controller.signal);
-        setFiltered(result.results || []);
-        setTotalResults(result.total || 0);
+        const results = result.results || [];
+        cacheRef.current.set(cacheKey, { results, total: result.total || results.length });
+        setAllResults(results);
+        setTotalResults(result.total || results.length);
       } catch (err) {
         if (err.name !== 'AbortError') {
           console.error('Search failed:', err);
-          setFiltered([]);
+          setAllResults([]);
         }
       } finally {
         setIsSearchPending(false);
@@ -114,7 +89,13 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections]);
+
+  const filtered = useMemo(() => {
+    if (allResults.length === 0) return [];
+    const start = (currentPage - 1) * pageSize;
+    return allResults.slice(start, start + pageSize);
+  }, [allResults, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
