@@ -87,11 +87,12 @@ function App() {
   useEffect(() => {
     if (loading) return;
 
+    const state = getStateFromURL();
     const params = {
-      q: searchQuery,
-      mode: selectedModes,
-      collection: selectedCollections,
-      page: currentPage,
+      q: state.searchQuery,
+      mode: state.selectedModes,
+      collection: state.selectedCollections,
+      page: state.page,
     };
 
     searchParamsRef.current = params;
@@ -115,6 +116,7 @@ function App() {
         if (!controller.signal.aborted) {
           setFiltered(response.results.map(p => ({ item: p })));
           setTotalResults(response.total);
+          setCurrentPage(params.page);
         }
       } catch (err) {
         if (!controller.signal.aborted) {
@@ -131,7 +133,7 @@ function App() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [searchQuery, selectedCollections, selectedModes, loading, currentPage]);
+  }, [searchQuery, selectedCollections, selectedModes, loading]);
 
   useEffect(() => {
     const handlePopState = () => {
