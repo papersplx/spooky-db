@@ -175,6 +175,7 @@ function App() {
   };
 
   const handleSelectProgram = (program) => {
+    console.log('handleSelectProgram called, currentPage:', currentPage);
     setSelected(program);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: program.id, page: currentPage });
   };
