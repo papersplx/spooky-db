@@ -201,6 +201,7 @@ function App() {
   };
 
   const handlePageChange = (newPage) => {
+    console.log('handlePageChange called with:', newPage);
     setCurrentPage(newPage);
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
   };
