@@ -7,6 +7,7 @@ const SearchBox = forwardRef(({ query, onSearch }, ref) => {
   const isInitialized = useRef(false);
   const debounceRef = useRef(null);
   const onSearchRef = useRef(onSearch);
+  const initialQueryRef = useRef(query);
 
   onSearchRef.current = onSearch;
 
@@ -32,6 +33,11 @@ const SearchBox = forwardRef(({ query, onSearch }, ref) => {
 
     if (debounceRef.current) {
       clearTimeout(debounceRef.current);
+    }
+
+    if (value === initialQueryRef.current) {
+      initialQueryRef.current = null;
+      return;
     }
 
     debounceRef.current = setTimeout(() => {
