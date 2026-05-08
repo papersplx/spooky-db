@@ -69,6 +69,7 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   white-space: nowrap;
+  padding: 0.4rem 0.8rem;
 }
 
 .search-spinner {
