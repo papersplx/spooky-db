@@ -148,6 +148,7 @@ function App() {
   }, []);
 
   const handleSearch = (query) => {
+    console.log('handleSearch called, setting page to 1');
     setSearchQuery(query);
     setCurrentPage(1);
     updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
@@ -225,6 +226,7 @@ function App() {
     const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
     const currentURL = window.location.pathname + window.location.search;
     console.log('updateURL called with state:', state, 'newURL:', newURL, 'currentURL:', currentURL);
+    console.trace('updateURL trace');
     if (currentURL === newURL) {
       console.log('URL already set, skipping');
       return;
