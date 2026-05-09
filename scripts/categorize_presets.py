@@ -20,6 +20,7 @@ Usage:
 import os
 import sys
 import json
+import re
 import argparse
 import logging
 import hashlib
@@ -447,14 +448,14 @@ Category (respond with exactly one category name):"""
 
             # Try to extract name and description from common patterns
             if "PresetName=" in content or "PresetName = " in content:
-                match = __import__("re").search(
+                match = re.search(
                     r'PresetName"?\s*=\s*"?([^"\n]+)"?', content
                 )
                 if match:
                     name = match.group(1).strip()
 
             if "Preset_Notes=" in content or "Preset_Notes = " in content:
-                match = __import__("re").search(
+                match = re.search(
                     r'Preset_Notes"?\s*=\s*"?([^"\n]+)"?', content
                 )
                 if match:
@@ -522,13 +523,13 @@ def process_directory(
 
         # Try to extract from content
         if "PresetName=" in code:
-            match = __import__("re").search(
+            match = re.search(
                 r'PresetName"?\s*=\s*"?([^"\n]+)"?', code
             )
             if match:
                 name = match.group(1).strip()
         if "Preset_Notes=" in code:
-            match = __import__("re").search(
+            match = re.search(
                 r'Preset_Notes"?\s*=\s*"?([^"\n]+)"?', code
             )
             if match:
