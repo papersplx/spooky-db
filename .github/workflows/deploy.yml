@@ -30,7 +30,7 @@ jobs:
       working-directory: spooky2-search
       run: npm run build
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v5
       with:
         path: spooky2-search/dist
   deploy:
