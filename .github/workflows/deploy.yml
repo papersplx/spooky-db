@@ -24,10 +24,13 @@ jobs:
       with:
         node-version: '24'
         cache: 'npm'
+        cache-dependency-path: spooky2-search/package-lock.json
     - name: Install dependencies
-      run: cd spooky2-search && npm ci
+      working-directory: spooky2-search
+      run: npm ci
     - name: Build
-      run: cd spooky2-search && npm run build
+      working-directory: spooky2-search
+      run: npm run build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
