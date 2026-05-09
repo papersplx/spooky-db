@@ -1,3 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text y=".9em" font-size="90">📡</text>
+  <circle cx="50" cy="50" r="45" fill="#4361ee" />
+  <path d="M 30 50 Q 35 35, 50 35 Q 65 35, 70 50 Q 65 65, 50 65 Q 35 65, 30 50 Z" fill="white" />
+  <circle cx="50" cy="50" r="8" fill="#4361ee" />
 </svg>
