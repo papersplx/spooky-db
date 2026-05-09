@@ -1,11 +1,12 @@
 .stats-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0.75rem;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
   font-size: 0.85rem;
+  width: 100%;
 }
 
 .stats-count {
@@ -16,7 +17,23 @@
   color: var(--text-primary);
 }
 
-.stats-time {
+.stats-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-breakdown-label {
   color: var(--text-secondary);
-  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.stats-badge {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  background: var(--accent-bg);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
 }

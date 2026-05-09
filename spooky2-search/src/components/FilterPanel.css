@@ -38,9 +38,101 @@
 .filter-options {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
-  max-height: 300px;
+  gap: 0.25rem;
+  max-height: 400px;
   overflow-y: auto;
+}
+
+.tree {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.tree-root {
+  margin-bottom: 0.25rem;
+}
+
+.tree-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  border-radius: 3px;
+}
+
+.tree-item:hover {
+  background: var(--accent-light);
+}
+
+.tree-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.tree-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.tree-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.tree-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: normal;
+}
+
+.tree-children {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.2rem;
+}
+
+.tree-leaf {
+  margin-bottom: 0;
+}
+
+.tree-leaf .tree-item {
+  font-size: 0.85rem;
+}
+
+.tree-leaf .tree-item input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.tree-node {
+  margin-bottom: 0;
+}
+
+.tree-node .tree-item {
+  font-size: 0.85rem;
+}
+
+.tree-node .tree-item input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .checkbox-label {
@@ -56,26 +148,6 @@
   accent-color: var(--accent);
   width: 16px;
   height: 16px;
-}
-
-.checkbox-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--text-primary);
-}
-
-.filter-more {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-top: 0.5rem;
-}
-
-.sentinel {
-  padding: 0.5rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
 }
 
 .filter-info {

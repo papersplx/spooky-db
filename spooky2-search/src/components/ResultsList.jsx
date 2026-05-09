@@ -88,6 +88,7 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
           query={searchQuery}
           currentPage={currentPage}
           pageSize={pageSize}
+          programs={programs}
         />
         {totalPages > 1 && renderPagination(false)}
         {isSearchPending && <div className="search-spinner" />}
