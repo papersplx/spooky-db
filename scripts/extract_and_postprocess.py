@@ -511,6 +511,31 @@ Examples:
         action="store_true",
         help="Enable debug logging",
     )
+    parser.add_argument(
+        "--categorize",
+        action="store_true",
+        help="Run LLM auto-categorization on processed files after post-processing",
+    )
+    parser.add_argument(
+        "--categorize-dry-run",
+        action="store_true",
+        help="Run keyword-only categorization (no LLM calls)",
+    )
+    parser.add_argument(
+        "--api-base",
+        default=None,
+        help="LLM API base URL (e.g. http://localhost:1234/v1 for LM Studio)",
+    )
+    parser.add_argument(
+        "--api-key",
+        default=None,
+        help="LLM API key (e.g. OPENAI_API_KEY)",
+    )
+    parser.add_argument(
+        "--model",
+        default=None,
+        help="LLM model name (default: gpt-4o-mini)",
+    )
 
     args = parser.parse_args()
 
@@ -657,6 +682,43 @@ Examples:
         with open(overall_path, "w", encoding="utf-8") as f:
             json.dump(overall_stats, f, indent=2, ensure_ascii=False, default=str)
         logger.info(f"\nOverall manifest saved: {overall_path}")
+
+    # Optional LLM categorization
+    if args.categorize or args.categorize_dry_run:
+        from categorize_presets import LLMCategorizer, process_directory
+
+        llm_base = args.api_base or os.environ.get("LLM_API_BASE", "http://localhost:1234/v1")
+        llm_key = args.api_key or os.environ.get("LLM_API_KEY", "")
+        llm_model = args.model or os.environ.get("LLM_MODEL", "gpt-4o-mini")
+
+        categorizer = LLMCategorizer(
+            api_base=llm_base,
+            api_key=llm_key,
+            model=llm_model,
+            temperature=0.1,
+        )
+
+        logger.info(f"\n{'='*60}")
+        logger.info("LLM CATEGORIZATION")
+        logger.info(f"{'='*60}")
+        logger.info(f"Model: {llm_model}")
+        logger.info(f"API base: {llm_base}")
+        logger.info(f"Dry run (keyword only): {args.categorize_dry_run}")
+
+        cat_stats = process_directory(
+            output_dir,
+            output_dir,
+            categorizer,
+            logger,
+            use_llm=not args.categorize_dry_run,
+            resume=True,
+        )
+        overall_stats["categorization"] = cat_stats
+
+        # Re-save overall manifest with categorization stats
+        if not args.dry_run:
+            with open(overall_path, "w", encoding="utf-8") as f:
+                json.dump(overall_stats, f, indent=2, ensure_ascii=False, default=str)
 
     # Summary
     logger.info(f"\n{'='*60}")
