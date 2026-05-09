@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
-import { searchPrograms, getProgram, getCollections } from './data/loader';
+import { searchPrograms, getProgram, getCollections, getTelegramUpdates } from './data/loader';
 import './App.css';
 
 function getStateFromURL() {
@@ -35,6 +35,7 @@ function App() {
   const [isSearchPending, setIsSearchPending] = useState(false);
   const [totalPrograms, setTotalPrograms] = useState(0);
   const [currentPage, setCurrentPage] = useState(initialState.page);
+  const [telegramUpdates, setTelegramUpdates] = useState(null);
 
   const searchParamsRef = useRef({});
   const abortControllerRef = useRef(null);
@@ -102,6 +103,18 @@ function App() {
     };
 
     fetchCollections();
+  }, []);
+
+  useEffect(() => {
+    const fetchTelegramUpdates = async () => {
+      try {
+        const updates = await getTelegramUpdates();
+        setTelegramUpdates(updates);
+      } catch {
+        // Silently ignore — timestamps are informational
+      }
+    };
+    fetchTelegramUpdates();
   }, []);
 
   useEffect(() => {
@@ -313,6 +326,25 @@ function App() {
         <p className="disclaimer">
           Frequencies are for experimental purposes only. Not medical advice.
         </p>
+        {telegramUpdates && (
+          <p className="telegram-updates">
+            <strong>Telegram group updates:</strong>{' '}
+            {Object.entries(telegramUpdates)
+              .filter(([, ts]) => ts)
+              .map(([group, ts]) => {
+                const date = new Date(ts);
+                const formatted = date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                });
+                return `${group}: ${formatted}`;
+              })
+              .join(' | ') || 'No data available'}
+          </p>
+        )}
       </footer>
     </div>
   );

@@ -21,3 +21,8 @@ spooky2-search/public/data/
 *.tmp
 __pycache__/
 .pytest_cache/
+
+# Telegram scraper session and config
+telegram_scraper_session.*
+telegram_config.env
+scripts/telegram_scraper_session.*

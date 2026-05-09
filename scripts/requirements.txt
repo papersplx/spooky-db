@@ -1,0 +1,2 @@
+# Telegram scraper dependencies
+telethon>=1.30.0

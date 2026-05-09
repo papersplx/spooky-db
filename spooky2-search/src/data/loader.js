@@ -64,3 +64,16 @@ export async function getCollections() {
   }
   return response.json();
 }
+
+/**
+ * Get Telegram group last-updated timestamps.
+ */
+export async function getTelegramUpdates() {
+  try {
+    const response = await fetch(`${API_BASE}/telegram-updates`);
+    if (!response.ok) return null;
+    return response.json();
+  } catch {
+    return null;
+  }
+}
