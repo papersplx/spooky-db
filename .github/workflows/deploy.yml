@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: '24'
     - name: Install dependencies
-      run: cd spooky2-search && npm ci
+      run: cd spooky2-search && npm install
     - name: Build
       run: cd spooky2-search && npm run build
     - name: Upload artifact
