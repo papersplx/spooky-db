@@ -653,6 +653,7 @@ Examples:
     overall_stats["completed_at"] = datetime.now(timezone.utc).isoformat()
 
     if not args.dry_run:
+        output_dir.mkdir(parents=True, exist_ok=True)
         with open(overall_path, "w", encoding="utf-8") as f:
             json.dump(overall_stats, f, indent=2, ensure_ascii=False, default=str)
         logger.info(f"\nOverall manifest saved: {overall_path}")
