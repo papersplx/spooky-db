@@ -15,6 +15,16 @@ app = FastAPI(title="Spooky2 Search API")
 # Path to local data directory for Telegram timestamps
 DATA_DIR = Path(os.environ.get("DATA_DIR", "data/presets"))
 
+# Neon connection — deferred until first database call
+CONN_STRING = os.environ.get("NEON_CONN_STRING")
+
+if not CONN_STRING:
+    import warnings
+    warnings.warn(
+        "NEON_CONN_STRING not set. Database endpoints (/search, /program, /collections) "
+        "will return errors. Static endpoints (/telegram-updates, /health) still work."
+    )
+
 
 @app.get("/")
 def read_root():
@@ -39,11 +49,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Neon connection
-CONN_STRING = os.environ.get("NEON_CONN_STRING")
-if not CONN_STRING:
-    raise ValueError("NEON_CONN_STRING environment variable is required")
 
 @app.get("/search")
 def search(
