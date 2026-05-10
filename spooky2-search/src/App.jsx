@@ -182,23 +182,25 @@ function App() {
   };
 
   const handleSelectCollection = (collection) => {
-    setSelectedCollections(prev =>
-      prev.includes(collection)
+    setSelectedCollections(prev => {
+      const next = prev.includes(collection)
         ? prev.filter(c => c !== collection)
-        : [...prev, collection]
-    );
-    setCurrentPage(1);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
+        : [...prev, collection];
+      setCurrentPage(1);
+      updateURL({ searchQuery, selectedModes, selectedCollections: next, selectedProgramId: selected?.id || null, page: 1 });
+      return next;
+    });
   };
 
   const handleSelectMode = (mode) => {
-    setSelectedModes(prev =>
-      prev.includes(mode)
+    setSelectedModes(prev => {
+      const next = prev.includes(mode)
         ? prev.filter(m => m !== mode)
-        : [...prev, mode]
-    );
-    setCurrentPage(1);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
+        : [...prev, mode];
+      setCurrentPage(1);
+      updateURL({ searchQuery, selectedModes: next, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
+      return next;
+    });
   };
 
   const handleSelectProgram = (program) => {
@@ -222,7 +224,7 @@ function App() {
     setSelectedCollections([]);
     setSelectedModes([]);
     setCurrentPage(1);
-    updateURL({ searchQuery, selectedModes:[], selectedCollections:[], selectedProgramId: null, page: 1 });
+    updateURL({ searchQuery, selectedModes: [], selectedCollections: [], selectedProgramId: null, page: 1 });
   };
 
   const handlePageChange = (newPage) => {
