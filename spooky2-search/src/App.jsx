@@ -16,7 +16,6 @@ function getStateFromURL() {
     selectedProgramId: params.get('program') || null,
     page: parseInt(params.get('page') || 1),
   };
-  console.log('getStateFromURL:', state);
   return state;
 }
 
