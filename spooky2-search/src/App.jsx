@@ -28,7 +28,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState(initialState.searchQuery);
   const [selectedCollections, setSelectedCollections] = useState(initialState.selectedCollections);
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(initialState.selectedCategories);
   const [collectionsList, setCollectionsList] = useState([]);
   const [categoriesList, setCategoriesList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
