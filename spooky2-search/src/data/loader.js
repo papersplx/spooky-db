@@ -67,6 +67,17 @@ export async function getCollections() {
 }
 
 /**
+ * Get all categories with counts.
+ */
+export async function getCategories() {
+  const response = await fetch(`${API_BASE}/categories`);
+  if (!response.ok) {
+    throw new Error(`Failed to load categories: ${response.status}`);
+  }
+  return response.json();
+}
+
+/**
  * Get Telegram group last-updated timestamps.
  */
 export async function getTelegramUpdates() {

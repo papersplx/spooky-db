@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
-import { searchPrograms, getProgram, getCollections, getTelegramUpdates } from './data/loader';
+import { searchPrograms, getProgram, getCollections, getCategories, getTelegramUpdates } from './data/loader';
 import './App.css';
 
 function getStateFromURL() {
@@ -12,6 +12,7 @@ function getStateFromURL() {
     searchQuery: params.get('q') || 'Longevity',
     selectedModes: params.getAll('mode').length > 0 ? params.getAll('mode') : ['Remote'],
     selectedCollections: params.getAll('collection'),
+    selectedCategories: params.getAll('category'),
     selectedProgramId: params.get('program') || null,
     page: parseInt(params.get('page') || 1),
   };
@@ -28,7 +29,9 @@ function App() {
   const [searchQuery, setSearchQuery] = useState(initialState.searchQuery);
   const [selectedCollections, setSelectedCollections] = useState(initialState.selectedCollections);
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [collectionsList, setCollectionsList] = useState([]);
+  const [categoriesList, setCategoriesList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [modesList, setModesList] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
@@ -44,8 +47,8 @@ function App() {
   const pageSize = 20;
   const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 1 week in ms
 
-  const getCacheKey = (query, modes, collections, page) => {
-    return JSON.stringify({ q: query, modes, collections, page });
+  const getCacheKey = (query, modes, collections, categories, page) => {
+    return JSON.stringify({ q: query, modes, collections, categories, page });
   };
 
   const getCachedResults = (key) => {
@@ -78,7 +81,7 @@ function App() {
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
-    const fetchCollections = async () => {
+    const fetchData = async () => {
       try {
         const collections = await getCollections();
         const counts = {};
@@ -95,6 +98,9 @@ function App() {
         setCollectionCounts(counts);
         setModesList([...modes].sort());
         setTotalPrograms(total);
+
+        const categories = await getCategories();
+        setCategoriesList(categories.map(c => c.category));
       } catch (err) {
         setError(err.message);
       } finally {
@@ -102,7 +108,7 @@ function App() {
       }
     };
 
-    fetchCollections();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -135,7 +141,7 @@ function App() {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
-    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections, currentPage);
+    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections, selectedCategories, currentPage);
     const cached = getCachedResults(cacheKey);
 
     if (cached) {
@@ -152,6 +158,7 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
+          category: selectedCategories,
           limit: pageSize,
           offset: (currentPage - 1) * pageSize,
         }, controller.signal);
@@ -174,11 +181,11 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections, selectedCategories, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: currentPage });
+    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedCategories, selectedProgramId: selected?.id || null, page: currentPage });
   };
 
   const handleSelectCollection = (collection) => {
@@ -187,7 +194,7 @@ function App() {
         ? prev.filter(c => c !== collection)
         : [...prev, collection];
       setCurrentPage(1);
-      updateURL({ searchQuery, selectedModes, selectedCollections: next, selectedProgramId: selected?.id || null, page: 1 });
+      updateURL({ searchQuery, selectedModes, selectedCollections: next, selectedCategories, selectedProgramId: selected?.id || null, page: 1 });
       return next;
     });
   };
@@ -198,33 +205,45 @@ function App() {
         ? prev.filter(m => m !== mode)
         : [...prev, mode];
       setCurrentPage(1);
-      updateURL({ searchQuery, selectedModes: next, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
+      updateURL({ searchQuery, selectedModes: next, selectedCollections, selectedCategories, selectedProgramId: selected?.id || null, page: 1 });
+      return next;
+    });
+  };
+
+  const handleSelectCategory = (category) => {
+    setSelectedCategories(prev => {
+      const next = prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category];
+      setCurrentPage(1);
+      updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories: next, selectedProgramId: selected?.id || null, page: 1 });
       return next;
     });
   };
 
   const handleSelectProgram = (program) => {
     setSelected(program);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: program.id, page: currentPage });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories, selectedProgramId: program.id, page: currentPage });
   };
 
   const handleSearchForProgram = (programName) => {
     setSearchQuery(programName);
     setSelected(null);
     setCurrentPage(1);
-    updateURL({ searchQuery: programName, selectedModes, selectedCollections, selectedProgramId: null, page: 1 });
+    updateURL({ searchQuery: programName, selectedModes, selectedCollections, selectedCategories, selectedProgramId: null, page: 1 });
   };
 
   const handleClearSelection = () => {
     setSelected(null);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: null, page: currentPage });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories, selectedProgramId: null, page: currentPage });
   };
 
   const handleClearFilters = () => {
     setSelectedCollections([]);
     setSelectedModes([]);
+    setSelectedCategories([]);
     setCurrentPage(1);
-    updateURL({ searchQuery, selectedModes: [], selectedCollections: [], selectedProgramId: null, page: 1 });
+    updateURL({ searchQuery, selectedModes: [], selectedCollections: [], selectedCategories: [], selectedProgramId: null, page: 1 });
   };
 
   const handlePageChange = (newPage) => {
@@ -232,7 +251,7 @@ function App() {
       searchBoxRef.current.cancelDebounce();
     }
     setCurrentPage(newPage);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: newPage });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories, selectedProgramId: selected?.id || null, page: newPage });
   };
 
   function updateURL(state) {
@@ -240,6 +259,7 @@ function App() {
     if (state.searchQuery && state.searchQuery !== 'Longevity') params.set('q', state.searchQuery);
     state.selectedModes.forEach(m => params.append('mode', m));
     state.selectedCollections.forEach(c => params.append('collection', c));
+    state.selectedCategories.forEach(c => params.append('category', c));
     if (state.selectedProgramId) params.set('program', state.selectedProgramId);
     if (state.page && state.page !== 1) params.set('page', state.page);
     const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
@@ -275,16 +295,19 @@ function App() {
 
       <main className="main">
         <aside className="sidebar">
-          <FilterPanel
-            collections={collectionsList}
-            collectionCounts={collectionCounts}
-            selectedCollections={selectedCollections}
-            onToggleCollection={handleSelectCollection}
-            modes={modesList}
-            selectedModes={selectedModes}
-            onToggleMode={handleSelectMode}
-            onClearFilters={handleClearFilters}
-          />
+<FilterPanel
+             collections={collectionsList}
+             collectionCounts={collectionCounts}
+             selectedCollections={selectedCollections}
+             onToggleCollection={handleSelectCollection}
+             modes={modesList}
+             selectedModes={selectedModes}
+             onToggleMode={handleSelectMode}
+             categories={categoriesList}
+             selectedCategories={selectedCategories}
+             onToggleCategory={handleSelectCategory}
+             onClearFilters={handleClearFilters}
+           />
         </aside>
 
           <section className="search-results">
