@@ -26,6 +26,9 @@ spooky2-search/public/data/
 __pycache__/
 .pytest_cache/
 
+# Kilo AI agent files
+.kilo/
+
 # Telegram scraper session (private - keep out of git)
 telegram_scraper_session.*
 telegram_config.env
