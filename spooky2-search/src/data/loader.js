@@ -3,7 +3,7 @@
  * Uses Render API for search to avoid large JSON and CORS issues.
  */
 
-const API_BASE = 'https://spooky-db.onrender.com';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 /**
  * Load programs via API.
@@ -28,11 +28,12 @@ export async function loadAllPresets(onProgress) {
  * Search programs via API.
  * Returns { results: [...], total: N }
  */
-export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100, offset = 0 } = {}, signal) {
+export async function searchPrograms({ q = '', mode = [], collection = [], category = [], limit = 100, offset = 0 } = {}, signal) {
   const params = new URLSearchParams();
   if (q) params.append('q', q);
   if (mode.length > 0) mode.forEach(m => params.append('mode', m));
   if (collection.length > 0) collection.forEach(c => params.append('collection', c));
+  if (category.length > 0) category.forEach(c => params.append('category', c));
   params.append('limit', limit);
   params.append('offset', offset);
 

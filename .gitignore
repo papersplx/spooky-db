@@ -7,6 +7,10 @@ wine_spooky/
 # Node modules
 node_modules/
 
+# Environment files
+*.env.local
+.env.local
+
 # Build artifacts
 dist/
 build/
