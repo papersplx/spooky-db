@@ -271,6 +271,9 @@ function App() {
       <div className="loading">
         <div className="spinner"></div>
         <p>Loading...</p>
+        <p style={{ fontSize: '0.9em', color: '#666', marginTop: '0.5rem' }}>
+          Initial queries can take up to 60 seconds to warm up the server.
+        </p>
       </div>
     );
   }
