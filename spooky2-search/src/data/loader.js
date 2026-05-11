@@ -28,12 +28,11 @@ export async function loadAllPresets(onProgress) {
  * Search programs via API.
  * Returns { results: [...], total: N }
  */
-export async function searchPrograms({ q = '', mode = [], collection = [], category = [], limit = 100, offset = 0 } = {}, signal) {
+export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100, offset = 0 } = {}, signal) {
   const params = new URLSearchParams();
   if (q) params.append('q', q);
   if (mode.length > 0) mode.forEach(m => params.append('mode', m));
   if (collection.length > 0) collection.forEach(c => params.append('collection', c));
-  if (category.length > 0) category.forEach(c => params.append('category', c));
   params.append('limit', limit);
   params.append('offset', offset);
 
@@ -62,17 +61,6 @@ export async function getCollections() {
   const response = await fetch(`${API_BASE}/collections`);
   if (!response.ok) {
     throw new Error(`Failed to load collections: ${response.status}`);
-  }
-  return response.json();
-}
-
-/**
- * Get all categories with counts.
- */
-export async function getCategories() {
-  const response = await fetch(`${API_BASE}/categories`);
-  if (!response.ok) {
-    throw new Error(`Failed to load categories: ${response.status}`);
   }
   return response.json();
 }

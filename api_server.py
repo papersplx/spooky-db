@@ -36,7 +36,6 @@ def read_root():
             "search": "/search?q=lung&limit=100",
             "program": "/program?id=<uuid>",
             "collections": "/collections",
-            "categories": "/categories",
             "telegram-updates": "/telegram-updates",
             "health": "/health"
         }
@@ -77,10 +76,6 @@ def search(
         if collection:
             where.append("collection = ANY(%s)")
             params.append(collection)
-
-        if category:
-            where.append("category = ANY(%s)")
-            params.append(category)
 
         where_clause = f"WHERE {' AND '.join(where)}" if where else ""
 
@@ -135,23 +130,6 @@ def get_collections():
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
-
-@app.get("/categories")
-def get_categories():
-    conn = psycopg.connect(CONN_STRING, row_factory=dict_row)
-    try:
-        with conn.cursor() as cur:
-            cur.execute("""
-                SELECT category, COUNT(*) as count
-                FROM programs
-                WHERE category IS NOT NULL AND category != ''
-                GROUP BY category
-                ORDER BY category
-            """)
-            return cur.fetchall()
-    finally:
-        conn.close()
 
 
 @app.get("/telegram-updates")

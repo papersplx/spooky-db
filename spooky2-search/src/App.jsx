@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
-import { searchPrograms, getProgram, getCollections, getCategories, getTelegramUpdates } from './data/loader';
+import { searchPrograms, getProgram, getCollections, getTelegramUpdates } from './data/loader';
 import './App.css';
 
 function getStateFromURL() {
@@ -12,7 +12,6 @@ function getStateFromURL() {
     searchQuery: params.get('q') || 'Longevity',
     selectedModes: params.getAll('mode').length > 0 ? params.getAll('mode') : ['Remote'],
     selectedCollections: params.getAll('collection'),
-    selectedCategories: params.getAll('category'),
     selectedProgramId: params.get('program') || null,
     page: parseInt(params.get('page') || 1),
   };
@@ -28,9 +27,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState(initialState.searchQuery);
   const [selectedCollections, setSelectedCollections] = useState(initialState.selectedCollections);
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
-  const [selectedCategories, setSelectedCategories] = useState(initialState.selectedCategories);
   const [collectionsList, setCollectionsList] = useState([]);
-  const [categoriesList, setCategoriesList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [modesList, setModesList] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
@@ -46,8 +43,8 @@ function App() {
   const pageSize = 20;
   const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 1 week in ms
 
-  const getCacheKey = (query, modes, collections, categories, page) => {
-    return JSON.stringify({ q: query, modes, collections, categories, page });
+  const getCacheKey = (query, modes, collections, page) => {
+    return JSON.stringify({ q: query, modes, collections, page });
   };
 
   const getCachedResults = (key) => {
@@ -97,18 +94,15 @@ function App() {
         setCollectionCounts(counts);
         setModesList([...modes].sort());
         setTotalPrograms(total);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-        const categories = await getCategories();
-        setCategoriesList(categories.map(c => c.category));
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  fetchData();
+}, []);
 
   useEffect(() => {
     const fetchTelegramUpdates = async () => {
@@ -157,7 +151,6 @@ function App() {
           q: searchQuery,
           mode: selectedModes,
           collection: selectedCollections,
-          category: selectedCategories,
           limit: pageSize,
           offset: (currentPage - 1) * pageSize,
         }, controller.signal);
@@ -180,11 +173,11 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections, selectedCategories, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections, currentPage]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedCategories, selectedProgramId: selected?.id || null, page: currentPage });
+    updateURL({ searchQuery: query, selectedModes, selectedCollections, selectedProgramId: selected?.id || null, page: currentPage });
   };
 
   const handleSelectCollection = (collection) => {
@@ -193,7 +186,7 @@ function App() {
         ? prev.filter(c => c !== collection)
         : [...prev, collection];
       setCurrentPage(1);
-      updateURL({ searchQuery, selectedModes, selectedCollections: next, selectedCategories, selectedProgramId: selected?.id || null, page: 1 });
+      updateURL({ searchQuery, selectedModes, selectedCollections: next, selectedProgramId: selected?.id || null, page: 1 });
       return next;
     });
   };
@@ -204,45 +197,33 @@ function App() {
         ? prev.filter(m => m !== mode)
         : [...prev, mode];
       setCurrentPage(1);
-      updateURL({ searchQuery, selectedModes: next, selectedCollections, selectedCategories, selectedProgramId: selected?.id || null, page: 1 });
-      return next;
-    });
-  };
-
-  const handleSelectCategory = (category) => {
-    setSelectedCategories(prev => {
-      const next = prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category];
-      setCurrentPage(1);
-      updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories: next, selectedProgramId: selected?.id || null, page: 1 });
+      updateURL({ searchQuery, selectedModes: next, selectedCollections, selectedProgramId: selected?.id || null, page: 1 });
       return next;
     });
   };
 
   const handleSelectProgram = (program) => {
     setSelected(program);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories, selectedProgramId: program.id, page: currentPage });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: program.id, page: currentPage });
   };
 
   const handleSearchForProgram = (programName) => {
     setSearchQuery(programName);
     setSelected(null);
     setCurrentPage(1);
-    updateURL({ searchQuery: programName, selectedModes, selectedCollections, selectedCategories, selectedProgramId: null, page: 1 });
+    updateURL({ searchQuery: programName, selectedModes, selectedCollections, selectedProgramId: null, page: 1 });
   };
 
   const handleClearSelection = () => {
     setSelected(null);
-    updateURL({ searchQuery, selectedModes, selectedCollections, selectedCategories, selectedProgramId: null, page: currentPage });
+    updateURL({ searchQuery, selectedModes, selectedCollections, selectedProgramId: null, page: currentPage });
   };
 
   const handleClearFilters = () => {
     setSelectedCollections([]);
     setSelectedModes([]);
-    setSelectedCategories([]);
     setCurrentPage(1);
-    updateURL({ searchQuery, selectedModes: [], selectedCollections: [], selectedCategories: [], selectedProgramId: null, page: 1 });
+    updateURL({ searchQuery, selectedModes: [], selectedCollections: [], selectedProgramId: null, page: 1 });
   };
 
   const handlePageChange = (newPage) => {
@@ -305,9 +286,6 @@ function App() {
              modes={modesList}
              selectedModes={selectedModes}
              onToggleMode={handleSelectMode}
-             categories={categoriesList}
-             selectedCategories={selectedCategories}
-             onToggleCategory={handleSelectCategory}
              onClearFilters={handleClearFilters}
            />
         </aside>

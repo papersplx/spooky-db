@@ -184,9 +184,6 @@ export default function FilterPanel({
    modes,
    selectedModes,
    onToggleMode,
-   categories,
-   selectedCategories,
-   onToggleCategory,
    onClearFilters,
  }) {
   const [expandedRoots, setExpandedRoots] = useState(new Set());
@@ -276,26 +273,6 @@ export default function FilterPanel({
           })}
         </div>
       </div>
-
-      {categories && categories.length > 0 && (
-        <div className="filter-section">
-          <h4>Category</h4>
-          <div className="filter-options">
-            {categories.map(function(category) {
-              return (
-                <label key={category} className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={selectedCategories && selectedCategories.includes(category)}
-                    onChange={function() { onToggleCategory && onToggleCategory(category); }}
-                  />
-                  <span>{category}</span>
-                </label>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
