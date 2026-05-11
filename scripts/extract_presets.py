@@ -249,48 +249,6 @@ class PresetParser:
                     else:
                         data[key] = value
 
-    def _parse_preset_section_format(self, filepath: Path, base_collection: str, content: str) -> List[Program]:
-        """Parse [Preset] style format."""
-        programs = []
-        sections = re.split(r'\[/Preset\]', content)
-        for section in sections:
-            if '[Preset]' not in section:
-                continue
-            section_body = section.split('[Preset]', 1)[1]
-            data = {}
-            for line in section_body.splitlines():
-                line = line.strip()
-                if not line:
-                    continue
-                m = re.match(r'^"([^"]+)=([^"]*)"$', line)
-                if m:
-                    key, value = m.group(1), m.group(2)
-                    if key in data:
-                        data[key] = data[key] + ',' + value
-                    else:
-                        data[key] = value
-
-    def _parse_preset_section_format(self, filepath: Path, base_collection: str, content: str) -> List[Program]:
-        """Parse [Preset] style format."""
-        programs = []
-        sections = re.split(r'\[/Preset\]', content)
-        for section in sections:
-            if '[Preset]' not in section:
-                continue
-            section_body = section.split('[Preset]', 1)[1]
-            data = {}
-            for line in section_body.splitlines():
-                line = line.strip()
-                if not line:
-                    continue
-                m = re.match(r'^"([^"]+)=([^"]*)"$', line)
-                if m:
-                    key, value = m.group(1), m.group(2)
-                    if key in data:
-                        data[key] = data[key] + ',' + value
-                    else:
-                        data[key] = value
-
             if 'PresetName' not in data:
                 continue
 
@@ -330,19 +288,6 @@ class PresetParser:
             programs.append(program)
 
         return programs
-
-        return programs
-
-        return programs
-
-    def _build_program(self, filepath: Path, base_collection: str,
-                       list2: str, list4: str, raw_list2: str, raw_list4: str) -> Optional[Program]:
-        """Construct a Program object from parsed List2/List4."""
-        # Derive name from filename or first line of description
-        name = filepath.stem
-        first_line = list2.split('\n')[0].strip()
-        if first_line and len(first_line) < 100:
-            name = first_line
 
     def _build_program(self, filepath: Path, base_collection: str,
                        list2: str, list4: str, raw_list2: str, raw_list4: str) -> Optional[Program]:

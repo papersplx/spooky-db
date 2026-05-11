@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """REST API for Spooky2 search using Neon Postgres."""
-from fastapi import FastAPI, Query, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Query, HTTPException, Request
 from pathlib import Path
 import json
 import os
@@ -10,7 +8,9 @@ from datetime import datetime, timezone
 import psycopg
 from psycopg.rows import dict_row
 
-app = FastAPI(title="Spooky2 Search API")
+app = FastAPI(title="Spooky2 Search API", version="1.0.0")
+
+API_VERSION = "1.0.0"
 
 # Path to local data directory for Telegram timestamps
 DATA_DIR = Path(os.environ.get("DATA_DIR", "data/presets"))
@@ -30,31 +30,34 @@ if not CONN_STRING:
 def read_root():
     return {
         "message": "Spooky2 Frequency Search API",
+        "version": API_VERSION,
         "frontend": "https://papersplx.github.io/spooky-db/",
         "endpoints": {
             "search": "/search?q=lung&limit=100",
             "program": "/program?id=<uuid>",
             "collections": "/collections",
+            "categories": "/categories",
             "telegram-updates": "/telegram-updates",
             "health": "/health"
         }
     }
 
 
-# CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# CORS — allow frontend origins; disable credentials when using wildcard
+@app.middleware("http")
+async def cors_middleware(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["Access-Control-Allow-Origin"] = "https://papersplx.github.io"
+    response.headers["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
 
 @app.get("/search")
 def search(
     q: str = Query(default=""),
     mode: list[str] = Query(default=[]),
     collection: list[str] = Query(default=[]),
+    category: list[str] = Query(default=[]),
     limit: int = Query(default=100),
     offset: int = Query(default=0)
 ):
@@ -74,6 +77,10 @@ def search(
         if collection:
             where.append("collection = ANY(%s)")
             params.append(collection)
+
+        if category:
+            where.append("category = ANY(%s)")
+            params.append(category)
 
         where_clause = f"WHERE {' AND '.join(where)}" if where else ""
 
@@ -128,6 +135,23 @@ def get_collections():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+@app.get("/categories")
+def get_categories():
+    conn = psycopg.connect(CONN_STRING, row_factory=dict_row)
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT category, COUNT(*) as count
+                FROM programs
+                WHERE category IS NOT NULL AND category != ''
+                GROUP BY category
+                ORDER BY category
+            """)
+            return cur.fetchall()
+    finally:
+        conn.close()
 
 
 @app.get("/telegram-updates")
