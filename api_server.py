@@ -159,17 +159,17 @@ def telegram_updates():
     """Return last-updated timestamps for each Telegram group."""
     timestamp_path = DATA_DIR / "telegram_group_timestamps.json"
 
-    result = {
-        "Sp2UnofFILES1": None,
-        "s2_unof_unproven": None,
-    }
+    result = {}
 
     if timestamp_path.exists():
         try:
             with open(timestamp_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             for group_slug, info in data.items():
-                result[group_slug] = info.get("last_updated")
+                if isinstance(info, str):
+                    result[group_slug] = info
+                elif isinstance(info, dict):
+                    result[group_slug] = info.get("last_updated")
         except Exception:
             pass
 
