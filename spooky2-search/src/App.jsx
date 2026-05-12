@@ -380,7 +380,11 @@ function App() {
                      label = 'unproven (telegram)';
                      break;
                    default:
-                     label = source; // .exe filenames as-is
+                     // For .exe files: strip extension and date suffix, replace underscores with spaces
+                     // e.g., "Spooky2_Presets_20260422.exe" -> "Spooky2 Presets"
+                     let cleaned = source.replace(/\.exe$/i, '');
+                     cleaned = cleaned.replace(/_\d{8,}$/, ''); // Remove trailing _YYYYMMDD date
+                     label = cleaned.replace(/_/g, ' ');
                  }
                  return (
                    <div key={source} style={{ marginTop: '2px' }}>
