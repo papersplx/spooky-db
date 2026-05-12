@@ -168,11 +168,19 @@
   border-radius: 3px;
   margin-left: 0.5rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
+/* Telegram source — purple */
 .result-source.source-telegram {
   background: rgba(111, 66, 193, 0.15);
   color: #6f42c1;
+}
+
+/* Database (Wine-imported) source — blue */
+.result-source.source-database {
+  background: rgba(0, 123, 255, 0.15);
+  color: #007bff;
 }
 
 .result-tag {
