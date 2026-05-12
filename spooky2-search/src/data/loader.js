@@ -73,7 +73,7 @@ export async function getCollections() {
  */
 export async function getTelegramUpdates() {
   try {
-    const response = await fetch(`${API_BASE}/telegram-updates`);
+    const response = await fetch(`${API_BASE}/telegram-updates?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) return null;
     return response.json();
   } catch {

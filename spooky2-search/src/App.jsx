@@ -363,26 +363,31 @@ function App() {
               if (entries.length === 0) {
                 return <div style={{ marginTop: '2px', fontStyle: 'italic', color: 'var(--text-secondary)' }}>No data available</div>;
               }
-              return entries.map(([source, ts]) => {
-                const date = new Date(ts);
-                const formatted = date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                });
-                let label = source;
-                if (source.startsWith('Spooky2_')) {
-                  label = source.slice(8).toLowerCase();
-                  if (label === 'proven_files' || label === 'unproven') {
-                    label = `${label} (telegram)`;
-                  }
-                }
-                return (
-                  <div key={source} style={{ marginTop: '2px' }}>
-                    {label}: {formatted}
-                  </div>
-                );
-              });
+               return entries.map(([source, ts]) => {
+                 const date = new Date(ts);
+                 const formatted = date.toLocaleDateString('en-US', {
+                   year: 'numeric',
+                   month: 'short',
+                   day: 'numeric',
+                 });
+                 // Use friendly labels for known sources
+                 let label;
+                 switch (source) {
+                   case 'Spooky2_PROVEN_FILES':
+                     label = 'proven (telegram)';
+                     break;
+                   case 'Spooky2_Unproven':
+                     label = 'unproven (telegram)';
+                     break;
+                   default:
+                     label = source; // .exe filenames as-is
+                 }
+                 return (
+                   <div key={source} style={{ marginTop: '2px' }}>
+                     {label}: {formatted}
+                   </div>
+                 );
+               });
             })()}
           </div>
         )}

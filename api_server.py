@@ -248,22 +248,17 @@ def telegram_updates():
                 except Exception:
                     pass
 
-    # Database .exe file timestamps
-    db_timestamp_path = DATA_DIR / "database_timestamps.json"
-    fallback_db_path = Path(__file__).parent / "data" / "presets" / "database_timestamps.json"
-    
-    # Try DATA_DIR first, then fallback to repo path
-    for path in [db_timestamp_path, fallback_db_path]:
-        if path.exists():
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    db_data = json.load(f)
-                if db_data and isinstance(db_data, dict):
-                    logger.info(f"Loaded database timestamps from {path}: {list(db_data.keys())}")
-                    result.update(db_data)
-                    break
-            except Exception as e:
-                logger.error(f"Failed to load database timestamps from {path}: {e}")
+    # Database .exe file timestamps - loaded from repo (versioned with code)
+    db_timestamp_path = Path(__file__).parent / "data" / "presets" / "database_timestamps.json"
+    if db_timestamp_path.exists():
+        try:
+            with open(db_timestamp_path, "r", encoding="utf-8") as f:
+                db_data = json.load(f)
+            if db_data and isinstance(db_data, dict):
+                logger.info(f"Loaded database timestamps: {list(db_data.keys())}")
+                result.update(db_data)
+        except Exception as e:
+            logger.error(f"Failed to load database timestamps: {e}")
 
     return result
 
