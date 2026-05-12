@@ -20,6 +20,9 @@ data/presets/presets_all.json
 data/presets/by_collection/
 spooky2-search/public/data/
 
+# Generated extraction stats (recreated on each run)
+data/presets/extraction_stats.json
+
 # Telegram raw presets: ignore large binaries, keep small metadata
 data/presets/telegram_raw/*
 !data/presets/telegram_raw/telegram_group_timestamps.json
