@@ -1,0 +1,2323 @@
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Modifications by Johannes_D   Ver.1.0    04.05.2024
+
+This prest chain contain the follwoing presets:
+Parasites (Intestinal) (DNA)
+Parasites (Flukes) (DNA)
+Parasites (Roundworms) (DNA)
+Parasites (Tapeworms) (DNA)
+Parasites (Externals) (DNA)
+Parasites (Blood and Tissue) (DNA)
+originally from JW.
+
+It contains DNA killing frequencies of a huge amount of Types of Parasites listed in every preset.The modifcations concerns the same reasons as for correct application of MWs in signal and signal processing with respect to Harmonic Analysis. By these modifications the presets can now work properly. The preset is tested very successful doublecked proven by two Dr. Klinghardt medical Doctor and Therapist showing independly the exsistence and - after applying these preset chain with parallel bitter herbs) that the body is cleaned from parasites.
+
+For curative application run this preset chain 3weeks by taking parallel bitter herbs (tinctures) and after 1 month again for 1 week. For prevention run the preset chain every half year 2 weeks running time.
+
+These are only roughly numbers. Individual adaption should be considered. in particular  by 'bathroom observation'...
+
+These preset chain is made for remote mode and it takes arround 5 hours for one cycle.
+
+WARNING: Using only on your own responsibility! No healing promise! 
+
+For data collection feedback are very welcome. Please contact the moodifier Johannes_D on Telegram Spooky2.Deutsch group.
+
+------------------------------------------------------------------------------------------
+A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+
+An intestinal parasite infection is a condition in which a parasite infects the gastro-intestinal tract of humans and other animals. Such parasites can live anywhere in the body, but most prefer the intestinal wall.
+
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+
+Connect a Spooky Remote to each generator output.
+
+The first preset contains the following strains:
+
+Bremia microspora voucher KUS-F17175 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Bremia microspora voucher KUS-F20256 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Bremia microspora voucher KUS-F20266 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Bremia microspora voucher KUS-F18854 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Bremia microspora voucher KUS-F19288 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Bremia microspora voucher KUS-F20212 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2015)
+Cryptosporidium sp. 43IA8 chromosome 8 (2023)
+Cryptosporidium sp. 43IA8 chromosome 7 (2023)
+Cryptosporidium sp. 43IA8 chromosome 6 (2023)
+Cryptosporidium sp. 43IA8 chromosome 4 (2023)
+Cryptosporidium sp. 43IA8 chromosome 3 (2023)
+Cryptosporidium sp. 43IA8 chromosome 5 (2023)
+Devaleraea microspora voucher MIMB42627-2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2022)
+Devaleraea microspora voucher MIMB42628-1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2022)
+Entamoeba histolytica ATP-NAD kinase (NADK) gene (2012)
+Fungal sp. microsporum canis small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Fungal sp. microsporum canis internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Giardia intestinalis 0099_PFOR1_H1(1) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H2(1) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H5(1) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H6(2) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR1_H7(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag13_PFOR1_H1(9) pyruvate synthase gene (2023)
+Giardia intestinalis Ag13_PFOR1_H2(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag13_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag15_PFOR1_H1(6) pyruvate synthase gene (2023)
+Giardia intestinalis Ag15_PFOR1_H2(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag15_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag15_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag15_PFOR1_H5(2) pyruvate synthase gene (2023)
+Giardia intestinalis Ag20_PFOR1_H1(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag20_PFOR1_H2(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag20_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag20_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H1(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H2(4) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H5(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H6(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag22_PFOR1_H7(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag30_PFOR1_H1(1) pyruvate synthase gene (2023)
+Giardia intestinalis Ag30_PFOR1_H2(5) pyruvate synthase gene (2023)
+Giardia intestinalis Ag30_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis P344_PFOR1_H1(2) pyruvate synthase gene (2023)
+Giardia intestinalis P344_PFOR1_H2(2) pyruvate synthase gene (2023)
+Giardia intestinalis P344_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis P344_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis P387_PFOR1_H1(1) pyruvate synthase gene (2023)
+Giardia intestinalis P387_PFOR1_H2(7) pyruvate synthase gene (2023)
+Giardia intestinalis P387_PFOR1_H4(1) pyruvate synthase gene (2023)
+Giardia intestinalis P387_PFOR1_H5(3) pyruvate synthase gene (2023)
+Giardia intestinalis P387_PFOR1__H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis P424_PFOR1_H1(19) pyruvate synthase gene (2023)
+Giardia intestinalis P427_PFOR1_H1(16) pyruvate synthase gene (2023)
+Giardia intestinalis P433_PFOR1_H1(9) pyruvate synthase gene (2023)
+Giardia intestinalis P433_PFOR1_H2(6) pyruvate synthase gene (2023)
+Giardia intestinalis P458_PFOR1_H3(1) pyruvate synthase gene (2023)
+Giardia intestinalis _P413__PFOR1_H1(15) pyruvate synthase gene (2023)
+Giardia intestinalis _P458_PFOR1_H1(9) pyruvate synthase gene (2023)
+Giardia intestinalis _P458_PFOR1_H2(2) pyruvate synthase gene (2023)
+Giardia intestinalis 0099_PFOR2_H1(3) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis 0099_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis 0099_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis 0099_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H1(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag13_PFOR2_H6(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H1(5) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H5(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag15_PFOR2_H6(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag20_PFOR2_H1(11) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag20_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag20_PFOR2_H3(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag20_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag20_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H1(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H10(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H11(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H6(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H7(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H8(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag22_PFOR2_H9(3) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag30_PFOR2_H1(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag30_PFOR2_H2(4) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag30_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis Ag30_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P344_PFOR2_H1(8) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P344_PFOR2_H2(3) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P344_PFOR2_H3(7) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P344_PFOR2_H4(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H1(4) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H10(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H11_(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H12(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H13(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H14(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H6(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H7(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H8(3) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2_H9(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P387_PFOR2__H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H1(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H3(8) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H6(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P413_PFOR2_H7(2) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P424_PFOR2_H1(14) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H1(9) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H2(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H3(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H4(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H5(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H6(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H7(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P427_PFOR2_H8(1) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P433_PFOR2_H1(20) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia intestinalis P458_PFOR2_H1(14) ferredoxin/flavodoxin-dependent pyruvate dehydrogenase gene (2023)
+Giardia lamblia ATCC 50803 phosphatidylinositol kinase-related kinase gene (2002)
+Giardia lamblia genomic locus 21 (2001)
+Microspongium alariae B ribulose-1,5-bisphosphate carboxylase/oxygenase large subunit (rbcL) gene; rbcL-rbcS intergenic spacer; and ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit (rbcS) gene; chloroplast (2018)
+Microspongium alariae A ribulose-1,5-bisphosphate carboxylase/oxygenase large subunit (rbcL) gene; rbcL-rbcS intergenic spacer; and ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit (rbcS) gene; chloroplast (2018)
+Microsporidium sp. Turtle Lake 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Ripley Pond I 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Ripley Pond II 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium cerebralis small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2012)
+Microsporidium sp. Angskars-klubben 115/117 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Angskars-klubben 126 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Lake George 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Angskar 16 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Angskar 21 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Fribourg 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium sp. Lulu Lake 16S ribosomal RNA gene, partial sequence; 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2008)
+Microsporidium luciopercae small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2016)
+Microsporidium sp. M2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2014)
+Microsporidium sp. M1 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2014)
+Microsporidium sp. Dhae17W small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2016)
+Microsporidium sp. MIC1 MIC1_BRN01 16S ribosomal RNA gene and 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2009)
+Microsporidium sp. MIC1 MIC1_SEC01 16S ribosomal RNA gene and 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2009)
+Microsporidium sp. MIC1 MIC1_STA01 16S ribosomal RNA gene and 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2009)
+Microsporidium sp. MIC1 MIC1_ZLU01 16S ribosomal RNA gene and 16S-23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA gene, partial sequence (2009)
+Microsporidium sp. SH small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and large subunit ribosomal RNA gene, partial sequence (2009)
+Microsporidium sp. PBT small subunit ribosomal RNA gene, partial sequence; SSU-LSU ribosomal RNA intergenic spacer; and large subunit ribosomal RNA gene, partial sequence (2010)
+Microsporidium sp. ZYS-1 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer; and 5S ribosomal RNA gene, partial sequence (2007)
+Microsporum canis QND100 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis KU20017.25.2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Microsporum canis clinic small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis 04-047-2395 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2008)
+Microsporum canis 04-049-1860 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2008)
+Microsporum canis 309 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Microsporum canis IS1895 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis MAOA17 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2020)
+Microsporum canis MCH4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2021)
+Microsporum canis clinic small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis culture CBS:113480 CBS 113480 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2018)
+Microsporum canis 12 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis 16-21NVT small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2021)
+Microsporum canis 209 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Microsporum canis AUMC 14458 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Microsporum canis Ihsan-S3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis clinic internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis 323 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Microsporum canis 2643-2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis 3347-wang internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis 5751 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis B10-8H small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis 31 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis KU20017.4 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2020)
+Microsporum canis UAEU18.1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis BMU 11032 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis SuRu-3-IRAQ internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2022)
+Microsporum canis UAEU20.2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis MASR AO1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2016)
+Microsporum canis MC4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2017)
+Microsporum canis QHAMZ internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2022)
+Microsporum canis QHHAYA52.IRAQ internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2022)
+Microsporum canis UAEU18.2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis QHHAYA25.IRAQ internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2022)
+Microsporum canis UAEU19.2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1 and 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis 1516 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis UAEU19.1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis UAEU20.1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis 10-21NVT internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Microsporum canis CLIS_2072_20 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis D_106_20 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HMMZ1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HMMZ2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HMMZ3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HMMZ4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HMMZ5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Microsporum canis HSMZ10 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ11 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ12 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ1N internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis HSMZ9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Microsporum canis MYD 599 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Microsporum canis culture CBS:496.86 CBS 496.86 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2018)
+Syndinium turbo cell-type microspores 18S ribosomal RNA gene, partial sequence; and internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2 (2005)
+Thelebolus microsporus totivirus 1 TmTv1ATCC 90970 (2019)
+Trichomonas vaginalis virus 4 TVV4-OC3 (2011)
+Trichomonas vaginalis virus 4 TVV4-OC3 (2018)
+Trichomonas vaginalis virus 3 TVV3-G3(HMS) (2021)
+Trichomonas vaginalis virus 2 TVV2-G3(HMS) (2021)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (Intestinal) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~2710BL876,~3009BL852,~8446BL9526934,~6042BL3479537,~7606BL3501659,~8985BL6699145,~3432BL3018692,~1938BL6641699,~2582BL996,~3971BL270,~1732BL224,~9238BL341,~7568BL182,~1271BL336,~6618BL301,~4214BL8650,~2455BL4498,~6157BL5185,~1604BL3809,~9100BL2857,~0754BL5658,~1043BL5339,~6581BL9015,~4086BL8144,~5630BL0240,~6020BL5927,~1477BL3376,~9973BL3814,~0627BL0489,~2916BL8182,~9776BL5466,~4959BL2623,~5503BL6503,~9215BL0703,~4753BL3986,~2258BL0738,~0499BL394,~5192BL448,~9076BL369,~6572BL187,~8126BL405,~9415BL214,~4953BL492,~2458BL289,~3002BL285,~4492BL282,~9849BL487,~7345BL285,~8099BL849,~9388BL7304,~4725BLR4947,~2321BLR0442,~3975BLR8950,~7687BLR2470,"
+"[/Preset]"
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+A fluke is a parasitic worm. Infections in humans usually occur after eating contaminated raw or undercooked freshwater fish or watercress. After flukes have been ingested, they travel from your intestines to your bile ducts in your liver where they then live and grow.
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+Connect a Spooky Remote to each generator output.
+This preset contains the following strains:
+Avian schistosomatid sp. F6 28S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2009)
+Avian schistosomatid sp. F4 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2009)
+Avian schistosomatid sp. F5 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2009)
+Avian schistosomatid sp. W2081 18S small subunit ribosomal RNA gene (2006)
+Avian schistosomatid sp. W1285 18S small subunit ribosomal RNA gene (2006)
+Avian schistosomatid sp. I3 PpL 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2011)
+Cercariaeum crassum 170-2-Al-Lt internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Cercariaeum crassum 217A-Lt internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Cercariaeum crassum 216A-Lt internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Clonorchis sinensis mitochondrion (2020)
+Paragonimus westermani IND2009 mitochondrion (2019)
+Schistosoma bovis 14-3-3 protein zeta gene (2005)
+Schistosoma curassoni OD14 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Schistosoma edwardiense 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2003)
+Schistosoma guineensis mitochondrion (2021)
+Schistosoma haematobium mitochondrion (2021)
+Schistosoma haematobium/mattheei hybrid internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2019)
+Schistosoma hippopotami 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2003)
+Schistosoma indicum mitochondrion (2020)
+Schistosoma intercalatum 5.8S ribosomal RNA and 28S ribosomal RNA genes, partial sequence, and internal transcribed spacer 2 (1995)
+Schistosoma japonicum SJASNF5 mitochondrion (2015)
+Schistosoma japonicum SJASNM2 mitochondrion (2015)
+Schistosoma japonicum SJASNM6 mitochondrion (2015)
+Schistosoma japonicum SJLEYF5 mitochondrion (2015)
+Schistosoma japonicum SJLEYM5 mitochondrion (2015)
+Schistosoma japonicum SJMINF5 mitochondrion (2015)
+Schistosoma japonicum SJMINM6 mitochondrion (2015)
+Schistosoma japonicum SJSORF5 mitochondrion (2015)
+Schistosoma japonicum SJSORM5 mitochondrion (2015)
+Schistosoma japonicum TW0006 mitochondrion (2016)
+Schistosoma japonicum AHTL06 mitochondrion (2016)
+Schistosoma japonicum AHTL07 mitochondrion (2016)
+Schistosoma japonicum AHTL09 mitochondrion (2016)
+Schistosoma japonicum AHTL10 mitochondrion (2016)
+Schistosoma japonicum HNYY10 mitochondrion (2016)
+Schistosoma japonicum IN0001 mitochondrion (2016)
+Schistosoma japonicum IN0002 mitochondrion (2016)
+Schistosoma japonicum IN0003 mitochondrion (2016)
+Schistosoma japonicum IN0004 mitochondrion (2016)
+Schistosoma japonicum IN0005 mitochondrion (2016)
+Schistosoma japonicum IN0006 mitochondrion (2016)
+Schistosoma japonicum IN0007 mitochondrion (2016)
+Schistosoma japonicum IN0008 mitochondrion (2016)
+Schistosoma japonicum IN0009 mitochondrion (2016)
+Schistosoma japonicum IN0010 mitochondrion (2016)
+Schistosoma japonicum JXDC03 mitochondrion (2016)
+Schistosoma japonicum JXDC04 mitochondrion (2016)
+Schistosoma japonicum JXDC09 mitochondrion (2016)
+Schistosoma japonicum PH0001 mitochondrion (2016)
+Schistosoma japonicum PH0002 mitochondrion (2016)
+Schistosoma japonicum PH0003 mitochondrion (2016)
+Schistosoma japonicum PH0004 mitochondrion (2016)
+Schistosoma japonicum PH0005 mitochondrion (2016)
+Schistosoma japonicum PH0006 mitochondrion (2016)
+Schistosoma japonicum PH0007 mitochondrion (2016)
+Schistosoma japonicum PH0008 mitochondrion (2016)
+Schistosoma japonicum PH0009 mitochondrion (2016)
+Schistosoma japonicum PH0010 mitochondrion (2016)
+Schistosoma japonicum AHGC07 mitochondrion (2016)
+Schistosoma japonicum AHGC08 mitochondrion (2016)
+Schistosoma japonicum AHGC09 mitochondrion (2016)
+Schistosoma japonicum SJSXM24 mitochondrion (2011)
+Schistosoma japonicum SJYEIIF10 mitochondrion (2011)
+Schistosoma japonicum SJYEIIm10 mitochondrion (2011)
+Schistosoma japonicum Sichuan Xichang mitochondrion (2014)
+Schistosoma japonicum Yunnan Eryuan mitochondrion (2014)
+Schistosoma japonicum Yunnan Heqing mitochondrion (2014)
+Schistosoma japonicum AHGC06 mitochondrion (2016)
+Schistosoma japonicum AHGC10 mitochondrion (2016)
+Schistosoma japonicum JXDC06 mitochondrion (2016)
+Schistosoma japonicum JXNC05 mitochondrion (2016)
+Schistosoma japonicum SCXC01 mitochondrion (2016)
+Schistosoma japonicum SCXC02 mitochondrion (2016)
+Schistosoma japonicum SCXC04 mitochondrion (2016)
+Schistosoma japonicum SCXC05 mitochondrion (2016)
+Schistosoma japonicum SCXC06 mitochondrion (2016)
+Schistosoma japonicum SCXC07 mitochondrion (2016)
+Schistosoma japonicum SCXC08 mitochondrion (2016)
+Schistosoma japonicum SCXC09 mitochondrion (2016)
+Schistosoma japonicum SCXC10 mitochondrion (2016)
+Schistosoma japonicum Taiwan Changhua mitochondrion (2014)
+Schistosoma japonicum YNEY01 mitochondrion (2016)
+Schistosoma japonicum YNEY02 mitochondrion (2016)
+Schistosoma japonicum YNEY03 mitochondrion (2016)
+Schistosoma japonicum YNEY04 mitochondrion (2016)
+Schistosoma japonicum YNEY05 mitochondrion (2016)
+Schistosoma japonicum YNEY06 mitochondrion (2016)
+Schistosoma japonicum YNEY07 mitochondrion (2016)
+Schistosoma japonicum YNEY08 mitochondrion (2016)
+Schistosoma japonicum YNEY09 mitochondrion (2016)
+Schistosoma japonicum YNEY10 mitochondrion (2016)
+Schistosoma japonicum AHGC01 mitochondrion (2016)
+Schistosoma japonicum AHGC02 mitochondrion (2016)
+Schistosoma japonicum AHGC05 mitochondrion (2016)
+Schistosoma japonicum AHTL03 mitochondrion (2016)
+Schistosoma japonicum AHTL04 mitochondrion (2016)
+Schistosoma japonicum AHTL05 mitochondrion (2016)
+Schistosoma japonicum AHTL08 mitochondrion (2016)
+Schistosoma japonicum Anhui Guichi mitochondrion (2014)
+Schistosoma japonicum Anhui Wuwei mitochondrion (2014)
+Schistosoma japonicum Anhui Zongyang mitochondrion (2014)
+Schistosoma japonicum Anhui tonglin mitochondrion (2014)
+Schistosoma japonicum HBSS06 mitochondrion (2016)
+Schistosoma japonicum HBSS07 mitochondrion (2016)
+Schistosoma japonicum HBSS08 mitochondrion (2016)
+Schistosoma japonicum HBSS10 mitochondrion (2016)
+Schistosoma japonicum HNCD02 mitochondrion (2016)
+Schistosoma japonicum HNYY01 mitochondrion (2016)
+Schistosoma japonicum HNYY09 mitochondrion (2016)
+Schistosoma japonicum JP0001 mitochondrion (2016)
+Schistosoma japonicum JP0002 mitochondrion (2016)
+Schistosoma japonicum JXDC01 mitochondrion (2016)
+Schistosoma japonicum JXDC02 mitochondrion (2016)
+Schistosoma japonicum JXDC05 mitochondrion (2016)
+Schistosoma japonicum JXDC07 mitochondrion (2016)
+Schistosoma japonicum JXDC10 mitochondrion (2016)
+Schistosoma japonicum JXNC03 mitochondrion (2016)
+Schistosoma japonicum JXNC07 mitochondrion (2016)
+Schistosoma japonicum JXNC08 mitochondrion (2016)
+Schistosoma japonicum SJHWM24 mitochondrion (2011)
+Schistosoma japonicum SJHYF8 mitochondrion (2011)
+Schistosoma japonicum SJJWM32 mitochondrion (2011)
+Schistosoma japonicum SJJYF25 mitochondrion (2011)
+Schistosoma japonicum SJYYM2 mitochondrion (2015)
+Schistosoma japonicum SJZJM6 mitochondrion (2011)
+Schistosoma japonicum AHTL02 mitochondrion (2016)
+Schistosoma japonicum HBSS01 mitochondrion (2016)
+Schistosoma japonicum HBSS02 mitochondrion (2016)
+Schistosoma japonicum HBSS03 mitochondrion (2016)
+Schistosoma japonicum HBSS04 mitochondrion (2016)
+Schistosoma japonicum HBSS05 mitochondrion (2016)
+Schistosoma japonicum HBSS09 mitochondrion (2016)
+Schistosoma japonicum HNCD01 mitochondrion (2016)
+Schistosoma japonicum HNCD04 mitochondrion (2016)
+Schistosoma japonicum HNCD06 mitochondrion (2016)
+Schistosoma japonicum HNCD08 mitochondrion (2016)
+Schistosoma japonicum HNCD10 mitochondrion (2016)
+Schistosoma japonicum HNYY03 mitochondrion (2016)
+Schistosoma japonicum HNYY04 mitochondrion (2016)
+Schistosoma japonicum HNYY06 mitochondrion (2016)
+Schistosoma japonicum HNYY07 mitochondrion (2016)
+Schistosoma japonicum JXNC01 mitochondrion (2016)
+Schistosoma japonicum JXNC02 mitochondrion (2016)
+Schistosoma japonicum JXNC06 mitochondrion (2016)
+Schistosoma japonicum AHGC04 mitochondrion (2016)
+Schistosoma japonicum HNCD03 mitochondrion (2016)
+Schistosoma japonicum HNCD05 mitochondrion (2016)
+Schistosoma japonicum HNCD07 mitochondrion (2016)
+Schistosoma japonicum HNCD09 mitochondrion (2016)
+Schistosoma japonicum HNYY02 mitochondrion (2016)
+Schistosoma japonicum HNYY05 mitochondrion (2016)
+Schistosoma japonicum HNYY08 mitochondrion (2016)
+Schistosoma japonicum JXNC04 mitochondrion (2016)
+Schistosoma japonicum JXNC09 mitochondrion (2016)
+Schistosoma japonicum JXNC10 mitochondrion (2016)
+Schistosoma japonicum TW0001 mitochondrion (2016)
+Schistosoma japonicum TW0002 mitochondrion (2016)
+Schistosoma japonicum TW0003 mitochondrion (2016)
+Schistosoma japonicum TW0004 mitochondrion (2016)
+Schistosoma japonicum TW0005 mitochondrion (2016)
+Schistosoma japonicum TW0007 mitochondrion (2016)
+Schistosoma japonicum TW0008 mitochondrion (2016)
+Schistosoma japonicum TW0009 mitochondrion (2016)
+Schistosoma japonicum TW0010 mitochondrion (2016)
+Schistosoma japonicum mitochondrion (2000)
+Schistosoma japonicum AHGC03 mitochondrion (2016)
+Schistosoma kisumuensis voucher MSB:Para:164 NADH dehydrogenase subunit 6 (nad6) gene; mitochondrial (2009)
+Schistosoma kisumuensis voucher MSB:Para:170 NADH dehydrogenase subunit 6 (nad6) gene; mitochondrial (2009)
+Schistosoma malayensis 18S ribosomal RNA gene, partial sequence, internal transcribed spacer 1, and 5.8S ribosomal RNA gene, partial sequence (1998)
+Schistosoma mansoni Puerto Rico chromosome 1 (2016)
+Schistosoma mansoni Puerto Rico chromosome W (2016)
+Schistosoma margrebowiei AB402C 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2022)
+Schistosoma mattheei Bg2_ITS-F internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2023)
+Schistosoma mekongi mitochondrion (2000)
+Schistosoma rodhaini 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2003)
+Schistosoma rodhaini JE147 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2005)
+Schistosoma sp. BB010_2_ITS-2 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Schistosoma spindale mitochondrion (2020)
+Schistosoma spindale mitochondrion (2006)
+Schistosoma turkestanicum 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2010)
+Schistosoma turkestanicum HunITS 1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 10 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum HunITS 9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2013)
+Schistosoma turkestanicum Host2 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm10 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host3 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host4 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host5 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host6 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm10 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm6 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm8 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host7 worm9 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosoma turkestanicum Host2 worm7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2017)
+Schistosomatidae sp. W640 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2016)
+Schistosomatidae sp. ex penguin JA-2014 153/12 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2014)
+Schistosomatium douthitti 28S ribosomal RNA gene, partial sequence, and internal transcribed spacer 2 (1995)
+Wolbachia endosymbiont (group B) of Ischnura elegans 26633 chromosome 1 (2022)
+Wolbachia endosymbiont (group B) of Agriphila straminella 24839 chromosome 1 (2022)
+Wolbachia endosymbiont (group A) of Philonthus cognatus 26552 chromosome 1 (2022)
+Wolbachia endosymbiont (group B) of Archips podanus 26592 chromosome 1 (2022)
+Wolbachia endosymbiont (group B) of Euphydryas aurinia 26626 chromosome 1 (2022)
+Wolbachia persica FSC845 succinate dehydrogenase (sdhA) gene (2011)
+Wolbachia phage WO (2016)
+Wolbachia pipientis ant7 chromosome (2022)
+Wolbachia pipientis wHm-t (2023)
+Wolbachia pipientis wHm-t chromosome (2023)
+Wolbachia pipientis wCin2USA1 chromosome (2021)
+Wolbachia pipientis wAlbB chromosome (2019)
+Wolbachia pipientis wAlbB-Q chromosome (2021)
+Wolbachia pipientis wAlbB-HN2016 chromosome (2019)
+Wolbachia pipientis wAlbB-FL2016 chromosome (2019)
+Wolbachia pipientis wHm-c (2023)
+Wolbachia pipientis wHm-c chromosome (2023)
+Wolbachia pipientis wIrr chromosome (2019)
+Wolbachia pipientis wMel_I23 chromosome (2019)
+Wolbachia pipientis wMel_N25 chromosome (2019)
+Wolbachia pipientis wMel_ZH26 chromosome (2019)
+Wolbachia sp. Armadillidium vulgare 23S ribosomal RNA gene, partial sequence; internal transcribed spacer 2; and 5S ribosomal RNA gene, partial sequence (1998)
+Wolbachia symbiont of Radopholus similis GroES (groES) gene; and GroEL (groEL) gene (2009)
+Wolbachia symbiont of Radopholus similis CTP synthase gene; and FtsZ (ftsZ) gene (2009)
+Xiphidiocercariae sp. CX1I532 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2022)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (Flukes) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~5926BL9117,~6215BL0005,~1663BL5990,~9258BL9197,~0812BL4846,~1102BL1322,~6649BL293,~4145BL173,~5799BC61333,~9501BC31439,~4948BL505,~2444BL579,~0685BL2808,~4487BC09036,~9835BC41875,~7320BC48519,~5661BC54812,~9374BC32742,~4711BL467,~2317BL1474,~3961BC34461,~4250BL893,~9797BC61646,~7293BC64876,~8857BC35595,~0246BC37929,~4684BC98028,~2189BC97918,~3733BC50610,~5122BC20637,~2983BL704,~0489BL205,~8710BL298,~3422BL74848796,~7869BL18571399,~5465BL737,~3606BL729,~8318BC97994,~2856BL64841,~0351BL928,~1905BL189,~3394BC34452,~7732BL012,~5238BL374,~6882BL130,~7518BL261,~2056BL6525,~0551BL4018,~1105BL678,~2594BC5021513,~0355BC6734241,~5438BC9013223,~6182BC0586209,~0894BC6796260,~5231BL4216,~3837BL46392,~1078BC5416562,~5780BC9126783,~0228BC3971538,~8723BC9742073,~9377BC7273709,~0766BC3921569,~5104BC2033483,~3600BC6858561,~4254BC0843033,~6643BC3804844,~0090BC6663809,~8596BL727,~9240BL0946,~1539BL8121,~5976BL768,"
+"[/Preset]"
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+Roundworm parasites are very common infections of humans and domestic animals. When the host becomes infected, often by oral ingestion of infective eggs, the parasite establishes in its intestinal niche.
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+Connect a Spooky Remote to each generator output.
+This preset contains the following strains:
+Ancylostoma duodenale mitochondrion (2002)
+Ancylostoma duodenale mitochondrial (2016)
+Ascaris lumbricoides voucher NDK113 mitochondrion (2022)
+Ascaris lumbricoides voucher TKU102 mitochondrion (2022)
+Ascaris lumbricoides voucher TKU25 mitochondrion (2022)
+Ascaris lumbricoides voucher NDK92 mitochondrion (2022)
+Ascaris lumbricoides voucher TKU23 mitochondrion (2022)
+Ascaris lumbricoides voucher NDK63 mitochondrion (2022)
+Enterobius vermicularis mitochondrion (2008)
+Enterobius vermicularis mitochondrial (2016)
+Enterobius vermicularis mitochondrial (2021)
+Necator americanus internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2015)
+Strongyloides stercoralis PV001 mitochondrion (2015)
+Strongyloides stercoralis mitochondrial, isolate: PV001 (2015)
+Strongyloides stercoralis MYZ001_8 mitochondrial (2020)
+Strongyloides stercoralis P11_8 mitochondrial (2020)
+Strongyloides stercoralis HTB177_4 mitochondrial (2020)
+Strongyloides stercoralis D024_2 mitochondrial (2020)
+Toxocara apodemi Taizhou internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2023)
+Toxocara canis 1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati Lion 2 Etawah internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati 5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati Leopard 1 Nainital internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Lion 1 Jaipur internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Tiger 1 Kheri internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Tiger 2 Kheri internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Tiger 3 Pilibhit internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Tiger 4 Nainital internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Tiger 5 Kanpur internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Whole_ITS_sequence_T1_1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati Whole_ITS_sequence_T2_1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2021)
+Toxocara cati ITScat1 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2020)
+Toxocara cati ITScat2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene; and internal transcribed spacer 2, partial sequence (2020)
+Toxocara cati T.cat17 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat19 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat2 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat25 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat33 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat4 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat5 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara cati T.cat7 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA; and internal transcribed spacer 2, partial sequence (2012)
+Toxocara malaysiensis mitochondrion (2008)
+Toxocara vitulorum mitochondrion (2022)
+Toxocara vitulorum mitochondrion (2023)
+Trichinella britovi 18S ribosomal RNA gene (2005)
+Trichinella murrelli 18S ribosomal RNA gene (2005)
+Trichinella nativa mitochondrial (2016)
+Trichinella nativa ISS10 mitochondrion (2014)
+Trichinella nelsoni 18S ribosomal RNA gene (2005)
+Trichinella papuae 18S ribosomal RNA gene (2005)
+Trichinella pseudospiralis ISS13 mitochondrion (2014)
+Trichinella pseudospiralis ISS588 mitochondrion (2014)
+Trichinella pseudospiralis ISS176 mitochondrion (2014)
+Trichinella pseudospiralis ISS470 mitochondrion (2014)
+Trichinella sp. T9 mitochondrion (2014)
+Trichinella sp. T6 mitochondrion (2014)
+Trichinella spiralis 14-3-3 zeta gene (2014)
+Trichinella zimbabwensis 18S ribosomal RNA gene (2005)
+Trichuris trichiura mitochondrion (2022)
+Trichuris trichiura mitochondrial (2016)
+Trichuris trichiura TMF31 mitochondrion (2021)
+Trichuris trichiura TPM1 mitochondrion (2021)
+Trichuris trichiura mitochondrion (2015)
+Trichuris trichiura mitochondrion (2012)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (Roundworms) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~1705BC69156,~9301BC69120,~7541BC07588,~1244BC48718,~6791BC08095,~4287BC64785,~2428BC50362,~6230BC48130,~1677BC64809,~9173BL827,~0827BC08980,~1116BC68646,~6554BC92185,~4159BC35779,~5713BC55639,~7003BL131,~1440BL925,~9046BL048,~0690BL866,~2989BL402,~9849BL244,~7345BC39360,~5576BC09203,~9388BL3221,~4726BC37503,~2221BC02869,~0562BL6721,~5275BL3202,~9612BC81580,~7218BC84636,~8862BC98565,~0151BC07413,~4598BC75265,~2194BC50126,~3748BL9316,~5037BC03189,~0585BC80853,~7080BC03769,~8634BC64872,~0023BC17640,~7884BC28965,~2967BC94244,~4611BC37907,"
+"[/Preset]"
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+Tapeworm infection is caused by ingesting food or water contaminated with tapeworm eggs or larvae. If you ingest certain tapeworm eggs, they can migrate outside your intestines and form larval cysts in body tissues and organs.
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+Connect a Spooky Remote to each generator output.
+This preset contains the following strains:
+Diphyllobothrium latum mitochondrial (2007)
+Diphyllobothrium latum mitochondrion (2007)
+Dipylidium caninum Dcan_canine_FL1 mitochondrion (2022)
+Dipylidium caninum mitochondrial, sample code: Dcan (2013)
+Dipylidium caninum mitochondrion (2020)
+Dipylidium caninum Dcan_feline_KS1 mitochondrion (2022)
+Dipylidium caninum R166 mitochondrion (2018)
+Echinococcus granulosus mitochondrion (2019)
+Hymenolepis nana mitochondrion (2016)
+Hymenolepis nana mitochondrial (2016)
+Taenia saginata 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2003)
+Taenia solium mitochondrion (2021)
+Taenia solium Puno mitochondrion (2022)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (Tapeworms) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~9659BC53959,~4006BC24761,~1502BC50325,~0733BC61538,~4545BC87335,~9982BC38942,~7488BC21250,~8132BC04429,~9421BL216,~4879BC39486,~2464BC55375,"
+"[/Preset]"
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+External parasites include fleas, mites and small insects.
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+Connect a Spooky Remote to each generator output.
+This preset contains the following strains:
+Dermanyssus gallinae mitochondrion (2020)
+Dermanyssus gallinae mitochondrion (2021)
+Dermatophagoides farinae JKM2019 mitochondrion (2021)
+Dermatophagoides farinae AD521 mitochondrion (2009)
+Dermatophagoides farinae mitochondrion (2009)
+Dermatophagoides pteronyssinus 1 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2; and 28S ribosomal RNA gene, partial sequence (2016)
+Ornithonyssus bacoti Orn.b1 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Ornithonyssus bacoti Orn.b2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Ornithonyssus bacoti Orn.b3 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2019)
+Pediculus humanus capitis voucher Australia Brisbane NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2471H5 NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2516H2 NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2517H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2557H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2558H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2560H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2563H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2563H2 NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2664H NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher Orlando NADH dehydrogenase subunit 5 (NAD5) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher Australia Brisbane cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2471H5 cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2516H2 cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2517H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2557H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2558H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2560H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2563H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2563H2 cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher B2664H cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Pediculus humanus capitis voucher Orlando cytochrome c oxidase subunit I (COX1) gene; mitochondrial (2014)
+Rickettsiella endosymbiont of Dermanyssus gallinae DGE chromosome (2021)
+Sarcoptes scabiei K2 mitochondrion (2017)
+Sarcoptes scabiei DW02 mitochondrion (2017)
+Sarcoptes scabiei N22 mitochondrion (2017)
+Sarcoptes scabiei B1 mitochondrion (2017)
+Sarcoptes scabiei W2 mitochondrion (2017)
+Sarcoptes scabiei K7 mitochondrion (2017)
+Sarcoptes scabiei VW mitochondrion (2017)
+Sarcoptes scabiei mitochondrial DNA (2018)
+Tyrophagus putrescentiae UMMZ BMOC 17-0108-002 PMR mitochondrion (2020)
+Tyrophagus putrescentiae voucher UMMZ BMOC 17-0108-002 mitochondrion (2022)
+Tyrophagus putrescentiae mitochondrion (2020)
+Tyrophagus putrescentiae mitochondrion (2014)
+Tyrophagus putrescentiae mitochondrion (2015)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (External) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~1204BC07536,~2593BC39109,~7931BC97548,~5436BL599,~6190BL694,~7479BL836,~2827BL3418,~0423BL6943,~1077BC0726405,~5789BC53029,~0226BC24973,~8722BC35256,~6953BC04910,~0765BC87105,~5103BC68735,~3608BC08705,~1849BC95126,~5641BC50336,~0099BC80184,~8595BC21691,"
+"[/Preset]"
+"[Preset]"
+"PresetName=Parasites comprehensive Roundworms Tapworms Flukes Intestinal blood (R) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=2"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=A parasite is an organism that lives on or in a host and gets its food from or at the expense of its host. They can cause disease in humans.
+Most of the blood parasites are transmitted to humans by an arthropod vector within the sexual phase of the life cycle. Some parasites use insects for development sites and as vectors.
+Tissue parasites can be either intracellular or extracellular depending on the species and the phase of the parasitic cycle.
+Run this preset for as long as possible. We recommend you also run detox programs in Remote mode.
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+Connect a Spooky Remote to each generator output.
+This preset contains the following strains:
+Acanthamoeba polyphaga mimivirus Kroon (2015)
+Acanthamoeba polyphaga mimivirus Kroon (2023)
+Acanthamoeba polyphaga mimivirus Oyster (2015)
+Acanthamoeba castellanii mamavirus Hal-V (2011)
+Acanthamoeba polyphaga mimivirus (2010)
+Acanthamoeba polyphaga mimivirus M4 (2022)
+Acanthamoeba polyphaga moumouvirus (2013)
+Acanthamoeba polyphaga mimivirus M4 (2011)
+Babesia microti RI chromosome IV (2015)
+Babesia microti RI chromosome IV (2017)
+Blechomonas juanalfonzi Leishmaniavirus-like RNA virus 1 OSU4 capsid RdRp fusion protein and putative coat protein genes (2018)
+Blechomonas maslovi Leishmaniavirus-like RNA virus 1 OSU6 putative coat protein and RNA-dependent RNA polymerase genes (2018)
+Blechomonas wendygibsoni Leishmaniavirus-like RNA virus 1 OSU8 capsid RdRp fusion protein and putative coat protein genes (2018)
+Brugia malayi mitochondrion (2021)
+Brugia malayi mitochondrion (2002)
+Brugia malayi ribosomal protein S14 (rps14), unknown (F37C12.2), ribosomal protein L36 (rpl36), and unknown (ayc1) genes; and unknown (F01F1.9) gene (2006)
+Endosymbiont of Acanthamoeba sp. UWC8 chromosome (2014)
+Endosymbiont of Acanthamoeba sp. UWC8 chromosome (2015)
+Leishmania amazonensis Josefa p36 LACK protein gene (2001)
+Loa loa 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1; and 5.8S ribosomal RNA gene, partial sequence (2006)
+Mutant Acanthamoeba polyphaga mimivirus KO_qu_143 (2023)
+Naegleria fowleri kurume mitochondrial (2021)
+Naegleria fowleri TW mitochondrion (2023)
+Naegleria fowleri V511 mitochondrion (2016)
+Naegleria fowleri voucher CSF-JRCS-AY27 AY27 mitochondrion (2021)
+Onchocerca volvulus mitochondrion (2015)
+Onchocerca volvulus forest mitochondrion (1999)
+Onchocerca volvulus mitochondrion (1998)
+Onchocerca volvulus mitochondrial (2016)
+P.polycephalum plasmodium-specific Hap-p protein (1990)
+Parachlamydia acanthamoebae 16S ribosomal RNA, partial sequence; 16S/23S ribosomal RNA intergenic spacer; and 23S ribosomal RNA, partial sequence (1999)
+Plasmodium ashfordi pGRW2 caseinolytic protease C (clpC) gene; apicoplast (2014)
+Plasmodium atheruri circumsporozoite protein gene (2001)
+Plasmodium berghei guanylate cyclase beta gene (2006)
+Plasmodium berghei sporozoite and liver stage asparagine-rich protein gene (2008)
+Plasmodium billbrayi DRC-ShegeD cytochrome oxidase subunit 3 (cox3), cytochrome oxidase subunit 1 (cox1), and cytochrome b (cytb) genes; mitochondrial (2010)
+Plasmodium billbrayi DRC-ShegeC cytochrome oxidase subunit 3 (cox3), cytochrome oxidase subunit 1 (cox1), and cytochrome b (cytb) genes; mitochondrial (2010)
+Plasmodium billbrayi UGD cytochrome oxidase subunit 3 (cox3), cytochrome oxidase subunit 1 (cox1), and cytochrome b (cytb) genes; mitochondrial (2010)
+Plasmodium billbrayi UGB cytochrome oxidase subunit 3 (cox3), cytochrome oxidase subunit 1 (cox1), and cytochrome b (cytb) genes; mitochondrial (2010)
+Plasmodium billcollinsi DRC-Itaito cytochrome oxidase subunit 3 (cox3) and cytochrome oxidase subunit 1 (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2010)
+Plasmodium billcollinsi UGD cytochrome oxidase subunit 3 (cox3) and cytochrome oxidase subunit 1 (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2010)
+Plasmodium billcollinsi UGF cytochrome oxidase subunit 3 (cox3) and cytochrome oxidase subunit 1 (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2010)
+Plasmodium brasilianum Bolivian I apicoplast (2016)
+Plasmodium brasilianum Bolivian I apicoplast (2022)
+Plasmodium bubalis mitochondrial, isolate: MUK2014-69 (2016)
+Plasmodium cathemerium 18S small subunit ribosomal RNA gene (2005)
+Plasmodium cf. malariae MB781_FD_SGA2.1 cytochrome oxidase subunit I (coI) gene; and cytochrome b (cytb) gene; mitochondrial (2020)
+Plasmodium chabaudi chabaudi calcium-dependent ATPase (atp6) gene (2005)
+Plasmodium chabaudi AS-ART ubiquitin specific protease-2 (ubp-2) gene (2007)
+Plasmodium coatneyi Hackeri chromosome 12 (2016)
+Plasmodium coatneyi Hackeri chromosome 12 (2017)
+Plasmodium cynomolgi Berok Duffy-binding protein 1 (DBP1) gene (2012)
+Plasmodium falciparum 3D7 apicoplast (2023)
+Plasmodium falciparum W2 apicoplast (2023)
+Plasmodium fieldi circumsporozoite protein (csp) gene (2011)
+Plasmodium fieldi LT4 circumsporozoite protein C14 (csp) gene (2013)
+Plasmodium fieldi SGEHIWM15-Y09-163 circumsporozoite protein (csp) gene (2012)
+Plasmodium fieldi SGEHIWM44-Y09-64 circumsporozoite protein (csp) gene (2012)
+Plasmodium fieldi SGEHIWM1-Y07-23 circumsporozoite protein (csp) gene (2012)
+Plasmodium fieldi SGEHIWM5-Y09-68 circumsporozoite protein (csp) gene (2012)
+Plasmodium floridense mitochondrion (2007)
+Plasmodium fragile normocyte-binding protein 1 gene (2007)
+Plasmodium gaboni TL2pp3816_3.4kb_5.13 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium gaboni TL2pp3850_3.4kb_5.1 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium gaboni TL2pp3850_3.3kb_5.3 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium gaboni TL2pp3870_3.3kb_5.2 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium gaboni TL2pp3911_3.3kb_5.12 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium gaboni TL2pp3911_3.3kb_5.19 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 (coxIII) gene; mitochondrial (2017)
+Plasmodium gallinaceum MAEBL (maebl) gene (2012)
+Plasmodium gallinaceum RNA polymerase II (Rbp1) gene (2009)
+Plasmodium gallinaceum mitochondrial (2006)
+Plasmodium gallinaceum mitochondrion (2006)
+Plasmodium gonderi cytochrome c oxidase subunit III (COIII) gene; cytochrome c oxidase subunit I (COI) gene; and cytochrome b (cytb) gene; mitochondrial (2004)
+Plasmodium gonderi MSP3-like protein (MSP3F1) gene (2014)
+Plasmodium homocircumflexum pCOLL4 mitochondrion (2023)
+Plasmodium inui South China mitochondrion (2010)
+Plasmodium inui Taiwan II cytochrome oxidase subunit 3 (cox3), cytochrome oxidase subunit 1 (cox1), and cytochrome b (cytb) genes; mitochondrial (2010)
+Plasmodium juxtanucleare mitochondrial (2006)
+Plasmodium juxtanucleare mitochondrion (2006)
+Plasmodium juxtanucleare Pj221 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj223 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj224 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj225 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj226 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj227 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium juxtanucleare Pj222 cytochrome oxidase subunit III (cox3) and cytochrome oxidase subunit I (cox1) genes; and cytochrome b (cytb) gene; mitochondrial (2018)
+Plasmodium knowlesi PHG30007 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SBH655 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi KEL30013 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi BS2018_0189 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi JHR30001 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SBH627 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi NS30004 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SBH641 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi PHG30006 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30005 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi TRG30002 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi KEL30012 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi BS2018_1028 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30002 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi NS30002 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi PRK30008 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi JHR30004 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30010 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30003 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30009 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30004 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30011 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi PRK30007 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi SEL30001 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium knowlesi MEL30002 merozoite surface protein 1 (msp1) gene (2023)
+Plasmodium lomamiensis TL2pp3816_3.4kb_5.11 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3820_3.4kb_5.13 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3820_3.4kb_5.17 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3833_3.4kb_5.23 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3834_3.4kb_5.13 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3870_3.4kb_5.1 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3870_3.4kb_5.4 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3911_3.4kb_5.13 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3912_3.4kb_5.13 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3948_3.4kb_5.18 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3948_3.4kb_5.21 cytochrome oxidase subunit 3 gene; cytochrome oxidase subunit 1 gene; and cytochrome b gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3850_3.3kb_3.12 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3816_3.3kb_5.20 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 (coxIII) gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3820_3.3kb_5.17 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 (coxIII) gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3820_3.3kb_5.18 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3833_3.3kb_5.23 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3855_3.3kb_5.19 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3870_3.3kb_5.24 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3911_3.3kb_5.13 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 gene; mitochondrial (2017)
+Plasmodium lomamiensis TL2pp3948_3.3kb_5.6 cytochrome b (cytb) gene; and cytochrome oxidase subunit 3 (coxIII) gene; mitochondrial (2017)
+Plasmodium lutzi UN117A mitochondrion (2012)
+Plasmodium malariae Ch dihydrofolate reductase-thymidylate synthase gene (2007)
+Plasmodium mexicanum mitochondrion (2007)
+Plasmodium ovale curtisi 3W circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi T13 circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi T14 circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi oaf circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi 17R circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi 17W circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi 18W circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi 19W circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi 3112 circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi OCLS circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi R42 circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale curtisi cytochrome oxidase subunit 3 (cox3) gene; cytochrome oxidase subunit 1 (cox1) gene; and cytochrome b (cytb) gene; mitochondrial (2012)
+Plasmodium ovale wallikeri O6W circumsporozoite protein/thrombospondin-related protein gene (2019)
+Plasmodium ovale 1104 dihydrofolate reductase-thymidylate synthase (DHFR-TS) gene (2009)
+Plasmodium reichenowi reticulocyte binding-like protein 2b (RBL2b) gene (2003)
+Plasmodium reichenowi reticulocyte binding-like protein 3 (RBL3) gene (2003)
+Plasmodium relictum ATCC 30141 mitochondrion (2004)
+Plasmodium relictum jb5.NAN015 mitochondrion (2004)
+Plasmodium relictum pGRW04 mitochondrion (2023)
+Plasmodium relictum jb3.zoopeng mitochondrion (2004)
+Plasmodium relictum mitochondrion (2009)
+Plasmodium relictum pGRW11 mitochondrion (2023)
+Plasmodium relictum pSGS1 mitochondrion (2023)
+Plasmodium simiovale circumsporozoite protein gene (1994)
+Plasmodium simium 121Ps mitochondrion (2018)
+Plasmodium simium 139Ps mitochondrion (2018)
+Plasmodium simium 160Ps mitochondrion (2018)
+Plasmodium simium 45Ps mitochondrion (2018)
+Plasmodium simium 95Ps mitochondrion (2018)
+Plasmodium simium 97Ps mitochondrion (2018)
+Plasmodium simium BL65Ps mitochondrion (2018)
+Plasmodium simium Fonseca MRA-353 mitochondrion (2005)
+Plasmodium simium PsimiumES mitochondrion (2017)
+Plasmodium simium R5Ps mitochondrion (2018)
+Plasmodium simium SS3Ps mitochondrion (2018)
+Plasmodium simium mitochondrion (2005)
+Plasmodium simium cytochrome c oxidase subunit III (COIII) gene; cytochrome c oxidase subunit I (COI) gene; and cytochrome b (cytb) gene; mitochondrial (2004)
+Plasmodium sp. pBUL07 mitochondrion (2023)
+Plasmodium sp. pCOPALB03 mitochondrion (2023)
+Plasmodium sp. pNEWAM05 mitochondrion (2023)
+Plasmodium sp. pHYPMA01 mitochondrion (2023)
+Plasmodium sp. pWW3 mitochondrion (2023)
+Plasmodium sp. pCOLL7 mitochondrion (2023)
+Plasmodium sp. pCUCROC01 mitochondrion (2023)
+Plasmodium sp. NEWAM07 mitochondrion (2023)
+Plasmodium sp. voucher BO_15 mitochondrion (2017)
+Plasmodium sp. pFOUMAD03 mitochondrion (2023)
+Plasmodium sp. vivax/simium 1294Mosq mitochondrion (2017)
+Plasmodium sp. vivax/simium 260Mosq mitochondrion (2017)
+Plasmodium sp. vivax/simium 345Mosq mitochondrion (2017)
+Plasmodium sp. vivax/simium 479Mosq mitochondrion (2017)
+Plasmodium sp. vivax/simium 485Mosq mitochondrion (2017)
+Plasmodium sp. vivax/simium 632Mosq mitochondrion (2017)
+Plasmodium sp. ex Bubalus bubalis NAST-KTWR-Domestic-47 mitochondrion (2019)
+Plasmodium sp. ex Bubalus bubalis mitochondrial, isolate: MUK2014-45 (2016)
+Plasmodium sp. ex Capra aegagrus hircus THGoat16-18 mitochondrial (2017)
+Plasmodium sp. ex Capra aegagrus hircus mitochondrial, isolate: SV330 (2016)
+Plasmodium sp. EB256 cytochrome c oxidase subunit 3 and cytochrome c oxidase subunit 1 genes; and cytochrome b gene; mitochondrial (2023)
+Plasmodium tejerai cytochrome c oxidase subunit 3 and cytochrome c oxidase subunit 1 genes; and cytochrome b gene; mitochondrial (2023)
+Plasmodium vinckei lentum circumsporozoite protein (CS) gene (2001)
+Plasmodium vinckei petteri circumsporozoite protein (CS) gene (2001)
+Plasmodium vinckei vinckei circumsporozoite protein (CS) gene (2001)
+Plasmodium vivax CK1 mitochondrion (2005)
+Plasmodium vivax CX7 mitochondrion (2005)
+Plasmodium vivax CX8 mitochondrion (2005)
+Plasmodium vivax IBM2 mitochondrion (2005)
+Plasmodium vivax IBM5 mitochondrion (2005)
+Plasmodium vivax IBY1 mitochondrion (2005)
+Plasmodium vivax IBY5 mitochondrion (2005)
+Plasmodium vivax IL42 mitochondrion (2005)
+Plasmodium vivax IL44 mitochondrion (2005)
+Plasmodium vivax IL45 mitochondrion (2005)
+Plasmodium vivax IL47 mitochondrion (2005)
+Plasmodium vivax IL48 mitochondrion (2005)
+Plasmodium vivax South Sudan S1 mitochondrion (2022)
+Plasmodium vivax TB66 mitochondrion (2005)
+Plasmodium vivax TC19 mitochondrion (2005)
+Plasmodium vivax TC20 mitochondrion (2005)
+Plasmodium vivax TC28 mitochondrion (2005)
+Plasmodium vivax TE26 mitochondrion (2005)
+Plasmodium vivax TFF13 mitochondrion (2005)
+Plasmodium vivax TG46 mitochondrion (2005)
+Plasmodium vivax TG57 mitochondrion (2005)
+Plasmodium vivax TV400 mitochondrion (2005)
+Plasmodium vivax V08A18 mitochondrion (2013)
+Plasmodium vivax V08A20 mitochondrion (2013)
+Plasmodium vivax V08A23 mitochondrion (2013)
+Plasmodium vivax V08A24 mitochondrion (2013)
+Plasmodium vivax V08A28 mitochondrion (2013)
+Plasmodium vivax V08A36 mitochondrion (2013)
+Plasmodium vivax V08A37 mitochondrion (2013)
+Plasmodium vivax V08A38 mitochondrion (2013)
+Plasmodium vivax V08B17 mitochondrion (2013)
+Plasmodium vivax V08B21 mitochondrion (2013)
+Plasmodium vivax V08B28 mitochondrion (2013)
+Plasmodium vivax VX3 mitochondrion (2005)
+Plasmodium vivax mitochondrion (2022)
+Plasmodium yoelii rhoptry protein gene (1995)
+Plasmodium yoelii sporozoite and liver stage asparagine-rich protein gene (2008)
+Protacanthamoeba bohemica small subunit ribosomal RNA gene (2005)
+Toxoplasma gondii RH-88 apicoplast (2020)
+Toxoplasma gondii RH88 apicoplast (2021)
+Toxoplasma gondii ME49 B7 apicoplast (2021)
+Toxoplasma gondii ME49xCTG D3X1 apicoplast (2021)
+Trypanosoma brucei gambiense Meya-Human_GAB2019 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Trypanosoma brucei gambiense Boka-Human_GAB2019 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2; and large subunit ribosomal RNA gene, partial sequence (2020)
+Trypanosoma cruzi CLBrener putative iron superoxide dismutase (SODB1) gene (2022)
+Wuchereria bancrofti mitochondrial (2016)
+Wuchereria bancrofti mitochondrion (2012)
+Wuchereria bancrofti TWG2008 mitochondrion (2012)
+Wuchereria bancrofti mitochondrion (2011)"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=UDB_Square"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=True"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=1"
+"Remove_Duplicate_Frequencies_Tolerance=.125"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Parasites (Blood And Tissue) (DNA) (R) - JW (CUST)"
+"Loaded_Frequencies=~4533BL0850222,~2039BL0896829,~3683BL9948077,~5072BL0532344,~0419BL0180782,~7915BL9633919,~8669BL792879,~0958BL9138630,~5305BLR0723,~3901BLR0793,~4555BLR6873,~8267BC04618,~2705BC04482,~0201BL71132,~9431BC0276264,~3144BL720,~8681BL464,~5187BL6029854,~4328BC38188,~8120BC29631,~3577BC73362,~1073BC47477,~2727BC87706,~3016BC24288,~8454BLm432,~6059BL039,~7603BL625,~8993BL5098,~3340BL21996,~1936BL0739,~2590BL6807,~3889BL6518,~1749BL7402,~9245BL3284,~7476BL3379,~1288BC40577,~6626BC4982,~4121BL8170,~2462BL2122,~6165BL3034,~1512BL4661,~9108BL0859025,~0762BL9530,~1051BC62889,~6498BC76429,~4094BL0432,~5648BL0102,~7937BL7350,~1485BL8927,~9970BL7912,~0534BL7254,~2923BL4044,~9784BL0531,~4867BL7159,~5511BL8297,~9223BL7664,~4660BL6891,~2266BL6535,~0497BC4985,~5109BL5142,~9557BL6733,~7142BL6098,~8706BL7398,~0095BL9375,~4533BL5720,~2039BL9380,~3683BL3639,~5072BL9365,~0419BL9025,~7915BL1275,~8669BL3413,~0958BL1243,~5305BL0703,~3901BL0738,~4555BL6812,~8267BL1876,~2705BL9082,~0201BL8276,~9431BL1407,~3144BL9029,~8681BL1826,~5187BL7684,~4328BL5939,~8120BL8919,~3577BL2545,~1073BL9720,~2727BL8260,~3016BL7907,~8454BL4882,~6059BL4976,~7603BL6080,~8993BL6736,~3340BL2750,~1936BL30078,~2590BL0231,~3889BC5562,~1749BC7370,~9245BC3080,~7476BC3344,~1288BL3678,~6626BC3089,~4121BL4589,~2462BC6095,~6165BC6073,~1512BC7162,~9108BC6098,~0762BC4466,~1051BC1489,~6498BL8975,~4094BC1870,~5648BL1919,~7937BL6457,~1485BL8747,~9308BL9237,~0962BL1872,~1251BC1855,~8111BL43249,~4294BL0756,~5848BL3821,~9650BC73733,~4098BC58278,~1593BC57097,~0834BC97353,~4537BL3659,~9984BL6630,~7570BL238,~8134BC55681,~9423BC87067,~4860BC87038,~2466BC87037,"
+"[/Preset]"
+

@@ -1,0 +1,336 @@
+"[Preset]"
+"PresetName=Antibiotics and Antivirials  V3 (XM)(MW) (R) - JD"
+"Force_MW_to_Hz_Factor=2.2523430883E+23"
+"Force_DNA_to_Hz_Factor=4.35589935811E+17"
+"Force_RNA_to_Hz_Factor=4.35589935811E+17"
+"Force_mRNA_to_Hz_Factor=4.35589935811E+17"
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=100000"
+"BFB_Finish_Frequency=5000000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.005"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=60"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=14"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=100"
+"BFB_After_Scan_Run_On_Gen=2"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=0"
+"Repeat_Chain=1"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Author: Johannes_D     Version 3     date 09.11.2025
+
+The purpose of this preset is to support devitalize (MRSA) bacterials, virus, and yeast/mould by using very potent natural substances in herbs like black cumin, Cryptolepis, Bidens Pilosa, 
+Artemisia Annua.Furthermore the implemented natueral substances modulating the immune 
+function.
+
+Preset can be applied for (tested):
+ - gram-negative bacterial and gram-positive bacterial
+ - Staphylococcus bacterial  and Streptococcus bacterial
+ - candida species and candida albicans
+ - Aspergillus Niger and Mucor Racemosus
+ - CytoMegaloVirus (CMV) 
+ - Respiratory Syncytial Virus (RSV)
+ - Epstein-Barr Virus (EBV)
+ - Mycobacterium Tuberculosis 
+ 
+The preset is tested and optimized in the electrical parameters for each substance. 
+It has an emulation efficiency of 92%. Thank you so much MARIA for testing the preset!!!
+
+If you want to apply the preset, then be aware:
+1. Using the preset ONLY on your OWN responsibility!
+2. No promise for any healing!
+3. Preset is only experimental without any offcial confirmation for the claimed benefits.
+4. It can only used by Sp2 sv higher l than 10/22
+5. Copy the preset in the sp2 user direcory and start in remote.
+6. Preset is made for XM.
+
+The Preset has been designed to loop stopps after two loops
+
+Stop treatment if you experience any discomfort.
+
+MW frequencies are very high. No frequency generator can reach these frequencies directly. This preset targets the sub harmonics of these frequencies.
+
+Spooky Remote provides a convenient way to treat conditions from any distance. Sandwich your DNA in some paper tape or sticker, and place inside Spooky Remote. 
+
+Connect your Spooky Remote to the 'BN' port of Spooky Boost.
+
+
+Cryptolepine has been reported to possess various pharmacological properties, including 
+  - antimalarial,
+  - anti-bacterial (SA, Mycobacterium smegmatis, M. fortuitum, M. abscessus, M.
+phlei, and M. aurum, M. bovis, M. tuberculosis, Babesia, bovis, B. bigemina, B. divergens, B. caballi, and Theileria equi, [Entamoeba histolytica for whole cryptolepis herb!!!])
+  - anti-fungal (accharomyces cerevisiae, Candida albicans, [Aspergillus niger for whole herb], 
+  - anti-hyperglycemic, 
+  - anticancer(brest,skin, osteosarcoma, lung,liver, leukemia)
+  - antidiabetic, 
+  - anti-inflammatory(supress LT-6, TNF-alpha, IL-1beta, NO)
+  - hypotensive, and antipyretic properties
+ 
+
+Phenylheptarine (PHT) 
+ - is antibacterial, 
+ - Nematicidal (i,e. kill worms as Bursaphelenchus xylophilus, Caenorhabditis elegans),
+ - cytotoxic 
+- has shown significant antifungal activity against majority of Candida Species. It inhibited growth of 
+C. albicans, C. tropicalis, C. guilliermondii, C. krusei, C. parapsilosis, C. glabrata, C. inconspicua 
+Cryptococcus neoformans, Trichosporon cutaneum, and Rhodotorula glutinis at and for  basidiomycetous yeasts
+
+Luteoline
+ - antiviral (as Flavivirus, HIV) 
+-  antiallergic (suppress suppress production of TNF-a in macrophages,  IL-4, IL-5 and IL-13)
+
+Linoleic Acid 
+ - antiviral (Herpes. Influenca.Sendai-Virus, Sinbis-Virus.)
+ - antibacterial (as Staphylococcus)
+
+Butein
+ - cytotoxic  (in colon cancer cells)
+ -  Anti - Leishmania parasites. 
+ 
+References:
+Cryptolepis sanguinolenta
+https://pmc.ncbi.nlm.nih.gov/articles/PMC5661077/
+https://link.springer.com/article/10.1007/s00210-022-02302-7
+https://patents.google.com/patent/WO1994018203A1/en
+https://patentimages.storage.googleapis.com/0a/16/98/735feb8dfea403/WO1994018203A1.pdf
+https://ethnoagriculture.com/unveiling-the-healing-power-of-cryptolepis-sanguinolenta-traditional-wisdom-meets-modern-science/
+https://www.vitamins-and-minerals.com/cryptolepis-benefits-explained/
+https://www.activemedicus.com/cryptolepis-cryptolepis-sanguinolenta/
+
+Bidens Piosa
+https://iadns.onlinelibrary.wiley.com/doi/10.1002/fft2.63
+https://www.helpleft.com/de/medicine/what-are-the-medical-uses-of-bidens-pilosa.html
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7099298/
+https://www.ijpsjournal.com/assetsbackoffice/uploads/article/Review+Article+on+Bidens+Pilosa+Leaves+Pharmacogenetic+Evaluation+Phytochemical+Analysis+Taxonomical+Classification+Traditional+and+Medicinal+Uses+and+Distribution.pdf
+https://www.mdpi.com/1999-4923/15/5/1491
+https://pubmed.ncbi.nlm.nih.gov/3916958/
+https://www.sciencedirect.com/science/article/abs/pii/0001706X9190013A
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8303746/
+In vitro antifungal activity of phenylheptatriyne from Bidens cernua L. against yeasts:
+https://www.sciencedirect.com/science/article/abs/pii/S0367326X09002524"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=4"
+"User_Defined_2_WCM=4"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Octave"
+"Out2_Frequency_Limit_Harmonic_Type=Odd"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=MM_ModSquare"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=True"
+"Out2_Run_Every_Second_Frequency=False"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=False"
+"Boost_Graph_BN=True"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=1"
+"Enable_Gate_Out2=1"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=0"
+"Remove_Duplicate_Frequencies_Tolerance=0"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=285"
+"Packing_Frequency_Out2=528"
+"FreqToAddDwell=9"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=1"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Phenylheptatriyne (1-Phenylhepta-1,3,5-triyne, Phenylheptatriin)_[C13H8] (CUST)"
+"Loaded_Programs=Cryptolepine_[C16H12N2] (CUST)"
+"Loaded_Programs=Biscryptolepine_[C32H22N4] (CUST)"
+"Loaded_Programs=Artemisinin (MW)"
+"Loaded_Programs=Thymoquinone_[C10H12O2] (CUST)"
+"Loaded_Programs=Luteolin_[C15H10O6] (CUST)"
+"Loaded_Programs=Linoleic acid (MW)"
+"Loaded_Programs=Butein_[C15H12O5] (CUST)"
+"Loaded_Frequencies=[C13H8]=180 A20a20 W11,"
+"Loaded_Frequencies=[C16H12N2]=240 A20a20 W10,"
+"Loaded_Frequencies=[C32H22N4]=180 A15a15 W10,"
+"Loaded_Frequencies=~1158M335.608489004=600 A15a15 W10,"
+"Loaded_Frequencies=[C10H12O2]=180 A10a10 W11,"
+"Loaded_Frequencies=[C15H10O6]=240 A15a15 W11,"
+"Loaded_Frequencies=~4783M559.130027857=180 A20a20 W11,"
+"Loaded_Frequencies=[C15H12O5]=240 A15a15 W11,"
+"[/Preset]"

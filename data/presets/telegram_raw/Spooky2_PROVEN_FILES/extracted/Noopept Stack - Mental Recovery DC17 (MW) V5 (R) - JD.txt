@@ -1,0 +1,307 @@
+"[Preset]"
+"PresetName=Noopept Stack - Mental Recovery DC17 (MW) V5 (R) - JD"
+"Force_MW_to_Hz_Factor=2.2523430883E+23"
+"Force_DNA_to_Hz_Factor=4.35589935811E+17"
+"Force_RNA_to_Hz_Factor=4.35589935811E+17"
+"Force_mRNA_to_Hz_Factor=4.35589935811E+17"
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=0"
+"BFB_Grade_Program=1"
+"Prevent_Duplicate_GX_BFB_Data=0"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=True"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=False"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=300"
+"Delay_for_GX_Inputs=0"
+"BFB_Samples_Per_Step=10"
+"BFB_Loops=1"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.0625"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=False"
+"BFB_Calculate_Using_Peak=True"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=1"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Aurthor Johannes_D   Version 1.0    Date: 29.06.2025
+
+acknowledgements:
+I want to give my gratitude to all Sp2 german community, supporting me with links, information, books, articles etc. that I can resaerch about noopept and its synergists, in particular Liva, Emanuele, Juergen, Anne and J I M. 
+
+My special thanks go to Maria and Walburga, who, through countless kinesiological tests, enabled the preset to achieve an optimization process never before achieved. Without this valuable help, an emulation quality of 92% would not have been possible. Thank you so much, MARIA and  WALBURGA!!!
+
+Noopept is a nootropic dipeptide which is used to increase the mental health and mental power.
+This preset contains an self made appropriate stack of different nootropic peptides plus synergetic substances to increase the effect of noopept and enhance the beneficial effects.  The main focus is thereby on prevention and improvement of dementia resp. alzheimer disease. But even user without any mental issue can profitate in situation with heavy mental stress (like preparation iof exams etc.).
+
+Beneficial effects of the preset can be:
+1. Improve overall mental power, mental healthyness, energy and mental clearity (in particular reduction of brain fog)
+2. Improve memory, concentration, learning ability, stress resistance, sleep quality
+3. neuroprotective and reduces neuroinflammartion
+4. Lower (detox)  harmful protein (as amyloids) 
+5. Increase neurogenese in the hypocampus
+6. improve the overall mental healthy in patients with dementia resp alzheimer or depression
+7. Improve the mental power of people - having no mental issue - under heavy mental or physical load.
+8. Reduce neuirological pain
+
+
+This preset is opimized and tested successful. These beneficial effects are not only the sume of by scientific studied attributed properties of the implemented substances, it is also tested kinesiological by two independent testing persons, and actually partialy comfirmed by several users who had tested the preset. Tests are on going, and honest feedbacks are wellcome. Please contact the author via Telegram.
+
+The preset has used a special implementation of Molecular Weight (MW) emulation which leads to an emulation efficiency of actual 93%. 
+
+The following substances are actual implemented:
+Noopept (n-phenylacetyl-l-prolylglycine ethyl ester)
+Cycloprolylglycine (Cyclo(prolylglycyl),Cyclic glycine-proline)
+Sunifiram
+Acetylcholine
+Cytidin-5'-diphosphocholin (CDP-Cholin, Citicoline)
+Glycerophosphocholine (Alpha GPC Choline, L-alpha-Glycerophosphorylcholine)
+Phosphatidyl serine 
+Acetylcarnitine
+Magnesium L-threonate 
+Theanine 
+Uridine 
+Docosahexaenoic Acid (DHA)
+Lithium Orotate
+Melatonin
+
+If you want to apply the preset, then be aware:
+1. Using the preset ONLY on your OWN responsibility!
+2. No promise for any healing!
+3. Preset is only experimental without any offcial confirmation for the claimed benefits.
+4. Using only with GX(Pro)!
+5. Copy the preset in the sp2 user directorey and start in remote mode.
+6. Start slowly with restricted running time 1-2h and inrease step by step as far you have no negative reaction until a half day. Then you can run it on the day or in the night. Give the body periodicly rest-time, i.e. time to recover and start to regulate without the preset.
+
+CAUTION:
+Without permission of the author it s forbidden to change this preset and publish it to a third party!
+
+References:
+https://flmodafinil.pl/de/noopept-wann-wird-es-angewendet-wie-wird-es-dosiert/?v=3a52f3c22ed6
+https://flmodafinil.pl/de/piracetam-eines-der-bekanntesten-nootropischen-praeparate/?v=3a52f3c22ed6
+https://flmodafinil.pl/de/aniracetam-verbessertes-gedaechtnis-und-geistiges-wohlbefinden/?v=3a52f3c22ed6 
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7895721/
+https://noodoc.com/noopept/
+https://www.researchgate.net/publication/312106612_Neuropeptide_cycloprolylglycine_is_an_endogenous_positive_modulator_of_AMPA_receptors
+https://en.wikipedia.org/wiki/Phenylpiracetam
+
+
+
+
+
+
+
+The Preset has been designed to loop continuously until stopped.
+
+MW frequencies are very high. No frequency generator can reach these frequencies directly. This preset targets the sub harmonics of these frequencies.
+
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+
+Spooky Remote provides a convenient way to treat conditions from any distance. Sandwich your DNA in some paper tape or sticker, and place inside Spooky Remote. 
+
+Connect your Spooky Remote to the 'BN' port of Spooky Boost."
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=.1"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=2"
+"User_Defined_2_WCM=2"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=Octave 6 Step Ramp Down"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Octave"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquareDC17"
+"User_Defined_2_Waveform=MM_ModSquareDC17"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=True"
+"Out2_Run_Every_Second_Frequency=False"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=False"
+"Boost_Graph_BN=True"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=0"
+"Remove_Duplicate_Frequencies_Tolerance=0"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=1"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Noppept Stack direct octave (CUST)"
+"Loaded_Frequencies=62155218 W10 a20A20=180, 60199765.58 W10 a20A20=180, 48085197.2 W10 a20A20=180, 57091154.9 W10 a20A20=180, 47678231.8 W10 a10 A10=180, 50227510.46 W11 a10A10=180, 77320176.8 W10 a20A20=180, 79361235.24 W10 a20A20=180, 57444273.44 W10 a20A20=180, 68024393.06 W11 a10A10=180, 47681332.22 W10 a20A20=180, 64124887.16 W10 a20A20=180, 63306396.72 W10 a20A20=180, 45347105.44 W10 a20A20=180,"
+"[/Preset]"

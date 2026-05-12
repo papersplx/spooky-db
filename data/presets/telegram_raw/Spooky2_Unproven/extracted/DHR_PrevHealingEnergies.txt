@@ -1,0 +1,152 @@
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0001 Spiritual Wellbeing (R)"
+"Loaded_Frequencies=75716=9,75727=9,51356=9,75975=9,75371=9,"
+"Loaded_Programs=Spiritual Wellbeing"
+"Preset_Notes=0001 Spiritual Wellbeing (R) for Remote
+By David Halliday
+
+The following Frequencies have been converted from the original 'dowsed' numbers. 
+These new Frequencies energetically clear Human Beings from blockages to allow Healing to take place via the absorption of Subtle Energies' 
+Therefore they should be used alongside the now corrected Frequency for Wellbeing that started this thread. They are as follows:- 
+   [Energetic Clearing_1] - 75716 Hz 
+   [Energetic Clearing_2] - 75727 Hz 
+   [Clearing & Healing] - 51356 Hz 
+   [Negative Field Energy (Vital for Humans)] - 75975 Hz  
+   [Wellbeing] - 75371 Hz  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0002 Combined 7 Chakras + Meridians (R)"
+"Loaded_Frequencies=52369=9,59560=9,69201=9,73556=9,76317=9,81206=9,86800=9,75656=9,87155=9,69854=9,78353=9,76225=9,"
+"Loaded_Programs=Combined 7 Chakras + Meridians"
+"Preset_Notes=0002 Combined 7 Chakras + Meridians (R) for Remote
+By David Halliday
+
+The frequencies have been converted from the original 'dowsed' numbers. 
+You must run the previous full Wellbeing frequency set before these and all others - Mandatory.  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0003 Remove Negative Energies (R)"
+"Loaded_Frequencies=87896=9,"
+"Loaded_Programs=Remove Negative Energies"
+"Preset_Notes=0003 Remove Negative Energies (R) for Remote
+By David Halliday
+
+NOTE1: You need only run this program once (or possibly twice) whereby each Frequency is flashed 23 times.  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0004 Aura Clear Energetic Body (R)"
+"Loaded_Frequencies=75716=9,"
+"Loaded_Programs=Aura Clear Energetic Body"
+"Preset_Notes=0004 Aura Clear Energetic Body (R) for Remote
+By David Halliday
+
+NOTE1: You need only run this program once (or possibly twice) whereby each Frequency is flashed 23 times.  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0005 Higher Chakras Universal Divinity Connection (R)"
+"Loaded_Frequencies=86920=9,82971=9,22357=9,21315=9,21339=9,"
+"Loaded_Programs=Higher Chakras Universal Divinity Connection"
+"Preset_Notes=0005 Higher Chakras Universal Divinity Connection (R) for Remote
+By David Halliday
+
+NOTE1: You need only run this program once (or possibly twice) whereby each Frequency is flashed 23 times. 
+NOTE2: These 5 external Higher Chakras' are outside of the body and complete the entire Human set- They are intelligent and will only connect automatically when/if you are ready..... from that day on you will start to Self Heal instantly..... in fact you will never be ill again in your current physical form if they do connect (As above; so below - The Alpha & The Omega - The beginning and the end of your difficult journey). 
+This set completes the Light Body Energetic side of things that we needed to do first as it is the root of most problems of the physical body  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0006 Protection of Aura & Light Body (R)"
+"Loaded_Frequencies=75716=9,55879=9,76566=9,75656=9,78663=9,80917=9,81637=9,69616=9,76020=9,68269=9,52003=9,52832=9,51663=9,"
+"Loaded_Programs=Protection of Aura & Light Body"
+"Preset_Notes=0006 Protection of Aura & Light Body (R) for Remote
+By David Halliday
+
+NOTE1: You need only run this program once (or possibly twice) whereby each Frequency is flashed 23 times. 
+NOTE2: Running this program more than once or twice can only be beneficial should you feel the need to do so.   
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0157 Preventing Healing Correction Frequency [Specific] (no Meds) (R)"
+"Loaded_Frequencies=69884=9,82972=9,"
+"Loaded_Programs=Preventing Healing Correction Frequency [Specific] (no Meds)"
+"Preset_Notes=0157 Preventing Healing Correction Frequency [Specific] (no Meds) (R) for Remote
+By David Halliday
+
+NOTE1: You must run the previous full 'Spiritual Wellbeing' and 'Chakra & Meridian' frequency set before this - Mandatory! 
+NOTE2: There are no restrictions on the amount of time you can run this program. But it is always good to have a 48/72 hour break (if required) from Subtle Energy treatments to allow any potential mood swings to re-balance. 
+NOTE3: This pre-set is designed to 'flash' each Frequency 23 times for Remote treatment. 
+NOTE4: Preferably the Spooky Remote Healing Device should be positioned inside, or close to, the Human Aura (left forearm side). 
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\DH Experimental Frequencies\Shells\DH_0000 (R)"
+"PresetName=0033 Increase Healing Energies & Remove Fatigue (R)"
+"Loaded_Frequencies=69863=9,87126=9,40661=9,29609=9,56366=9,83929=9,61714=9,75721=9,63865=9,55136=9,86028=9,75656=9,78663=9,80917=9,82051=9,75656=9,24999=9,81637=9,38616=9,86693=9,81782=9,69534=9,74692=9,84928=9,87673=9,87133=9,86573=9,70168=9,84540=9,81525=9,81553=9,82177=9,56115=9,75846=9,69604=9,81485=9,75715=9,87180=9,54932=9,82239=9,80580=9,75656=9,86573=9,75727=9,81144=9,55657=9,48271=9,69158=9,48201=9,49764=9,75959=9,55643=9,55185=9,82972=9,72272=9,62659=9,75979=9,81540=9,75715=9,87243=9,87237=9,87235=9,81606=9,59695=9,86749=9,48318=9,75417=9,69289=9,"
+"Loaded_Programs=Increase Healing Energies & Remove Fatigue"
+"Preset_Notes=0033 Increase Healing Energies & Remove Fatigue (R) for Remote
+By David Halliday
+
+NOTE1: You need only run this program once (or possibly twice) whereby each Frequency is flashed 23 times inside of the Aura. 
+NOTE2: You may likely need to run the Spooky Remote Healing Device inside or close to the Aura that surrounds your body - Approx. 6ft. If you are Healing at a 'distance' it may need to be run continuously until you see the desired effect. 
+NOTE3: Increased Energy may keep you awake at night.  
+
+Please report back. 
+Good luck.
+
+The above frequencies are experimental. Feedback is always welcome.
+
+David suggests putting the remote next to your left arm for treatment, connecting the Spooky Remote to Out1. For use with DNA sample, connect Spooky Remote to generator, to the 'BN' port of Spooky Boost for best results."
+"[/Preset]"

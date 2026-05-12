@@ -38,6 +38,13 @@ BEGIN
     ) THEN
         ALTER TABLE programs ADD COLUMN tag TEXT;
     END IF;
+    -- Add created_at column if missing
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'created_at'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();
+    END IF;
     -- Backfill source for existing rows
     IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'source') THEN
         UPDATE programs SET source = 'wine' WHERE source IS NULL;

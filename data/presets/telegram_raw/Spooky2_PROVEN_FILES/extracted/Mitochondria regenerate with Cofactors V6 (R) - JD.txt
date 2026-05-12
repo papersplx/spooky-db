@@ -1,0 +1,387 @@
+"[Preset]"
+"PresetName=Mitochondria regenerate with Cofactors V6 (R) - JD"
+"Force_MW_to_Hz_Factor=2.2523430883E+23"
+"Force_DNA_to_Hz_Factor=4.35589935811E+17"
+"Force_RNA_to_Hz_Factor=4.35589935811E+17"
+"Force_mRNA_to_Hz_Factor=4.35589935811E+17"
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=100000"
+"BFB_Finish_Frequency=5000000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.005"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=60"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=14"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=100"
+"BFB_After_Scan_Run_On_Gen=2"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Author Johannes_D Vers.6  from 13.12.2025
+
+
+Update: NEW in V6 is
+
+- Urolithin A   -> triggers Autophagy, Mitophagy and Lysophagy, can detect cancer cell and triggers appptosis
+- Ellagitannin  -> precurser of urolithin A
+- beta-Nicotinamide mononucleotide(NMN)  --> Anti ageing, precurser to NAD+, 
+- L-Ergothionein(Sympectothion,Thioneine)  --> high anti-oxidant and synergistic to NMN
+
+The preset is tested and optimized in each parameter for each of the new substances.
+The emulation efficiency is still 93%. Thank you so much Walburga for testing the preset!
+
+
+Update: NEW V5 is the substance spermidin, which has several positive impact of mirtochondrial 
+function, as 
+ - trigger Autophagy, 
+ - modulates Apoptosis 
+ - actives AMPK, 
+ - prevents  senescent cells (=zombi-cells).
+While senescent cells no longer divide, they remain metabolically active and secrete pro-inflammatory molecules. Over time, their accumulation disrupts tissue function, promotes chronic inflammation, and contributes to age-related diseases such as cancer, immune dysfunction, and neurodegeneration.
+ - suppress inflammation by decreasing pro-inflammatroic cytokins tnf-a, ROS, IL-1b, IL-18, NF-xB
+
+The implementation of spermidin is done by optimized, dewll, amplitude, spin-driection. This lead to an overall emulation efficiency of 92% of the whole preset.
+
+Thank you Walburga for testing the preset!
+
+references:
+https://spermidinelife.us/blogs/news/spermidine-cellular-senescence
+https://www.researchgate.net/figure/AMPK-is-activated-by-spermidine-and-drives-mitochondrial-accumulation-and-M2-polarization_fig2_345991417
+https://www.researchsquare.com/article/rs-5686388/v1
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8612618/
+
+
+
+The purpose of this preset is to regenerate and active mitochondria: It consistis 36 substances with potentially properties comprises in particular:
+  - improve mitochondrial biogenesis
+  - improve ATP generation, 
+  - improve DNA repair,
+  - boost AMPK
+  - eliminate senescent cells
+  - activate autophagy 
+  - promote longevity, in particular maintain the length of Telomere
+
+  
+AMPK:
+Inside each of our cells is a key metabolism enzyme called AMPK (adenosine monophosphate-activated protein kinase) which plays a fundamental role in energy homeostasis and acts as a ‘life span regulator'. AMPK is expressed in a number of tissues (liver, brain, skeletal muscle) where it works rather like a ‘metabolic master switch', regulating several intracellular systems. 
+Properties of AMPK:
+    - Helps extend lifespan by 20-30% as shown in animal studies.
+    - Lowers blood sugar levels by increasing cellular glucose uptake.
+    - Inhibits synthesis of surplus fats and increases fat-burning.
+    - Reduces triglyceride levels in the blood.
+    - Combats liver degeneration.
+    - Increases the number of new, healthy mitochondria.
+
+Fisitin:
+Fisetin is a polyphenol found in fruits such as strawberries (160 mg/kg), apples (27mg/kg) and persimmon (10 mg/kg), as well as in some medicinal plants. It is described as having multiple biological benefits including inhibition of cell proliferation (1), neuroprotection (2), bone protection and suppression of inflammation (3). But its two most extraordinary properties are its ability to both destroy senescent cells that pervade the body, and activate the mechanism of autophagy which enables cells to ‘devour’ their own waste products (4). Several studies have shown it helps extend longevity and reduce markers of senescence in humans. 
+
+
+This preset are opimized for each substance in electrical parameters in order to achive highest possible emulation efficiency. Indeed this preset has emulation efficiency of 87%! Thank you so much WALBURGA for testing the preset kinesiologically during the whole opimization process!
+Tests are on going, and honest feedbacks are wellcome. Please contact the author via Telegram.
+
+
+If you want to apply the preset, then be aware:
+1. Using the preset ONLY on your OWN responsibility!
+2. No promise for any healing!
+3. Preset is only experimental without any offcial confirmation for the claimed benefits.
+4. Recomended is GX(Pro)!
+
+The Preset has been designed to loop continuously until stopped.
+
+MW frequencies are very high. No frequency generator can reach these frequencies directly. This preset targets the sub harmonics of these frequencies.
+
+Please note that you will have no indication lights on your remote. The speeds of these frequencies are too high for the LEDs to keep up!
+
+Spooky Remote provides a convenient way to treat conditions from any distance. Sandwich your DNA in some paper tape or sticker, and place inside Spooky Remote. 
+
+Connect your Spooky Remote to the 'BN' port of Spooky Boost."
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=4"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=MM_ModSquare"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=True"
+"Out2_Run_Every_Second_Frequency=False"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=False"
+"Boost_Graph_BN=True"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=0"
+"Remove_Duplicate_Frequencies_Tolerance=0"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=1"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=ATP (MW)"
+"Loaded_Programs=Niacin (MW)"
+"Loaded_Programs=Nicotinamide riboside (MW)"
+"Loaded_Programs=NAD+ (Nicotinamide Adenine Dinucleotide) (MW)"
+"Loaded_Programs=Apigenin (MW)"
+"Loaded_Programs=Pyrroloquinoline Quinone (MW)"
+"Loaded_Programs=Lipoic acid (MW)"
+"Loaded_Programs=Sodium (R)-Alpha-Lipoate_[C8H15NaO2S2] (CUST)"
+"Loaded_Programs=Sodium (R)-Alpha-Lipoate_[C8H13NaO2S2] (CUST)"
+"Loaded_Programs=S-Acetyl-L-Glutathione (CUST)"
+"Loaded_Programs=Glutathione (MW)"
+"Loaded_Programs=Carnosine (MW)"
+"Loaded_Programs=Carnitine tartrate_[C18H36N2O12] (CUST)"
+"Loaded_Programs=Ubiquinol (MW)"
+"Loaded_Programs=Betaine (MW)"
+"Loaded_Programs=Palmitoyl-Linoleoyl Phosphatidylcholine (MW)"
+"Loaded_Programs=Citicoline (MW)"
+"Loaded_Programs=Phosphatidylcholine (1,2-Diacyl-sn-glycero-3-phosphocholin)_[C42H80NO8P] (CUST)"
+"Loaded_Programs=Benfotiamine (MW)"
+"Loaded_Programs=5-methyltetrahydrofolic acid (MW)"
+"Loaded_Programs=Pyridoxal phosphate (MW)"
+"Loaded_Programs=S-adenosylmethionine (SAMe)_[C15H22N6O5S] (CUST)"
+"Loaded_Programs=Flavin adenine dinucleotide (MW)"
+"Loaded_Programs=Flavin mononucleotide (MW)"
+"Loaded_Programs=Berberine (MW)"
+"Loaded_Programs=Fisetin (MW)"
+"Loaded_Programs=Resveratrol (MW)"
+"Loaded_Programs=beta-Nicotinamide mononucleotide_[C11H15N2O8P] (CUST)"
+"Loaded_Programs=L-Ergothionein(Sympectothion,Thioneine)_[C9H15N3O2S] (CUST)"
+"Loaded_Programs=Quercetin (MW)"
+"Loaded_Programs=Epigallocatechin gallate (MW)"
+"Loaded_Programs=Myricetin (MW)"
+"Loaded_Programs=Dihydromyricetin (MW)"
+"Loaded_Programs=Curcumin (MW)"
+"Loaded_Programs=Glucosamine (MW)"
+"Loaded_Programs=Ginseng Extract (Panax Ginseng)_[C15H24N2O] (CUST)"
+"Loaded_Programs=Genistein (MW)"
+"Loaded_Programs=Cordycepin (MW)"
+"Loaded_Programs=Spermidine (MW)"
+"Loaded_Programs=Ellagitannin_[C44H32O27] (CUST)"
+"Loaded_Frequencies=~4322M966.208314773=900 A20a20 W10,"
+"Loaded_Frequencies=~4380M087.642969676=240 A10a10 W11 ,"
+"Loaded_Frequencies=~9099M511.7710585=180 A20a20 W10,"
+"Loaded_Frequencies=M664.11694759=900 A20a20 W10,"
+"Loaded_Frequencies=~7219M437.23585712=180 A20a20 W10,"
+"Loaded_Frequencies=~1907M550.922007002=180 A20a20 W10,"
+"Loaded_Frequencies=~4493M560.202986745=180 A20a20 W10,"
+"Loaded_Frequencies=[C8H15NaO2S2]=180 A20a20 W10,"
+"Loaded_Frequencies=[C8H13NaO2S2]=180 A20a20 W10,"
+"Loaded_Frequencies=M349.09437113=180 A20a20 W11,"
+"Loaded_Frequencies=~5954M299.654821712=180 A20a20 W11,"
+"Loaded_Frequencies=~9848M288.567460602=180 A10a10 W11,"
+"Loaded_Frequencies=[C18H36N2O12]=240 A20a20 W11,"
+"Loaded_Frequencies=~4872M244.998952213=180 A20a20 W10,"
+"Loaded_Frequencies=~1453M604.016744967=180 A10a10 W10,"
+"Loaded_Frequencies=~7280M494.778843716=180 A20a20 W10,"
+"Loaded_Frequencies=~6460M322.100331304=180 A20a20 W10,"
+"Loaded_Frequencies=[C42H80NO8P]=180 A20a20 W10,"
+"Loaded_Frequencies=~0177M141.866865113=180 A20a20 W10,"
+"Loaded_Frequencies=~8610M130.713796268=180 A20a20 W10,"
+"Loaded_Frequencies=~4734M791.913208270=180 A20a20 W10,"
+"Loaded_Frequencies=[C15H22N6O5S]=180 A20a20 W10,"
+"Loaded_Frequencies=~4283M457.611491975=180 A20a20 W10,"
+"Loaded_Frequencies=~5183M315.393166908=180 A20a20 W10,"
+"Loaded_Frequencies=~5340M444.225184775=180 A20a20 W10,"
+"Loaded_Frequencies=~6661M407.644386198=180 A20a20 W10,"
+"Loaded_Frequencies=~4236M372.74991048=180 A20a20 W10,"
+"Loaded_Frequencies=[C11H15N2O8P]=240 A10a10 W11,"
+"Loaded_Frequencies=[C9H15N3O2S]=180 A20a20 W11,"
+"Loaded_Frequencies=~4969M096.646743810=180 A20a20 W10,"
+"Loaded_Frequencies=~5748M836.614853471=240 A10a10 W11,"
+"Loaded_Frequencies=~4767M532.624475333=180 A20a20 W10,"
+"Loaded_Frequencies=~6105M489.67708399=180 A20a20 W10,"
+"Loaded_Frequencies=~1027M462.687194679=180 A20a20 W10,"
+"Loaded_Frequencies=~6242M024.997774857=180 A20a20 W10,"
+"Loaded_Frequencies=[C15H24N2O]=180 A20a20 W10,"
+"Loaded_Frequencies=~0237M166.69065449=180 A20a20 W10,"
+"Loaded_Frequencies=~7831M413.693694908=180 A20a20 W10,"
+"Loaded_Frequencies=~7771M983.333993805=240 A20a20 W11,"
+"Loaded_Frequencies=[C44H32O27]=360 A10a10 W11,"
+"[/Preset]"

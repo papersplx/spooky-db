@@ -1,0 +1,314 @@
+"[Preset]"
+"PresetName=CBD collection V5  DC625 (MW) (P) - JD"
+"Force_MW_to_Hz_Factor="
+"Force_DNA_to_Hz_Factor="
+"Force_RNA_to_Hz_Factor="
+"Force_mRNA_to_Hz_Factor="
+"Force_MW_Inhibit_Factor="
+"Padlock=1"
+"BFB_Start_Frequency=100000"
+"BFB_Finish_Frequency=5000000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=1"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=1"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=False"
+"BFB_Initial_Step_Size_%=.005"
+"BFB_Initial_Step_Size_%_Selected=True"
+"BFB_Max_Hits_To_Find=60"
+"BFB_Start_Delay=200"
+"Delay_for_GX_Inputs=.07"
+"BFB_Samples_Per_Step=1"
+"BFB_Loops=14"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.25"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=True"
+"BFB_Calculate_Using_Peak=False"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=0"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=100"
+"BFB_After_Scan_Run_On_Gen=2"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=2"
+"Repeat_Chain=1"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=10"
+"Out1_Offset=0"
+"Out2_Hz_Factor=0"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=1"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=10"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Author Johannes_D Vers. 5.0  from 14.12.2025
+
+This Preset is made for Sp2 Plasma!
+
+UPDATE: What is new in V5? 
+
+1. All frequencies checked by measurement with spectrum analyser (SA)
+2. Maximizing the power of the Fields, radiated from the plasma tube by adapting
+various parameters in the Settings-Tab.
+
+Therefore this version is actual the most powerful emulation for the implemented Cannabinoide.
+
+--------------------------------------------------------------------------------
+
+
+This preset is based an special implementation of Molecular Weight (MW) emulation on the cannabinoide CBD, CBGV, CBC, CBG, CBN, CBGA, CBDA, and THCV which one can find in a full spectrum CBD oil. Actually no synergists in form of terpene includes. This may updated in a next version as far as I will get enough positive feedbacks from users.
+
+Preset is tested very successfull by several users from acute pain to inflammation to mental -and sleeping issue.Even for respiratory issues (cold virus) the preset works well, after several application.
+
+Feedbacks are welcome! Contact the author Johannes_D on Sp2 - Deutsch Telegram group.
+
+Cannabinoids have impact to regulate
+
+    Appetite
+    Blood pressure
+    Body temperature
+    Energy
+    Heart rate
+    Immune response and autophagy
+    Inflammation
+    Memory
+    Mood 
+    Muscle control/- relaxation
+    Pain response 
+    Sleep 
+    Thirst
+    blood sugar
+
+Hence there is hugh potential of cannabinoids to push the body from disregulation in a regulation mode and thus it promotes healing for a wide spectrum of healthy issues. Beside well known CBD there are further Cannabinoide where reseach results are very new and promising but also actually not always fully understood. 
+
+
+This preset are opimized and tested successful. Furthermore it is practically tested by different users.
+
+If you want to apply the preset, then be aware:
+1. Using the preset ONLY on your OWN responsibility!
+2. No promise for any healing!
+3. Preset is only experimental without any offcial confirmation for the claimed benefits.
+4. Start slowly with restricted running time 1-2h and inrease step by step as far you have no negative reaction until a half day. Then you can run it on the day or in the night. Give the body periodicly rest-time, i.e. time to recover and start to regulate without the preset.
+5. Be aware that cannabinoide can crossreact with certain group of medicaments, means that cannabinoide can amplify or lower the effects of some medicaments. (look in references for that or research by yourself!)
+
+References:
+Cannabidiolic Acid, a Still Overlooked Bioactive Compound: An Introductory Review
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7321064/
+Cannabidiol regulates apoptosis and autophagy in inflammation and cancer: A review
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9899821/
+The Link between Cannabis Use, Immune System, and Viral Infections
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8229290/
+Tetrahydrocannabivarin (THCV): a commentary on potential therapeutic benefit for the management of obesity and diabetes
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7819335/
+Molecular and Cellular Mechanisms of Action of Cannabidiol
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10458707/
+
+Basics
+https://cannigma.com/plant/cannabinoids-and-their-effects/
+https://vivimu.com/cbg-vs-cbga/?wcprbl_location=AZ
+https://sensiseeds.com/de/blog/grundlagenwissen-zu-cannabinoiden-was-ist-tetrahydrocannabivarin-thcv/
+https://www.institut-kirchhoff.de/fileadmin/user_upload/pdf/publikationen/Cannabinoide_in_neuartigen_Lebensmitteln_Futtermitteln.pdf
+https://cannactiva.com/de/cbn-oder-cannabinol-was-ist-es-eigenschaften-und-wirkungen-des-schlaf-cannabinoids/
+https://cannactiva.com/de/cannabinoid-arten-von-cannabis/
+https://pure-extract-cbd.com/de/blog/cbga-bienfaits/
+On cannigma.com  you can switch to english
+https://cannigma.com/de/pflanze/cannabinoide-und-ihre-wirkung/
+https://cannactiva.com/de/thcv-was-ist-das/
+https://cannactiva.com/de/was-ist-cbdv-und-welche-wirkung-hat-es/
+https://cannigma.com/de/cbd-de/was-ist-cbd/
+https://cannactiva.com/de/cbc-was-ist/
+https://vaping360.com/de/learn/cbc/
+https://vaping360.com/de/learn/cbn/
+
+Todo: including synergists 
+https://cannigma.com/treatment/what-is-the-entourage-effect/
+
+The Preset has been designed to loop stopps after two loops"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=3000000"
+"Out1_Min_Freq=100000"
+"Out2_Max_Freq=3000000"
+"Out2_Min_Freq=0"
+"Hz_Gate=3.6"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=173.6"
+"Gating_Out1_ms_Off=104.2"
+"Gating_Out2_ms_On=138.9"
+"Gating_Out2_ms_Off=138.9"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=1"
+"User_Defined_2_WCM=1"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=2"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=None"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Octave"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquare"
+"User_Defined_2_Waveform=Square_100_Percent_Offset"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=True"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=False"
+"Out2_Run_Every_Second_Frequency=False"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=True"
+"SpikeWave=False"
+"InverseWave=False"
+"Positive_Waveform_Only=True"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=True"
+"Boost_Graph_BN=False"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=1"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=0"
+"Remove_Duplicate_Frequencies_Tolerance=.025"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=0"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=1"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=1"
+"Loaded_Programs=CBD CBGV CBC CBG CBN CBDA CBGA THCV Plsmsa direct (CUST)"
+"Loaded_Frequencies=1918337.3=180, 1759512.11=180, 1918337.3=180, 1747206.59=180, 1918337.3=180, 1930642.86=180, 1893726.3=180, 2186894.7=180, 2199200.2=180, 1747206.59=180,"
+"[/Preset]"

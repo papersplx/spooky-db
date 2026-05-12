@@ -49,6 +49,12 @@ BEGIN
     ) THEN
         ALTER TABLE programs ADD COLUMN tag TEXT;
     END IF;
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'created_at'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();
+    END IF;
 END $$;
 """
 
@@ -63,6 +69,31 @@ CREATE_INDEXES_SQL = [
     "CREATE INDEX IF NOT EXISTS idx_programs_gin ON programs USING GIN (frequencies);",
     "CREATE INDEX IF NOT EXISTS idx_programs_tsvector ON programs USING GIN (to_tsvector('english', name || ' ' || COALESCE(description, '')));",
 ]
+
+INSERT_SQL = """
+    INSERT INTO programs (
+        id, name, description, code, frequencies,
+        preset_file, collection, mode, category,
+        default_dwell, entry_type, loaded_programs,
+        source, tag
+    )
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    ON CONFLICT (id) DO UPDATE SET
+        name = EXCLUDED.name,
+        description = EXCLUDED.description,
+        code = EXCLUDED.code,
+        frequencies = EXCLUDED.frequencies,
+        preset_file = EXCLUDED.preset_file,
+        collection = EXCLUDED.collection,
+        mode = EXCLUDED.mode,
+        category = EXCLUDED.category,
+        default_dwell = EXCLUDED.default_dwell,
+        entry_type = EXCLUDED.entry_type,
+        loaded_programs = EXCLUDED.loaded_programs,
+        source = EXCLUDED.source,
+        tag = EXCLUDED.tag,
+        created_at = NOW()
+"""
 
 
 def get_connection():
@@ -93,6 +124,31 @@ def clear_existing_data(conn):
     print("  Cleared.")
 
 
+INSERT_SQL = """
+    INSERT INTO programs (
+        id, name, description, code, frequencies,
+        preset_file, collection, mode, category,
+        default_dwell, entry_type, loaded_programs,
+        source, tag
+    )
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    ON CONFLICT (id) DO UPDATE SET
+        name = EXCLUDED.name,
+        description = EXCLUDED.description,
+        code = EXCLUDED.code,
+        frequencies = EXCLUDED.frequencies,
+        preset_file = EXCLUDED.preset_file,
+        collection = EXCLUDED.collection,
+        mode = EXCLUDED.mode,
+        category = EXCLUDED.category,
+        default_dwell = EXCLUDED.default_dwell,
+        entry_type = EXCLUDED.entry_type,
+        loaded_programs = EXCLUDED.loaded_programs,
+        source = EXCLUDED.source,
+        tag = EXCLUDED.tag,
+        created_at = NOW()
+"""
+
 def import_data(conn, presets_file):
     """Import programs from JSON file."""
     if not os.path.exists(presets_file):
@@ -109,65 +165,46 @@ def import_data(conn, presets_file):
 
     inserted = 0
     errors = 0
+    BATCH_SIZE = 2000
 
     with conn.cursor() as cur:
+        batch = []
         for i, prog in enumerate(programs):
             try:
-                cur.execute(
-                    """
-                    INSERT INTO programs (
-                        id, name, description, code, frequencies,
-                        preset_file, collection, mode, category,
-                        default_dwell, entry_type, loaded_programs,
-                        source, tag
-                    )
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    ON CONFLICT (id) DO UPDATE SET
-                        name = EXCLUDED.name,
-                        description = EXCLUDED.description,
-                        code = EXCLUDED.code,
-                        frequencies = EXCLUDED.frequencies,
-                        preset_file = EXCLUDED.preset_file,
-                        collection = EXCLUDED.collection,
-                        mode = EXCLUDED.mode,
-                        category = EXCLUDED.category,
-                        default_dwell = EXCLUDED.default_dwell,
-                        entry_type = EXCLUDED.entry_type,
-                        loaded_programs = EXCLUDED.loaded_programs,
-                        source = EXCLUDED.source,
-                        tag = EXCLUDED.tag,
-                        created_at = NOW()
-                    """,
-                     (
-                         prog["id"],
-                         prog.get("name", ""),
-                         prog.get("description"),
-                         prog.get("code", ""),
-                         json.dumps(prog.get("frequencies", [])),
-                         prog.get("preset_file"),
-                         prog.get("collection"),
-                         prog.get("mode", "Other"),
-                         prog.get("category"),
-                         prog.get("default_dwell"),
-                         prog.get("entry_type", "program"),
-                         prog.get("loaded_programs"),
-                         # Support both _source (old) and source (new) field names
-                         prog.get("_source") or prog.get("source", "wine"),
-                         # Support both _tag (old) and tag (new)
-                         prog.get("_tag") or prog.get("tag"),
-                     ),
+                row = (
+                    prog["id"],
+                    prog.get("name", ""),
+                    prog.get("description"),
+                    prog.get("code", ""),
+                    json.dumps(prog.get("frequencies", [])),
+                    prog.get("preset_file"),
+                    prog.get("collection"),
+                    prog.get("mode", "Other"),
+                    prog.get("category"),
+                    prog.get("default_dwell"),
+                    prog.get("entry_type", "program"),
+                    prog.get("loaded_programs"),
+                    prog.get("_source") or prog.get("source", "wine"),
+                    prog.get("_tag") or prog.get("tag"),
                 )
-                inserted += 1
+                batch.append(row)
+                if len(batch) >= BATCH_SIZE:
+                    cur.executemany(INSERT_SQL, batch)
+                    inserted += len(batch)
+                    batch.clear()
+                    conn.commit()
+                    if (i + 1) % 10000 == 0:
+                        print(f"  Progress: {i + 1}/{total} ({inserted} inserted, {errors} errors)")
             except Exception as e:
                 errors += 1
                 if errors <= 5:
                     print(f"  Error on program {i + 1}/{total} (id={prog.get('id', '?')}): {e}", file=sys.stderr)
 
-            if (i + 1) % 5000 == 0:
-                conn.commit()
-                print(f"  Progress: {i + 1}/{total} ({inserted} inserted, {errors} errors)")
+        if batch:
+            cur.executemany(INSERT_SQL, batch)
+            inserted += len(batch)
+            conn.commit()
 
-    conn.commit()
     print(f"\nImport complete: {inserted} inserted, {errors} errors out of {total} total.")
 
 

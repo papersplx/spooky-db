@@ -46,3 +46,6 @@ __pycache__/
 telegram_scraper_session.*
 telegram_config.env
 scripts/telegram_scraper_session.*
+
+# Large Telegram archive containers (exceed GitHub limits)
+*.zip.txt
