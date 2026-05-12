@@ -374,10 +374,10 @@ function App() {
                  let label;
                  switch (source) {
                    case 'Spooky2_PROVEN_FILES':
-                     label = 'proven (telegram)';
+                     label = 'Proven (telegram)';
                      break;
                    case 'Spooky2_Unproven':
-                     label = 'unproven (telegram)';
+                     label = 'Unproven (telegram)';
                      break;
                    default:
                      // For .exe files: strip extension and date suffix, replace underscores with spaces
