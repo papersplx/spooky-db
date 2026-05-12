@@ -357,7 +357,7 @@ function App() {
         </p>
         {telegramUpdates && (
           <div className="telegram-updates">
-            <strong>updates:</strong>
+            <strong>Last updated:</strong>
             {(() => {
               const entries = Object.entries(telegramUpdates).filter(([, ts]) => ts);
               if (entries.length === 0) {
