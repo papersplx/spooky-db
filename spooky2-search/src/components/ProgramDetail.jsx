@@ -62,6 +62,12 @@ function ProgramDetail({ program, onClose, onSearchProgram }) {
           )}
           {program.category && <span className="tag category">{program.category}</span>}
           <span className="tag type">{program.entry_type}</span>
+          {program._source && program._source !== 'wine' && (
+            <span className={`tag source-tag source-${program._source?.toLowerCase()}`}>{program._source}</span>
+          )}
+          {program._tag && (
+            <span className={`tag tag-${program._tag?.toLowerCase()}`}>{program._tag}</span>
+          )}
           {primaryWaveform !== null && (
             <span className="tag waveform-tag">
               {WAVEFORM_NAMES[primaryWaveform] || `W${primaryWaveform}`}

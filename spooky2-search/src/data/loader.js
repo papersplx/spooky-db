@@ -28,11 +28,14 @@ export async function loadAllPresets(onProgress) {
  * Search programs via API.
  * Returns { results: [...], total: N }
  */
-export async function searchPrograms({ q = '', mode = [], collection = [], limit = 100, offset = 0 } = {}, signal) {
+export async function searchPrograms({ q = '', mode = [], collection = [], category = [], source = [], tag = [], limit = 100, offset = 0 } = {}, signal) {
   const params = new URLSearchParams();
   if (q) params.append('q', q);
   if (mode.length > 0) mode.forEach(m => params.append('mode', m));
   if (collection.length > 0) collection.forEach(c => params.append('collection', c));
+  if (category.length > 0) category.forEach(c => params.append('category', c));
+  if (source.length > 0) source.forEach(s => params.append('source', s));
+  if (tag.length > 0) tag.forEach(t => params.append('tag', t));
   params.append('limit', limit);
   params.append('offset', offset);
 

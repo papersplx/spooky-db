@@ -115,13 +115,23 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
                   <span className="entry-badge preset">chain</span>
                 )}
               </div>
-              <div className="result-meta">
+<div className="result-meta">
                 <span className="result-collection">{program.collection}</span>
                 {program.mode && !program.collection.toLowerCase().includes(program.mode.toLowerCase()) && (
                   <span className="result-mode">{program.mode}</span>
                 )}
                 {program.entry_type === 'preset' && (
                   <span className="result-type">preset</span>
+                )}
+                {program._source && program._source !== 'wine' && (
+                  <span className={`result-source source-${program._source?.toLowerCase()}`}>
+                    {program._source}
+                  </span>
+                )}
+                {program._tag && (
+                  <span className={`result-tag tag-${program._tag?.toLowerCase()}`}>
+                    {program._tag}
+                  </span>
                 )}
               </div>
               <div className="result-description">

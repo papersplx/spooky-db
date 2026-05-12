@@ -28,8 +28,28 @@ CREATE TABLE IF NOT EXISTS programs (
     default_dwell INTEGER,
     entry_type TEXT DEFAULT 'program',
     loaded_programs TEXT,
+    source TEXT DEFAULT 'wine',
+    tag TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+"""
+
+ALTER_TABLE_SQL = """
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'source'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN source TEXT DEFAULT 'wine';
+    END IF;
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'tag'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN tag TEXT;
+    END IF;
+END $$;
 """
 
 CREATE_INDEXES_SQL = [
@@ -38,6 +58,8 @@ CREATE_INDEXES_SQL = [
     "CREATE INDEX IF NOT EXISTS idx_programs_collection ON programs (collection);",
     "CREATE INDEX IF NOT EXISTS idx_programs_category ON programs (category);",
     "CREATE INDEX IF NOT EXISTS idx_programs_entry_type ON programs (entry_type);",
+    "CREATE INDEX IF NOT EXISTS idx_programs_source ON programs (source);",
+    "CREATE INDEX IF NOT EXISTS idx_programs_tag ON programs (tag);",
     "CREATE INDEX IF NOT EXISTS idx_programs_gin ON programs USING GIN (frequencies);",
     "CREATE INDEX IF NOT EXISTS idx_programs_tsvector ON programs USING GIN (to_tsvector('english', name || ' ' || COALESCE(description, '')));",
 ]
@@ -55,6 +77,7 @@ def setup_database(conn):
     print("Setting up database schema...")
     with conn.cursor() as cur:
         cur.execute(CREATE_TABLE_SQL)
+        cur.execute(ALTER_TABLE_SQL)
         for idx_sql in CREATE_INDEXES_SQL:
             cur.execute(idx_sql)
     conn.commit()
@@ -95,9 +118,10 @@ def import_data(conn, presets_file):
                     INSERT INTO programs (
                         id, name, description, code, frequencies,
                         preset_file, collection, mode, category,
-                        default_dwell, entry_type, loaded_programs
+                        default_dwell, entry_type, loaded_programs,
+                        source, tag
                     )
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                     ON CONFLICT (id) DO UPDATE SET
                         name = EXCLUDED.name,
                         description = EXCLUDED.description,
@@ -110,6 +134,8 @@ def import_data(conn, presets_file):
                         default_dwell = EXCLUDED.default_dwell,
                         entry_type = EXCLUDED.entry_type,
                         loaded_programs = EXCLUDED.loaded_programs,
+                        source = EXCLUDED.source,
+                        tag = EXCLUDED.tag,
                         created_at = NOW()
                     """,
                     (
@@ -125,6 +151,8 @@ def import_data(conn, presets_file):
                         prog.get("default_dwell"),
                         prog.get("entry_type", "program"),
                         prog.get("loaded_programs"),
+                        prog.get("source", "wine"),
+                        prog.get("tag"),
                     ),
                 )
                 inserted += 1

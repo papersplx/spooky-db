@@ -275,7 +275,7 @@ def merge_presets(
     return merged
 
 
-def save_telegram_timestamps(telegram_raw_dir: Path, data_dir: Path, logger):
+def save_telegram_timestamps(telegram_raw_dir: Path, data_dir: Path, logger=None):
     """Save group update timestamps for the API server."""
     timestamps = {}
 
@@ -289,13 +289,15 @@ def save_telegram_timestamps(telegram_raw_dir: Path, data_dir: Path, logger):
         ts = get_timestamp_for_group(group_dir)
         if ts:
             timestamps[group_dir.name] = ts
-            logger.debug(f"  {group_dir.name}: last updated {ts}")
+            if logger:
+                logger.debug(f"  {group_dir.name}: last updated {ts}")
 
     timestamp_path = data_dir / "telegram_group_timestamps.json"
     with open(timestamp_path, "w", encoding="utf-8") as f:
         json.dump(timestamps, f, indent=2)
 
-    logger.info(f"Saved timestamps for {len(timestamps)} groups: {timestamp_path}")
+    if logger:
+        logger.info(f"Saved timestamps for {len(timestamps)} groups: {timestamp_path}")
     return timestamps
 
 
@@ -412,7 +414,7 @@ def reextract_all(output_dir: Path, clean: bool = False):
         json.dump(stats, f, indent=2)
 
     # Save Telegram group timestamps
-    save_telegram_timestamps(TELEGRAM_RAW_DIR, output_dir, logger=None)
+    save_telegram_timestamps(TELEGRAM_RAW_DIR, output_dir)
 
     print(f"\nRe-extraction complete!")
     print(f"  Wine files processed:    {stats['wine_files']}")

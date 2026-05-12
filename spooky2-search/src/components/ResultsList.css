@@ -135,12 +135,62 @@
   color: var(--text-secondary);
 }
 
+.result-collection {
+  background: var(--bg-secondary);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
 .result-mode {
   background: var(--bg-secondary);
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   margin-left: 0.5rem;
   font-size: 0.8rem;
+}
+
+.result-type {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  font-weight: 600;
+  background: rgba(23, 162, 184, 0.15);
+  color: #17a2b8;
+  text-transform: uppercase;
+}
+
+.result-source {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.result-source.source-telegram {
+  background: rgba(111, 66, 193, 0.15);
+  color: #6f42c1;
+}
+
+.result-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.3rem;
+  font-weight: 500;
+}
+
+.result-tag.tag-proven {
+  background: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+}
+
+.result-tag.tag-unproven {
+  background: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
 }
 
 .result-description {

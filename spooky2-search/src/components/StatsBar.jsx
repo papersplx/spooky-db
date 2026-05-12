@@ -7,11 +7,19 @@ function StatsBar({ total, query, currentPage, pageSize, programs }) {
   const breakdowns = programs.reduce((acc, p) => {
     acc.entry_type[p.entry_type] = (acc.entry_type[p.entry_type] || 0) + 1;
     acc.mode[p.mode] = (acc.mode[p.mode] || 0) + 1;
+    if (p._source) {
+      acc.source[p._source] = (acc.source[p._source] || 0) + 1;
+    }
+    if (p._tag) {
+      acc.tag[p._tag] = (acc.tag[p._tag] || 0) + 1;
+    }
     return acc;
-  }, { entry_type: {}, mode: {} });
+  }, { entry_type: {}, mode: {}, source: {}, tag: {} });
 
   const entryTypes = Object.entries(breakdowns.entry_type);
   const modes = Object.entries(breakdowns.mode);
+  const sources = Object.entries(breakdowns.source);
+  const tags = Object.entries(breakdowns.tag);
 
   return (
     <div className="stats-bar">
@@ -32,6 +40,26 @@ function StatsBar({ total, query, currentPage, pageSize, programs }) {
             {mode}: {count}
           </span>
         ))}
+        {sources.length > 0 && (
+          <>
+            <span className="stats-breakdown-label">Source:</span>
+            {sources.map(([source, count]) => (
+              <span key={source} className="stats-badge">
+                {source}: {count}
+              </span>
+            ))}
+          </>
+        )}
+        {tags.length > 0 && (
+          <>
+            <span className="stats-breakdown-label">Tags:</span>
+            {tags.map(([tag, count]) => (
+              <span key={tag} className="stats-badge">
+                {tag}: {count}
+              </span>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

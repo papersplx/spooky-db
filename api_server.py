@@ -18,6 +18,41 @@ DATA_DIR = Path(os.environ.get("DATA_DIR", "data/presets"))
 # Neon connection — deferred until first database call
 CONN_STRING = os.environ.get("NEON_CONN_STRING")
 
+MIGRATION_SQL = """
+DO $$
+BEGIN
+    -- Add source column if missing
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'source'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN source TEXT DEFAULT 'wine';
+    END IF;
+    -- Add tag column if missing
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'programs' AND column_name = 'tag'
+    ) THEN
+        ALTER TABLE programs ADD COLUMN tag TEXT;
+    END IF;
+    -- Backfill source for existing rows
+    IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'programs' AND column_name = 'source') THEN
+        UPDATE programs SET source = 'wine' WHERE source IS NULL;
+    END IF;
+END $$;
+"""
+
+if CONN_STRING:
+    try:
+        _conn = psycopg.connect(CONN_STRING)
+        with _conn.cursor() as _cur:
+            _cur.execute(MIGRATION_SQL)
+        _conn.commit()
+        _conn.close()
+    except Exception as _e:
+        import warnings
+        warnings.warn(f"Migration failed: {_e}")
+
 if not CONN_STRING:
     import warnings
     warnings.warn(
@@ -57,6 +92,8 @@ def search(
     mode: list[str] = Query(default=[]),
     collection: list[str] = Query(default=[]),
     category: list[str] = Query(default=[]),
+    source: list[str] = Query(default=[]),
+    tag: list[str] = Query(default=[]),
     limit: int = Query(default=100),
     offset: int = Query(default=0)
 ):
@@ -77,6 +114,18 @@ def search(
             where.append("collection = ANY(%s)")
             params.append(collection)
 
+        if category:
+            where.append("category = ANY(%s)")
+            params.append(category)
+
+        if source:
+            where.append("source = ANY(%s)")
+            params.append(source)
+
+        if tag:
+            where.append("tag = ANY(%s)")
+            params.append(tag)
+
         where_clause = f"WHERE {' AND '.join(where)}" if where else ""
 
         with conn.cursor() as cur:
@@ -88,7 +137,7 @@ def search(
             total = cur.fetchone()['total']
 
             cur.execute(f"""
-                SELECT id, name, description, collection, mode, entry_type
+                SELECT id, name, description, collection, mode, entry_type, source, tag
                 FROM programs
                 {where_clause}
                 ORDER BY name
@@ -123,7 +172,22 @@ def get_collections():
                 GROUP BY collection, mode
                 ORDER BY collection
             """)
-            return cur.fetchall()
+            collections = cur.fetchall()
+
+            sources = []
+            try:
+                cur.execute("""
+                    SELECT source, tag, COUNT(*) as count
+                    FROM programs
+                    WHERE source IS NOT NULL AND source != 'wine'
+                    GROUP BY source, tag
+                    ORDER BY source, tag
+                """)
+                sources = cur.fetchall()
+            except Exception:
+                sources = []
+
+            return {"collections": collections, "sources": sources}
     finally:
         conn.close()
 
@@ -182,3 +246,21 @@ def telegram_updates():
                     pass
 
     return result
+
+
+@app.get("/telegram-tags")
+def telegram_tags():
+    """Return aggregated counts by source and tag."""
+    conn = psycopg.connect(CONN_STRING, row_factory=dict_row)
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT source, tag, COUNT(*) as count
+                FROM programs
+                WHERE source IS NOT NULL
+                GROUP BY source, tag
+                ORDER BY source, tag
+            """)
+            return cur.fetchall()
+    finally:
+        conn.close()

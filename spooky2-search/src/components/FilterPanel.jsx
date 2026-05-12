@@ -184,6 +184,9 @@ export default function FilterPanel({
    modes,
    selectedModes,
    onToggleMode,
+   sources,
+   selectedSources,
+   onToggleSource,
    onClearFilters,
  }) {
   const [expandedRoots, setExpandedRoots] = useState(new Set());
@@ -273,6 +276,26 @@ export default function FilterPanel({
           })}
         </div>
       </div>
+
+      {sources && sources.length > 0 && (
+        <div className="filter-section">
+          <h4>Source</h4>
+          <div className="filter-options">
+            {sources.map(function(source) {
+              return (
+                <label key={source} className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={selectedSources.includes(source)}
+                    onChange={function() { onToggleSource(source); }}
+                  />
+                  <span>{source}</span>
+                </label>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
