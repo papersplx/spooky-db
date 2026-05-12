@@ -247,11 +247,13 @@ def telegram_updates():
 
     # Database .exe file timestamps
     db_timestamp_path = DATA_DIR / "database_timestamps.json"
+    if not db_timestamp_path.exists():
+        # Fallback to repo's copy if DATA_DIR points to external storage
+        db_timestamp_path = Path(__file__).parent / "data" / "presets" / "database_timestamps.json"
     if db_timestamp_path.exists():
         try:
             with open(db_timestamp_path, "r", encoding="utf-8") as f:
                 db_data = json.load(f)
-            # db_data expected: {"exe1": "iso_date", "exe2": "...", ...}
             result.update(db_data)
         except Exception:
             pass

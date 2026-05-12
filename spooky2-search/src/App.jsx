@@ -355,29 +355,37 @@ function App() {
         <p className="disclaimer">
           Frequencies are for experimental purposes only. Not medical advice.
         </p>
-         {telegramUpdates && (
-           <p className="telegram-updates">
-             <strong>updates:</strong>{' '}
-             {Object.entries(telegramUpdates)
-               .filter(([, ts]) => ts)
-               .map(([source, ts]) => {
-                 const date = new Date(ts);
-                 const formatted = date.toLocaleDateString('en-US', {
-                   year: 'numeric',
-                   month: 'short',
-                   day: 'numeric',
-                 });
-                 // Clean up source label: strip Spooky2_ prefix, lowercase
-                 let label = source;
-                 if (source.startsWith('Spooky2_')) {
-                   label = source.slice(8).toLowerCase();
-                   label = `${label} (telegram)`;
-                 }
-                 return `${label}: ${formatted}`;
-               })
-               .join(' | ')}
-           </p>
-         )}
+        {telegramUpdates && (
+          <div className="telegram-updates">
+            <strong>updates:</strong>
+            {(() => {
+              const entries = Object.entries(telegramUpdates).filter(([, ts]) => ts);
+              if (entries.length === 0) {
+                return <div style={{ marginTop: '2px', fontStyle: 'italic', color: 'var(--text-secondary)' }}>No data available</div>;
+              }
+              return entries.map(([source, ts]) => {
+                const date = new Date(ts);
+                const formatted = date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                });
+                let label = source;
+                if (source.startsWith('Spooky2_')) {
+                  label = source.slice(8).toLowerCase();
+                  if (label === 'proven_files' || label === 'unproven') {
+                    label = `${label} (telegram)`;
+                  }
+                }
+                return (
+                  <div key={source} style={{ marginTop: '2px' }}>
+                    {label}: {formatted}
+                  </div>
+                );
+              });
+            })()}
+          </div>
+        )}
       </footer>
     </div>
   );
