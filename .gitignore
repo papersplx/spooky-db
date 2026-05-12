@@ -20,6 +20,11 @@ data/presets/presets_all.json
 data/presets/by_collection/
 spooky2-search/public/data/
 
+# Telegram raw presets: ignore large binaries, keep small metadata
+data/presets/telegram_raw/*
+!data/presets/telegram_raw/telegram_group_timestamps.json
+!data/presets/telegram_raw/postprocess_manifest.json
+
 # Logs and temp files
 *.log
 *.tmp

@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-05-10T16:31:13.018932+00:00",
+  "groups_processed": [
+    {
+      "name": "Spooky2_PROVEN_FILES",
+      "tag": "Proven",
+      "description": "Proven Presets",
+      "total_files": 140,
+      "organized_by_mode": {
+        "Contact": 30,
+        "Scalar": 1,
+        "Plasma": 15,
+        "Remote": 87,
+        "Coil": 5,
+        "Laser": 2
+      },
+      "unclassified": 0
+    },
+    {
+      "name": "Spooky2_Unproven",
+      "tag": "Unproven",
+      "description": "Unproven Presets",
+      "total_files": 175,
+      "organized_by_mode": {
+        "Contact": 35,
+        "Remote": 132,
+        "Plasma": 5,
+        "Coil": 3
+      },
+      "unclassified": 0
+    }
+  ],
+  "total_files": 315,
+  "total_archives_extracted": 0,
+  "completed_at": "2026-05-10T16:31:13.209283+00:00"
+}
