@@ -355,25 +355,29 @@ function App() {
         <p className="disclaimer">
           Frequencies are for experimental purposes only. Not medical advice.
         </p>
-        {telegramUpdates && (
-          <p className="telegram-updates">
-            <strong>Telegram group updates:</strong>{' '}
-            {Object.entries(telegramUpdates)
-              .filter(([, ts]) => ts)
-              .map(([group, ts]) => {
-                const date = new Date(ts);
-                const formatted = date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-                return `${group}: ${formatted}`;
-              })
-              .join(' | ') || 'No data available'}
-          </p>
-        )}
+         {telegramUpdates && (
+           <p className="telegram-updates">
+             <strong>updates:</strong>{' '}
+             {Object.entries(telegramUpdates)
+               .filter(([, ts]) => ts)
+               .map(([source, ts]) => {
+                 const date = new Date(ts);
+                 const formatted = date.toLocaleDateString('en-US', {
+                   year: 'numeric',
+                   month: 'short',
+                   day: 'numeric',
+                 });
+                 // Clean up source label: strip Spooky2_ prefix, lowercase
+                 let label = source;
+                 if (source.startsWith('Spooky2_')) {
+                   label = source.slice(8).toLowerCase();
+                   label = `${label} (telegram)`;
+                 }
+                 return `${label}: ${formatted}`;
+               })
+               .join(' | ')}
+           </p>
+         )}
       </footer>
     </div>
   );

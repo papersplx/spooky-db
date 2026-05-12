@@ -198,11 +198,11 @@ def health():
 
 @app.get("/telegram-updates")
 def telegram_updates():
-    """Return last-updated timestamps for each Telegram group."""
-    timestamp_path = DATA_DIR / "telegram_group_timestamps.json"
-
+    """Return last-updated timestamps for Telegram groups and database .exe files."""
     result = {}
 
+    # Telegram group timestamps
+    timestamp_path = DATA_DIR / "telegram_group_timestamps.json"
     if timestamp_path.exists():
         try:
             with open(timestamp_path, "r", encoding="utf-8") as f:
@@ -244,6 +244,17 @@ def telegram_updates():
                     ).isoformat()
                 except Exception:
                     pass
+
+    # Database .exe file timestamps
+    db_timestamp_path = DATA_DIR / "database_timestamps.json"
+    if db_timestamp_path.exists():
+        try:
+            with open(db_timestamp_path, "r", encoding="utf-8") as f:
+                db_data = json.load(f)
+            # db_data expected: {"exe1": "iso_date", "exe2": "...", ...}
+            result.update(db_data)
+        except Exception:
+            pass
 
     return result
 
