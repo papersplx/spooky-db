@@ -146,6 +146,25 @@ No test suite currently (by design). Validate by:
 
 **Slow search**: Ensure not running on low-end device; 50k items should query <100ms.
 
+## Local Development
+
+For local development, environment variables are loaded from `.envrc` in the project root:
+- **`NEON_CONN_STRING`**: PostgreSQL connection string to the Neon database. Required for API endpoints that query the database (`/search`, `/program`, `/collections`, `/telegram-tags`). Without it, these endpoints return errors; static endpoints (`/telegram-updates`, `/health`) still work.
+
+  Example `.envrc` contents:
+  ```bash
+  export NEON_CONN_STRING="postgres://user:pass@host-name.neon.tech/spooky2?sslmode=require"
+  ```
+
+  The `api_server.py` reads this at startup. If unset, a warning is logged and database queries will fail. The database schema is auto-migrated on startup (adds `source` and `tag` columns if missing).
+
+**Scripts that read `NEON_CONN_STRING`:**
+- `api_server.py` — all database-querying endpoints
+- `import_to_neon.py` — imports `presets_all.json` into Neon. You can run: `NEON_CONN_STRING=postgres://... python3 import_to_neon.py`
+- `scripts/check_update.py` — compares remote database against local presets
+
+> **Note:** The project also supports a `REIMPORT_TOKEN` endpoint for remote re-import, but this is not needed for local development.
+
 ## Deployment Notes
 
 - **Vercel**: 100 MB limit. Our JSON is ~10-20 MB depending on dataset.
