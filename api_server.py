@@ -52,6 +52,28 @@ if CONN_STRING:
             _cur.execute(MIGRATION_SQL)
         _conn.commit()
         _conn.close()
+        # Auto-import data if table is empty (first run)
+        import threading
+        def run_import():
+            try:
+                logger.info("Checking if data import is needed...")
+                conn2 = psycopg.connect(CONN_STRING)
+                with conn2.cursor() as cur2:
+                    cur2.execute("SELECT COUNT(*) FROM programs")
+                    count = cur2.fetchone()[0]
+                conn2.close()
+                if count == 0:
+                    logger.info("No programs found — running import_to_neon.py...")
+                    result = subprocess.run([sys.executable, "import_to_neon.py"], capture_output=True, text=True, cwd=Path(__file__).parent)
+                    if result.returncode == 0:
+                        logger.info("Import completed")
+                    else:
+                        logger.error(f"Import failed: {result.stderr}")
+                else:
+                    logger.info(f"Database already has {count} programs — skipping import")
+            except Exception as e:
+                logger.error(f"Auto-import error: {e}")
+        threading.Thread(target=run_import, daemon=True).start()
     except Exception as _e:
         import warnings
         warnings.warn(f"Migration failed: {_e}")
@@ -279,3 +301,31 @@ def telegram_tags():
             return cur.fetchall()
     finally:
         conn.close()
+
+
+@app.post("/reimport")
+def reimport_data(request: Request):
+    """Re-import presets_all.json to Neon database (admin only)."""
+    token = request.query_params.get("token")
+    if not token or token != os.environ.get("REIMPORT_TOKEN", "reimport-secret"):
+        raise HTTPException(status_code=403, detail="Invalid or missing token")
+    
+    try:
+        script_path = Path(__file__).parent / "import_to_neon.py"
+        result = subprocess.run(
+            [sys.executable, str(script_path)],
+            capture_output=True,
+            text=True,
+            timeout=600,
+        )
+        if result.returncode == 0:
+            return {"status": "ok", "message": "Reimport completed", "output": result.stdout}
+        else:
+            return {
+                "status": "error",
+                "message": "Reimport failed",
+                "stderr": result.stderr,
+                "stdout": result.stdout,
+            }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Reimport error: {e}")
