@@ -123,15 +123,15 @@ function ResultsList({ programs, selected, onSelect, onClearSelection, isSearchP
                  {program.entry_type === 'preset' && (
                    <span className="result-type">preset</span>
                  )}
-                 {program._source === 'telegram' && (
+                 {program.source === 'telegram' && (
                    <span className="result-source source-telegram">Telegram</span>
                  )}
-                 {program._source === 'wine' && (
+                 {program.source === 'wine' && (
                    <span className="result-source source-database">Database</span>
                  )}
-                 {program._tag && (
-                   <span className={`result-tag tag-${program._tag?.toLowerCase()}`}>
-                     {program._tag}
+                 {program.tag && (
+                   <span className={`result-tag tag-${program.tag?.toLowerCase()}`}>
+                     {program.tag}
                    </span>
                  )}
                </div>

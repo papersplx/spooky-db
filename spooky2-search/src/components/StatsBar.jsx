@@ -4,17 +4,17 @@ function StatsBar({ total, query, currentPage, pageSize, programs }) {
   const start = total > 0 ? (currentPage - 1) * pageSize + 1 : 0;
   const end = Math.min(currentPage * pageSize, total);
 
-  const breakdowns = programs.reduce((acc, p) => {
-    acc.entry_type[p.entry_type] = (acc.entry_type[p.entry_type] || 0) + 1;
-    acc.mode[p.mode] = (acc.mode[p.mode] || 0) + 1;
-    if (p._source) {
-      acc.source[p._source] = (acc.source[p._source] || 0) + 1;
-    }
-    if (p._tag) {
-      acc.tag[p._tag] = (acc.tag[p._tag] || 0) + 1;
-    }
-    return acc;
-  }, { entry_type: {}, mode: {}, source: {}, tag: {} });
+   const breakdowns = programs.reduce((acc, p) => {
+     acc.entry_type[p.entry_type] = (acc.entry_type[p.entry_type] || 0) + 1;
+     acc.mode[p.mode] = (acc.mode[p.mode] || 0) + 1;
+     if (p.source) {
+       acc.source[p.source] = (acc.source[p.source] || 0) + 1;
+     }
+     if (p.tag) {
+       acc.tag[p.tag] = (acc.tag[p.tag] || 0) + 1;
+     }
+     return acc;
+   }, { entry_type: {}, mode: {}, source: {}, tag: {} });
 
   const entryTypes = Object.entries(breakdowns.entry_type);
   const modes = Object.entries(breakdowns.mode);

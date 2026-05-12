@@ -279,6 +279,11 @@
   color: #6f42c1;
 }
 
+.tag.source-database {
+  background: rgba(0, 123, 255, 0.15);
+  color: #007bff;
+}
+
 .tag.tag-proven {
   background: rgba(40, 167, 69, 0.15);
   color: #28a745;

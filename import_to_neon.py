@@ -138,22 +138,24 @@ def import_data(conn, presets_file):
                         tag = EXCLUDED.tag,
                         created_at = NOW()
                     """,
-                    (
-                        prog["id"],
-                        prog.get("name", ""),
-                        prog.get("description"),
-                        prog.get("code", ""),
-                        json.dumps(prog.get("frequencies", [])),
-                        prog.get("preset_file"),
-                        prog.get("collection"),
-                        prog.get("mode", "Other"),
-                        prog.get("category"),
-                        prog.get("default_dwell"),
-                        prog.get("entry_type", "program"),
-                        prog.get("loaded_programs"),
-                        prog.get("source", "wine"),
-                        prog.get("tag"),
-                    ),
+                     (
+                         prog["id"],
+                         prog.get("name", ""),
+                         prog.get("description"),
+                         prog.get("code", ""),
+                         json.dumps(prog.get("frequencies", [])),
+                         prog.get("preset_file"),
+                         prog.get("collection"),
+                         prog.get("mode", "Other"),
+                         prog.get("category"),
+                         prog.get("default_dwell"),
+                         prog.get("entry_type", "program"),
+                         prog.get("loaded_programs"),
+                         # Support both _source (old) and source (new) field names
+                         prog.get("_source") or prog.get("source", "wine"),
+                         # Support both _tag (old) and tag (new)
+                         prog.get("_tag") or prog.get("tag"),
+                     ),
                 )
                 inserted += 1
             except Exception as e:

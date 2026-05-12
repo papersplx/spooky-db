@@ -216,10 +216,10 @@ def extract_from_files(
 
             for prog in programs:
                 prog_dict = prog.to_dict()
-                prog_dict["_source"] = "telegram"
+                prog_dict["source"] = "telegram"
                 prog_dict["_source_file"] = str(filepath.name)
                 prog_dict["_group"] = group_slug
-                prog_dict["_tag"] = tag
+                prog_dict["tag"] = tag
                 # Ensure collection reflects the tag hierarchy
                 prog_dict["collection"] = collection
                 new_programs.append(prog_dict)
@@ -358,11 +358,11 @@ def reextract_all(output_dir: Path, clean: bool = False):
                     continue
                 filepath = root_path / txt_file
                 try:
-                    programs = parser2.parse_file(filepath, collection_name)
-                    for p in programs:
-                        d = p.to_dict()
-                        d["_source"] = "wine"
-                        all_programs.append(d)
+                     programs = parser2.parse_file(filepath, collection_name)
+                     for p in programs:
+                         d = p.to_dict()
+                         d["source"] = "wine"
+                         all_programs.append(d)
                     stats["wine_files"] += 1
                 except Exception as e:
                     stats["errors"] += 1
@@ -377,15 +377,15 @@ def reextract_all(output_dir: Path, clean: bool = False):
             try:
                 tag, collection, group_slug = resolve_tag_and_collection(filepath)
 
-                programs = parser.parse_file(filepath, collection)
-                for p in programs:
-                    d = p.to_dict()
-                    d["_source"] = "telegram"
-                    d["_source_file"] = filepath.name
-                    d["_group"] = group_slug
-                    d["_tag"] = tag
-                    d["collection"] = collection
-                    all_programs.append(d)
+                 programs = parser.parse_file(filepath, collection)
+                 for p in programs:
+                     d = p.to_dict()
+                     d["source"] = "telegram"
+                     d["_source_file"] = filepath.name
+                     d["_group"] = group_slug
+                     d["tag"] = tag
+                     d["collection"] = collection
+                     all_programs.append(d)
                 stats["telegram_files"] += 1
             except Exception as e:
                 stats["errors"] += 1
