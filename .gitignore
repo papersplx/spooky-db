@@ -10,6 +10,7 @@ node_modules/
 # Environment files
 *.env.local
 .env.local
+.envrc
 
 # Build artifacts
 dist/

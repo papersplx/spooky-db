@@ -1,0 +1,16 @@
+# Spooky2 Search — Environment Variables
+# Copy this file to .envrc and fill in your values.
+# Then run: direnv allow
+# Or manually: source .envrc
+
+# Neon PostgreSQL connection string (required for API database queries)
+# Get this from your Neon dashboard: https://neon.tech
+export NEON_CONN_STRING="postgres://user:pass@host-name.neon.tech/spooky2?sslmode=require"
+
+# Data directory path (optional, defaults to: data/presets)
+# Used by API to locate telegram_raw/ and database_timestamps.json
+export DATA_DIR="data/presets"
+
+# Secret token for /reimport admin endpoint (optional but recommended in deployment)
+# Set a long random string to prevent unauthorized re-imports
+export REIMPORT_TOKEN="your-secret-token-here"
