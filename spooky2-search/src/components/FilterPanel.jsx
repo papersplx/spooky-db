@@ -200,7 +200,7 @@ export default function FilterPanel({
    onToggleSource,
    onClearFilters,
  }) {
-  const [listRef] = useRef(null);
+  const listRef = useRef(null);
 
   var tree = useMemo(function() {
     var rawTree = computeFolderCounts(buildTree(collections), collectionCounts);
