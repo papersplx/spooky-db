@@ -342,7 +342,7 @@ def reimport_data(request: Request):
 
         script_path = Path(__file__).parent / "import_to_neon.py"
         result = subprocess.run(
-            ["python3", str(script_path)],
+            ["python3", str(script_path), "--clear", "--skip-setup"],
             capture_output=True,
             text=True,
             timeout=600,
