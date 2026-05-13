@@ -70,7 +70,7 @@ function TreeNode({
     setExpanded(!expanded);
   };
 
-  // Recursively count selected leaf descendants for a given node
+  // Recursively count selected descendant leaves for a given node
   function countSelected(node) {
     if (!node.children || node.children.length === 0) {
       return selectedCollections.includes(node.fullPath) ? 1 : 0;
@@ -78,7 +78,7 @@ function TreeNode({
     return node.children.reduce((sum, child) => sum + countSelected(child), 0);
   }
 
-  // Recursively count total leaf descendants
+  // Recursively count total descendant leaves for a given node
   function countLeaves(node) {
     if (!node.children || node.children.length === 0) {
       return 1;
@@ -86,8 +86,12 @@ function TreeNode({
     return node.children.reduce((sum, child) => sum + countLeaves(child), 0);
   }
 
-  const totalSelected = children.reduce((sum, child) => sum + countSelected(child), 0);
-  const totalLeaves = children.reduce((sum, child) => sum + countLeaves(child), 0);
+  // For this node: include its own leaf status if it's a leaf
+  const nodeIsLeaf = !hasChildren;
+  const totalSelectedLeafSelf = nodeIsLeaf && selectedCollections.includes(name) ? 1 : 0;
+  const totalLeaves = nodeIsLeaf ? 1 : children.reduce((sum, child) => sum + countLeaves(child), 0);
+  const totalSelected = nodeIsLeaf ? totalSelectedLeafSelf : children.reduce((sum, child) => sum + countSelected(child), 0);
+
   const allSelected = totalLeaves > 0 && totalSelected === totalLeaves;
   const someSelected = totalSelected > 0 && totalSelected < totalLeaves;
 
