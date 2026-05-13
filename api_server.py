@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+##!/usr/bin/env python3
 """REST API for Spooky2 search using Neon Postgres."""
 import logging
 import subprocess
