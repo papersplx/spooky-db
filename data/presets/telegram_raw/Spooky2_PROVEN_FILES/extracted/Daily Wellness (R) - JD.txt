@@ -1,0 +1,233 @@
+"[Preset]"
+"Base_Preset=\Shell (Empty) Presets\Remote\Healing (R) - JW.txt"
+"User_Defined_2_Waveform=MM_ModSquare"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"  
+"Out2_Follows_Program_Frequency=True"
+"Out2_Follow_Out1_Frequency=False"
+"PresetName=Sleep Induction (R) - DB"
+"Loaded_Frequencies=2.5=360,0.512=360,31.32=360,0.512=360,"
+"Loaded_Frequencies=130=180,400=180,620=180,42500=180,57500=180,92500=180,175000=180,475170=180,527000=180,667000=180,"
+"Loaded_Frequencies=1-3=3600,"
+"Loaded_Frequencies=2.5=360,0.512=360,31.32=360,0.512=360,"
+"Loaded_Frequencies=3716.512=180,"
+"Loaded_Frequencies=657=180,"
+"Loaded_Frequencies=M232.121177766=180 W11 A20 a20,"
+"Loaded_Frequencies=99.5=180 W10 A05 a05,"
+"Loaded_Frequencies=M204.089877638=180 W11 A20 a20,"
+"Loaded_Frequencies=2.5=360 W10 A05 a05,0.512=360,31.32=360,0.512=360,"
+"Loaded_Frequencies=11=180 W10 A05 a05,12=180,13=180,14=180,16=180,17=180,18=180,19=180,20=180,21=180,22=180,23=180,24=180,25=180,26=180,27=180,28=180,29=180,30=180,31=180,32=180,33=180,"
+"Loaded_Frequencies=2.5=360,0.512=360,31.32=360,0.512=360,"
+"Loaded_Frequencies=32=180,33=180,34=180,35=180,36=180,37=180,38=180,39=180,40=180,41=180,42=180,43=180,44=180,45=180,46=180,"
+"Loaded_Frequencies=2.5=360,0.512=360,31.32=360,0.512=360,"
+"Loaded_Frequencies=47=180,48=180,49=180,50=180,51=180,52=180,53=180,54=180,55=180,56=180,57=180,58=180,59=180,60=180,61=180,"
+"Loaded_Frequencies=7.83=600,"
+"Loaded_Programs=Insomnia Secondary/Hypoglycemia (CUST)"
+"Loaded_Programs=Sleep Disorders (KHZ)"
+"Loaded_Programs=Sleep Restorative (XTRA)"
+"Loaded_Programs=Insomnia Secondary/Hypoglycemia (CUST)"
+"Loaded_Programs=Melatonin (CUST)"
+"Loaded_Programs=Electrical Sensitivity Reduce (XTRA)"
+"Loaded_Programs=Melatonin (MW)"
+"Loaded_Programs=Detox EMF (CUST)"
+"Loaded_Programs=L-Tryptophan (MW)"
+"Loaded_Programs=Insomnia Secondary/Hypoglycemia (CUST)"
+"Loaded_Programs=Emotions and Sleep 1 (XTRA)"
+"Loaded_Programs=Insomnia Secondary/Hypoglycemia (CUST)"
+"Loaded_Programs=Emotions and Sleep 2 (XTRA)"
+"Loaded_Programs=Insomnia Secondary/Hypoglycemia (CUST)"
+"Loaded_Programs=Emotions and Sleep 3 (XTRA)"
+"Loaded_Programs=Schumann Resonance (CAFL)"
+"Manual_Start=False"
+"Preset_Notes=Daily Wellness (R) - JD  by Johannes_D Version 0.5, 13.02.2024
+
+This is an adapted version of Daily Wellness (R) - BY.txt. These adaptions concerns all MW-Programs within this preset chain that were executed by preset MW-emulate (R)-JW.txt and the last one is replaced by the modified preset MW-emulate (R)-JD.txt, because of limited effectiveness of the original one. Furthermore all single MW-Programs in the all presets are modified arcording to adapted preset MW Emulate (R)-JW.txt.
+
+Comments, hints and also reporting of the effectiveness are very welcome! Please contact the author in the german Spooky2.deutsch Telegram-group. 
+
+For use with Remote Mode only.
+This is a general well-being program, designed by Judy Buduccio. There are 4 presets in this chained preset. Here are the names of the preset and their run times:
+  1. Sleep Induction (R) - DB : 5 hours
+  2. Multi-Vitamin and Mineral (R) - JW : 4 hours
+  3. Daytime (R) - BY : 11 hours
+  4. Evening (R) - BY : 4 hours
+
+The entire preset runs for 24 hours. Start the preset an hour before you want to fall asleep. So lets say you want to fall asleep at 10pm, the preset will run as follows:
+  9pm-2am: Sleep Induction
+  2am-6am: Multi-Vitamin and Mineral
+  6am-5pm: Daytime
+  5pm-9pm: Evening
+
+The preset Daytime (R) - BY has the following programs:
+  ATP Generate XTRA
+  ATP MW
+  Gamma Brainwave Frequency ETDF
+  Chakra 2 Crown ALT
+  Absentmindedness CAFL
+  Clarity of Thought/Mental Function Stimulate XTRA
+  Mental Function Improve XTRA
+  Memory and Test-taking Improve XTRA
+  Concentration Improve XTRA
+  Emotional Balance 1 XTRA
+  Emotions General Aid XTRA
+  Grounding XTRA
+
+The preset Evening (R) - BY has the following programs:
+  Skin Collagen Building ETDF
+  Skin + Facial Toning XTRA
+  Grounding XTRA
+  Chakra 2 Crown ALT
+"
+"Repeat_Sequence=0"
+"Schedule_Run_For=5"
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\User\MW Emulate (R) - JD.txt"
+"PresetName=Multi-Vitamin and Mineral (R) - JW"
+"Padlock=1"
+"Loaded_Frequencies=M1121.371=180,M1119.355=180,M1109.407=180,M1107.392=180,M1107.392=180,M1105.376=180,M1103.361=180,M1081.376=180,M1079.361=180,M1077.345=180,M1055.361=180,M1053.345=180,M1053.345=180,M1051.329=180,M1029.345=180,M1027.329=180,M1027.329=180,M1025.314=180,M853.116=180,M823.141=180,M809.126=180,M785.157=180,M767.115=180,M745.091=180,M744.083=180,M665.125=180,M664.117=180,M506.996=180,M427.029=180,M388.041=180,M347.063=180,M330.256=180,M328.240=180,M280.240=180,M278.225=180,M177.943=180,M94.953=180,M43.990=180,M34.005=180,M31.990=180,M23.985=180,M18.011=180,"
+"Loaded_Frequencies=M40.078=180,"
+"Loaded_Frequencies=M51.996=180,"
+"Loaded_Frequencies=M253.809=180,"
+"Loaded_Frequencies=M24.305=180,"
+"Loaded_Frequencies=M54.938=180,"
+"Loaded_Frequencies=M95.95=180,"
+"Loaded_Frequencies=M33.998=180,"
+"Loaded_Frequencies=M39.098=180,"
+"Loaded_Frequencies=M78.971=180,"
+"Loaded_Frequencies=M22.99=180,"
+"Loaded_Frequencies=M34.076=180,"
+"Loaded_Frequencies=M65.38=180,"
+"Loaded_Frequencies=M265.355=180,"
+"Loaded_Frequencies=M376.369=180,"
+"Loaded_Frequencies=M123.111=180,"
+"Loaded_Frequencies=M476.536=180,"
+"Loaded_Frequencies=M169.18=180,"
+"Loaded_Frequencies=M244.309=180,"
+"Loaded_Frequencies=M441.404=180,"
+"Loaded_Frequencies=M1355.388=180,"
+"Loaded_Frequencies=M785.157=180,M665.125=180,M664.117=180,M616.177=180,M616.177=180,M612.152=180,M307.084=180,M176.032=180,M175.024=180,M174.016=180,M22.990=180,M1.008=180,"
+"Loaded_Frequencies=M384.648=180,"
+"Loaded_Frequencies=M430.717=180,"
+"Loaded_Frequencies=M450.707=180,"
+"Loaded_Frequencies=~8597M204.322=180,"
+"Loaded_Frequencies=~7444M383.606=180,"
+"Loaded_Frequencies=M309.2714=180,"
+"Loaded_Programs=alpha-linolenic (omega3) and linoleic (omega6) acid metabolism (MW)"
+"Loaded_Programs=Minerals - Calcium (MW)"
+"Loaded_Programs=Minerals - Chromium (MW)"
+"Loaded_Programs=Minerals - Iodine (MW)"
+"Loaded_Programs=Minerals - Magnesium (MW)"
+"Loaded_Programs=Minerals - Manganese (MW)"
+"Loaded_Programs=Minerals - Molybdenum (MW)"
+"Loaded_Programs=Minerals - Phosphorus (MW)"
+"Loaded_Programs=Minerals - Potassium (MW)"
+"Loaded_Programs=Minerals - Selenium (MW)"
+"Loaded_Programs=Minerals - Sodium (MW)"
+"Loaded_Programs=Minerals - Sulfur (MW)"
+"Loaded_Programs=Minerals - Zinc (MW)"
+"Loaded_Programs=Vitamin B1 (MW)"
+"Loaded_Programs=Vitamin B2 (MW)"
+"Loaded_Programs=Vitamin B3 (MW)"
+"Loaded_Programs=Vitamin B5 (MW)"
+"Loaded_Programs=Vitamin B6 (MW)"
+"Loaded_Programs=Vitamin B7 (MW)"
+"Loaded_Programs=Vitamin B9 (MW)"
+"Loaded_Programs=Vitamin B12 (MW)"
+"Loaded_Programs=Vitamin C (ascorbate) metabolism (MW)"
+"Loaded_Programs=Vitamin D (MW)"
+"Loaded_Programs=Vitamin E (MW)"
+"Loaded_Programs=Vitamin K (MW)"
+"Loaded_Programs=Biotin (MW)"
+"Loaded_Programs=Taurine (MW)"
+"Loaded_Programs=Vitamin B17/Laetrile (Cancer) (MW)"
+"reset_Notes=Remote preset for essential micronutrients, vitamins and minerals.
+
+Run time is 4 hours. This preset will run between 1:00am and 5:00am each day.
+
+GX can run this preset stand-alone, but select Start each day. Do not Loop.
+
+Use the BN port of Spooky Boost.
+
+"
+"Repeat_Chain=1"
+"Repeat_Sequence=0"
+"Schedule_Run_For=4"
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\Shell (Empty) Presets\Remote\Healing (R) - JW.txt"
+"User_Defined_2_Waveform=MM_ModSquare"
+"Out1_Frequency_Limit_Harmonic_Type=Odd"  
+"Out2_Follows_Program_Frequency=True"
+"Out2_Follow_Out1_Frequency=False"
+"PresetName=Daytime (R) - BY"
+"Padlock=0"
+"Loaded_Frequencies=9.6=1200,"
+"Loaded_Frequencies=M506.996=180 W11 A20 a20,"
+"Loaded_Frequencies=40=180 W10 A05 a05,"
+"Loaded_Frequencies=432=600,"
+"Loaded_Frequencies=5.8=900,"
+"Loaded_Frequencies=35=180,"
+"Loaded_Frequencies=20.8=180,"
+"Loaded_Frequencies=398=180,"
+"Loaded_Frequencies=5.79=180,7.83=180,20=180,35=180,10000=180,"
+"Loaded_Frequencies=15=180,644=180,764=180,"
+"Loaded_Frequencies=4.9=180,20=180,72=180,95=180,125=180,146=180,428=180,522=180,802=180,1550=180,10000=180,"
+"Loaded_Frequencies=194.71=180,"
+"Loaded_Programs=ATP Generate (XTRA)"
+"Loaded_Programs=ATP (MW)"
+"Loaded_Programs=Gamma Brainwave Frequency (ETDF)"
+"Loaded_Programs=Chakra 2 Crown (ALT)"
+"Loaded_Programs=Absentmindedness (CAFL)"
+"Loaded_Programs=Clarity of Thought/Mental Function Stimulate (XTRA)"
+"Loaded_Programs=Mental Function Improve (XTRA)"
+"Loaded_Programs=Memory and Test-taking Improve (XTRA)"
+"Loaded_Programs=Concentration Improve (XTRA)"
+"Loaded_Programs=Emotional Balance 1 (XTRA)"
+"Loaded_Programs=Emotions General Aid (XTRA)"
+"Loaded_Programs=Grounding (XTRA)"
+"Preset_Notes=Daytime (R) - BY
+
+For use with Remote Mode only.
+
+This has the following programs:
+  ATP Generate XTRA
+  ATP MW
+  Gamma Brainwave Frequency ETDF
+  Chakra 2 Crown ALT
+  Absentmindedness CAFL
+  Clarity of Thought/Mental Function Stimulate XTRA
+  Mental Function Improve XTRA
+  Memory and Test-taking Improve XTRA
+  Concentration Improve XTRA
+  Emotional Balance 1 XTRA
+  Emotions General Aid XTRA
+  Grounding XTRA
+"
+"Repeat_Chain=0"
+"Repeat_Sequence=0"
+"Schedule_Run_For=11"
+"[/Preset]"
+"[Preset]"
+"Base_Preset=\Shell (Empty) Presets\Remote\Healing (R) - JW.txt"
+"PresetName=Evening (R) - BY"
+"Loaded_Frequencies=190=180,370=180,7250=180,45750=180,120500=180,424000=180,467000=180,493100=180,750000=180,922530=180,"
+"Loaded_Frequencies=9.6=900,2.4=900,1.2=900,"
+"Loaded_Frequencies=194.71=180,"
+"Loaded_Frequencies=432=600,"
+"Loaded_Programs=Skin Collagen Building (ETDF)"
+"Loaded_Programs=Skin + Facial Toning (XTRA)"
+"Loaded_Programs=Grounding (XTRA)"
+"Loaded_Programs=Chakra 2 Crown (ALT)"
+"Preset_Notes=Evening (R) - BY
+
+For use with Remote Mode only.
+
+This has the following programs:
+  Skin Collagen Building ETDF
+  Skin + Facial Toning XTRA
+  Grounding XTRA
+  Chakra  2 Crown ALT
+"
+"Repeat_Sequence=0"
+"Schedule_Run_For=4"
+"[/Preset]"

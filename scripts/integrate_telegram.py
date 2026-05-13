@@ -73,10 +73,12 @@ def get_existing_names(data: Dict) -> Set[str]:
     return set(p["name"] for p in data.get("programs", []))
 
 
-def get_file_hashes(data_dir: Path) -> Dict[str, str]:
-    """Get hashes of all existing source files."""
+def get_file_hashes(data_dir: Path, exclude_dir: Path = None) -> Dict[str, str]:
+    """Get hashes of all existing source files, optionally excluding a subdirectory."""
     hashes = {}
     for prog_file in data_dir.rglob("*.txt"):
+        if exclude_dir and exclude_dir in prog_file.parents:
+            continue
         hashes[compute_file_hash(prog_file)] = str(prog_file)
     return hashes
 
@@ -102,7 +104,7 @@ def find_new_files(
 ) -> List[Path]:
     """Find .txt files in telegram directory that aren't already in the dataset."""
     existing_names = get_existing_names(existing_data)
-    existing_hashes = get_file_hashes(DATA_DIR)
+    existing_hashes = get_file_hashes(DATA_DIR, exclude_dir=TELEGRAM_RAW_DIR)
 
     new_files = []
     skipped = 0

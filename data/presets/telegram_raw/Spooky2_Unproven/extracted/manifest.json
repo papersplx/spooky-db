@@ -1,0 +1,13 @@
+{
+  "group": "Spooky2 Unproven",
+  "total_messages_scanned": 0,
+  "files_downloaded": 175,
+  "files_failed": 0,
+  "files_skipped": 0,
+  "downloaded_files": [],
+  "date_range": {
+    "earliest": null,
+    "latest": null
+  },
+  "error": null
+}

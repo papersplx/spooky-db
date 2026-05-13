@@ -1,0 +1,324 @@
+"[Preset]"
+"PresetName=Oncomodulin-1 V3 DC17 (Coil) - JD"
+"Force_MW_to_Hz_Factor=2.2523430883E+23"
+"Force_DNA_to_Hz_Factor=4.35589935811E+17"
+"Force_RNA_to_Hz_Factor=4.35589935811E+17"
+"Force_mRNA_to_Hz_Factor=4.35589935811E+17"
+"Force_MW_Inhibit_Factor="
+"Padlock=0"
+"BFB_Start_Frequency=41000"
+"BFB_Finish_Frequency=1800000"
+"BFB_Include_Octave=0"
+"BFB_Include_Sub_Octave=0"
+"BFB_Single_Scan=0"
+"BFB_Grade_Program=0"
+"Prevent_Duplicate_GX_BFB_Data=0"
+"BFB_Initial_Step_Size_Hz=100"
+"BFB_Initial_Step_Size_Hz_Selected=True"
+"BFB_Initial_Step_Size_%=.025"
+"BFB_Initial_Step_Size_%_Selected=False"
+"BFB_Max_Hits_To_Find=10"
+"BFB_Start_Delay=300"
+"Delay_for_GX_Inputs=0"
+"BFB_Samples_Per_Step=10"
+"BFB_Loops=1"
+"BFB_Threshold=0"
+"BFB_Reverse_Lookup_Tolerance=.0625"
+"BFB_Include_x_Hz_In_Search=0"
+"BFB_Calculate_Using_RA=False"
+"BFB_Calculate_Using_Peak=True"
+"BFB_RA_Window_1=20"
+"BFB_RA_Window_2=0"
+"BFB_Retentive_RA_Window_Selected=0"
+"BFB_BPM=False"
+"BFB_HRV=False"
+"BFB_Angle=False"
+"BFB_Detect_Max=True"
+"BFB_Detect_Min=False"
+"BFB_Detect_Change=0"
+"BFB_After_Scan_Run_Hits=1"
+"Baseline_Before_BFB=0"
+"BFB_Repeat_BFB=1"
+"BFB_After_Scan_Run_On_Gen=0"
+"BFB_Continue_Refining_Hits=0"
+"BFB_Detect_mA=True"
+"BFB_Detect_Angle_And_mA=False"
+"BFB_Min_BPM=30"
+"BFB_Max_BPM=130"
+"BFB_Max_HRV=30"
+"Amplitude_Modulation_Enabled=0"
+"Repeat_Each_Frequency=1"
+"Repeat_Each_Program=1"
+"Repeat_Sequence=1"
+"Repeat_Chain=0"
+"Frequency_Slider_Scale=1"
+"Frequency_Multiplier=1"
+"Frequency_Constant=0"
+"Out1_Phase_Angle=0"
+"Duty_Cycle=50"
+"Out1_Amplitude=20"
+"Out1_Offset=0"
+"Out2_Hz_Factor=1"
+"Out2_Hz_Constant=0"
+"Swap_Waveform_Time=0"
+"Out1_Shadow_Generator=0"
+"Out1_Shadow_Hz_Factor=0"
+"Out1_Shadow_Hz_Constant=0"
+"Schedule_Run_For=0"
+"Schedule_Delay_Start_Days=0"
+"Schedule_Delay_Start_Hours=0"
+"Schedule_Delay_Start_Minutes=0"
+"Out1_Fixed_Frequency_Hz=0"
+"Out2_Amplitude=20"
+"Out2_Offset=0"
+"Out2_Phase_Angle=0"
+"Preset_Notes=Author Johannes_D Vers.2  from 22.07.2025
+
+UPDATE: This version 
+ - has improved MW emulate implementation to increase intensity and the emulation efficiency
+ - is respecting spin of each implmented substance 
+ - has optimized amplitude for each implemented substance 
+
+In summa leads this to an emulation efficiency of arround 90%
+------------------------------------------------------
+
+This is a first version for Sp2 PEMF Coil.
+
+The purpose of this preset is to  stimulate Oncomodulin-1 Protein by the molecule itself, 
+but also with substances which can activate Oncomodulin-1 as mannose and Forskolin.
+
+Forskolin stimulate cAMP (Cyclic adenosine monophosphate) which promotes the production of 
+Oncomodulin. But Forskolin has the property to lower the inner eye pressure by itself, as seen in several studies. Hence it is also beneficial for glaucoma patients.
+
+The preset is tested sucessful kinesiological and also by several users with medical diagnosed issues. Kinesiogic tests show that the preset can be applied for:
+1. reducing inner eye pressure 
+2. regenerate optic nerve  
+3. Improving vision in the case of cataract (=grey star)
+
+Several feedbacks show that the preset can indeed lowering inner eye pressure and having positive impact on vision. 
+
+If you want to apply the preset, then be aware:
+1. Using the preset ONLY on your OWN responsibility!
+2. No promise for any healing!
+3. Preset is only experimental and not tested!
+4. Only with GX(Pro)!
+5. IT IS NOT ALLOWED TO SHARE THIS PRESET WITHOUT PERMISSION OF THE AUTHOR!!!
+6. Start slowly with restricted running time 3min and increase step by step as far you have no negative reaction to 20min a 1-2 times a day. Give the body periodicly rest-time, i.e. time to recover. Put the BN-Side of the coil on the temple of the head of that eye what you want to treat. 
+Use the preset ONLY ON ONE AND THE SAME eye, and observe yourself. Only if all is fine, improvement of the treated eye is present, THEN appy the preset to the other eye!!!
+
+Feedback are very welcome! Let me know whether resp. how it works in your case!
+Please contact the author on Telegram Spooky.Deutsch or 'Spooky2 unofficial'.
+
+CAUTION: 
+NEGATIVE SIDE EFFECTS and CROSSREACTION WITH OTHER MEDICAMENTS is possible. (look in references for that or research by yourself!)
+Thereby one has to see cAMP, which is crucial for producing oncomodulin. But besides many healthy benefits, cAMP can have also negative side effects! Be aware that Forskolin stimulate cAMP production. 
+
+References:
+Protein-sequences for Monoisotopic Mass of Oncomodulin
+https://www.uniprot.org/uniprotkb/P0CE72/entry
+https://www.prospecbio.com/ocm_human
+Article about Oncomodulin
+https://glaucoma.org/articles/optic-nerve-regeneration
+https://glaucomaphysician.net/issues/2021/june/reversing-vision-loss-with-neuromodulation/
+https://pmc.ncbi.nlm.nih.gov/articles/PMC2780793/
+https://en.wikipedia.org/wiki/Oncomodulin
+https://pubmed.ncbi.nlm.nih.gov/16699509/
+Forskolin
+https://www.verywellfit.com/the-benefits-of-forskolin-89415
+https://nootropicsexpert.com/forskolin/ 
+https://www.webmd.com/vitamins-and-supplements/forskolin-uses-and-risks
+https://ihjo.de/gesundheit-wohlbefinden/forskolin-wirkung/
+https://drmedjulia.com/forskolin-vorteile-nebenwirkungen-dosierung-interaktionen/
+
+
+Oncomodulin-1; OM; Parvalbumin Beta; OCM; OCM1; OCMN is implemented in two ways: 
+
+1. A 109 AA sequence as listed in uniprot 
+
+https://www.ncbi.nlm.nih.gov/protein/KAI2544897.1  
+
+the MM is calculated from the AA sequence   
+
+msitdvlsad diaaalqecr dpdtfepqkf fqtsglskms asqvkdvfrf idndqsgyld 
+eeelkfflqk fesgarelte setkslmaaa dndgdgkiga eefqemvhs  
+
+2. A 117 AA sequency as one can find from a producer /seller of oncomodulin
+
+https://www.prospecbio.com/ocm_human
+
+
+The Oncomodulin protein displays calmodulin-like activity, particularly in terms of enzyme activation and growth regulation. It is capable of binding two calcium ions, indicating its involvement in calcium-mediated cellular processes.  
+
+Oncomodulin is a parvalbumin-family calcium-binding protein expressed and secreted by macrophages (that typically traffic to tissue as an inflammatory response or after injury). Oncomodulin is present in the eye.[It is small, acidic, has a high calcium-binding activity.  
+
+For oncomodulin to work properly, it must have elevated levels of cAMP and the sugar mannose, which is present in the vitreous of the eye.[2]  cAMP increases the effectiveness of oncomodulin several times more than just having oncomodulin and cAMP alone.[2] Oncomodulin is  activated by activating downstream signaling of Ca2+, calmodulin kinase, and gene transcription.[5]  Oncomodulin mRNA production peaks within a day of an inflammatory response.[9] During inflammation, macrophages are released into  the eye in order to promote axon regeneration.[10] Inducing an inflammatory response enables the ability of sensory neurons to regenerate  their axons through the dorsal roots.[9] The secretion of oncomodulin from macrophages stimulates the growth of neurons.[9] The identity of  the receptor for oncomodulin that allows axon regeneration is unknown.[2] It is also unknown whether oncomodulin promotes regeneration  elsewhere in the immune system. Signaling complexes that may be important to work with oncomodulin include PI 3 Kinase, MAP Kinase,  JAK/STAT, and CaM Kinase II.[2] The depletion of oncomodulin from media in which macrophages grow removes the axon-promoting activity of the media.[5]  Neutrophils are also an important component of oncomodulin activation. Without neutrophils present, macrophages are less effective at stimulating extensive  regeneration of neurons.[9] This is because neutrophils enter the area of inflammation before macrophages do. In addition to macrophages, neutrophils are  also a major source of oncomodulin production.[9]  In rats, the gene that encodes oncomodulin is under control of a solo oncomodulin LTR that comes from an endogenous intracisternal A-particle.[3]  The oncomodulin LTR is only present in rats. Oncomodulin levels are highest in the rat out of all other species that have been previously investigated.[3]
+
+
+The Preset has been designed to loop continuously until stopped.
+
+MW frequencies are very high. No frequency generator can reach these frequencies directly. This preset targets the sub harmonics of these frequencies.
+
+Connect your PEMF Coil to the 'High Power' port of Spooky Boost v3.0.and 
+put BN-Side of PEMF Coil on the Body.
+
+Stop treatment if you experience any discomfort.
+
+
+"
+"Settings_Frequency_Wobble_Percentage=0"
+"Settings_Amplitude_Wobble_Steps=16"
+"Settings_Amplitude_Wobble_Percentage=0"
+"Settings_Frequency_Wobble_Steps=16"
+"Out1_Max_Freq=0"
+"Out1_Min_Freq=0"
+"Out2_Max_Freq=0"
+"Out2_Min_Freq=0"
+"Hz_Gate=.1"
+"Reduce_Amplitude_Frequency=10"
+"Ramp_Amplitude_Up_Rate=4"
+"Ramp_Amplitude_Down_Rate=4"
+"Gating_Out1_ms_On=125"
+"Gating_Out1_ms_Off=125"
+"Gating_Out2_ms_On=125"
+"Gating_Out2_ms_Off=125"
+"Dwell_Multiplier=1"
+"Frequency_Wobble_Dwell_Option=0"
+"Sine_WCM=1"
+"Square_WCM=1"
+"Sawtooth_WCM=1"
+"Inverted_Sawtooth_WCM=1"
+"Triangle_WCM=1"
+"Sine_Damped_WCM=8"
+"Square_Damped_WCM=8"
+"Sine_Hbomb_WCM=16"
+"Square_Hbomb_WCM=16"
+"User_Defined_1_WCM=2"
+"User_Defined_2_WCM=2"
+"Sine_Spike_Length=0"
+"Square_Spike_Length=0"
+"Sawtooth_Spike_Length=0"
+"Inverted_Sawtooth_Spike_Length=0"
+"Triangle_Spike_Length=0"
+"SineDamped_Spike_Length=0"
+"Square_Damped_Spike_Length=0"
+"Sine_Hbomb_Spike_Length=0"
+"Square_Hbomb_Spike_Length=0"
+"User_Defined_1_Spike_Length=0"
+"User_Defined_2_Spike_Length=0"
+"Sine_Spike_Ratio=2"
+"Square_Spike_Ratio=2"
+"Sawtooth_Spike_Ratio=2"
+"Inverted_Sawtooth_Spike_Ratio=2"
+"Triangle_Spike_Ratio=1"
+"Sine_Damped_Spike_Ratio=2"
+"Square_Damped_Spike_Ratio=2"
+"Sine_Hbomb_Spike_Ratio=2"
+"Square_Hbomb_Spike_Ratio=2"
+"User_Defined_1_Spike_Ratio=2"
+"User_Defined_2_Spike_Ratio=2"
+"Sine_Spectrum=0"
+"Square_Spectrum=0"
+"Sawtooth_Spectrum=0"
+"Inverted_Sawtooth_Spectrum=0"
+"Triangle_Spectrum=0"
+"Sine_Damped_Spectrum=0"
+"Square_Damped_Spectrum=0"
+"Sine_Hbomb_Spectrum=0"
+"Square_Hbomb_Spectrum=0"
+"User_Defined_1_Spectrum=0"
+"User_Defined_2_Spectrum=0"
+"F1_Factor=1"
+"F1_Phase_Angle=0"
+"Maximum_Spike_Count=0"
+"F1_Modulation_Type=Add F1 to F2"
+"Harmonic_Wobble=Octave 6 Step Ramp Down"
+"Custom_Wobble="
+"Settings_Harmonic_Wobble_Down=0"
+"Schedule_Run_From=Midnight"
+"Schedule_Run_To=Midnight"
+"Stop_When_Complete=0"
+"After_x_Hrs_Stop=False"
+"After_x_Hrs_Advance=True"
+"Advance_When_Complete=True"
+"Out1_Frequency_Limit_Harmonic_Type=Octave"
+"Out2_Frequency_Limit_Harmonic_Type=Octave"
+"Out1_Custom_Harmonic_Factor_Divisor=2"
+"Out2_Custom_Harmonic_Factor_Divisor=2"
+"Frequency_Sort_Option=Do NOT sort frequencies"
+"Amplitude_Wobble_Type=Disabled"
+"Frequency_Wobble_Type=Disabled"
+"User_Defined_1_Waveform=MM_ModSquareDC17"
+"User_Defined_2_Waveform=MM_ModSquareDC17"
+"Auto_Start=False"
+"Auto_Resume=False"
+"Manual_Start=True"
+"Out2_Follow_Out1_Frequency=False"
+"Out1_Fixed_Frequency=False"
+"Gate_Hz_Option=True"
+"Gate_On_Off_Duration_Option=False"
+"Out2_Follows_Program_Frequency=True"
+"Out2_Run_Every_Second_Frequency=False"
+"Out1_Sine=False"
+"Out1_Square=False"
+"Out1_Sawtooth=False"
+"Out1_Inverted_Sawtooth=False"
+"Out1_Triangle=False"
+"Out1_Sine_Damped=False"
+"Out1_Square_Damped=False"
+"Out1_Sine_Hbomb=False"
+"Out1_Square_Hbomb=False"
+"Out1_User_Defined_1=True"
+"Out1_User_Defined_2=False"
+"Out2_Sine=False"
+"Out2_Square=False"
+"Out2_Sawtooth=False"
+"Out2_Inverted_Sawtooth=False"
+"Out_2_Triangle=False"
+"Out2_Sine_Damped=False"
+"Out2_Square_Damped=False"
+"Out2_Sine_Hbomb=False"
+"Out2_Square_Hbomb=False"
+"Out2_User_Defined_2=False"
+"Out2_Follow_Out1_Wave=False"
+"SpikeWave=False"
+"InverseWave=True"
+"Positive_Waveform_Only=False"
+"Negative_Waveform_Only=False"
+"Boost_Graph_MN=False"
+"Boost_Graph_BN=True"
+"Enable_F2_Modulation=0"
+"Enable_Reduce_Low_Frequency_Amplitude=0"
+"Enable_Gate_Out1=0"
+"Enable_Gate_Out2=0"
+"Enable_MW_Inhibit_Factor=0"
+"Enable_Remove_Duplicate_Frequencies=0"
+"Remove_Duplicate_Frequencies_Tolerance=0"
+"RunFrequencyBetweenPrograms=0"
+"Packing_Frequency_Out1=0"
+"Packing_Frequency_Out2=0"
+"FreqToAddDwell=0"
+"Enable_Positive_Spike=1"
+"Enable_Negative_Spike=1"
+"Negative_Edge_For_Spike=0"
+"Enable_Invert_Sine=0"
+"Enable_Invert_Square=0"
+"Enable_Invert_Sawtooth=0"
+"Enable_Invert_Inverted_Sawtooth=0"
+"Enable_Invert_Triangle=0"
+"Enable_Invert_Sine_Damped=0"
+"Enable_Invert_Square_Damped=0"
+"Enable_Invert_Sine_Hbomb=0"
+"Enable_Invert_Square_Hbomb=0"
+"Enable_Invert_User_Defined_1=1"
+"Enable_Invert_User_Defined_2=0"
+"Enable_Invert_Follow_Out1_Wave=0"
+"Enable_Invert_Spike_Waveform=0"
+"Enable_Amplitude_RampUp=0"
+"Enable_Amplitude_Ramp_Down=0"
+"Enable_Swap_Frequency_And_Amplitude=0"
+"Notify_When_Zero_Hz=0"
+"Notify_When_Program_Advances=0"
+"Out2_Subtract_DataBase_Frequency=0"
+"Loaded_Programs=Oncomodulin collection (MW) (CUST)"
+"Loaded_Frequencies=37892516.6=180 a15A15 W11, 43164422.4=180 a20A20 W10, 39949680.8=180 a20A20 W10, 43436104.1=180 a20A20 W10,"
+"[/Preset]"
