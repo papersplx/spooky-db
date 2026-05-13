@@ -33,6 +33,9 @@ data/presets/telegram_raw/*
 !data/presets/telegram_raw/Spooky2_Unproven/
 !data/presets/telegram_raw/Spooky2_Unproven/postprocess_manifest.json
 
+# Backups (can be large)
+data/presets/backups/
+
 # Logs and temp files
 *.log
 *.tmp
