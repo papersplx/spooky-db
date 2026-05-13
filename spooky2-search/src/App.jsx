@@ -150,30 +150,55 @@ function App() {
       return;
     }
 
-    const doSearch = async () => {
-      setIsSearchPending(true);
-      try {
-        const result = await searchPrograms({
-          q: searchQuery,
-          mode: selectedModes,
-          collection: selectedCollections,
-          source: selectedSources,
-          limit: pageSize,
-          offset: (currentPage - 1) * pageSize,
-        }, controller.signal);
-        const results = result.results || [];
-        setCachedResults(cacheKey, results, result.total || 0);
-        setFiltered(results);
-        setTotalResults(result.total || 0);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          console.error('Search failed:', err);
-          setFiltered([]);
-        }
-      } finally {
-        setIsSearchPending(false);
-      }
-    };
+     const doSearch = async () => {
+       setIsSearchPending(true);
+       try {
+         // Map UI source labels to API source/tag filters
+         const sourceSet = new Set();
+         const tagSet = new Set();
+         selectedSources.forEach(s => {
+           switch (s) {
+             case 'Database':
+               sourceSet.add('wine');
+               break;
+             case 'Telegram':
+               sourceSet.add('telegram');
+               break;
+             case 'Proven':
+               sourceSet.add('telegram');
+               tagSet.add('Proven');
+               break;
+             case 'Unproven':
+               sourceSet.add('telegram');
+               tagSet.add('Unproven');
+               break;
+           }
+         });
+         const apiSource = Array.from(sourceSet);
+         const apiTag = Array.from(tagSet);
+
+         const result = await searchPrograms({
+           q: searchQuery,
+           mode: selectedModes,
+           collection: selectedCollections,
+           source: apiSource,
+           tag: apiTag,
+           limit: pageSize,
+           offset: (currentPage - 1) * pageSize,
+         }, controller.signal);
+         const results = result.results || [];
+         setCachedResults(cacheKey, results, result.total || 0);
+         setFiltered(results);
+         setTotalResults(result.total || 0);
+       } catch (err) {
+         if (err.name !== 'AbortError') {
+           console.error('Search failed:', err);
+           setFiltered([]);
+         }
+       } finally {
+         setIsSearchPending(false);
+       }
+     };
 
     doSearch();
 
@@ -299,7 +324,7 @@ function App() {
 
       <main className="main">
         <aside className="sidebar">
-<FilterPanel
+            <FilterPanel
               collections={collectionsList}
               collectionCounts={collectionCounts}
               selectedCollections={selectedCollections}
@@ -307,7 +332,7 @@ function App() {
               modes={modesList}
               selectedModes={selectedModes}
               onToggleMode={handleSelectMode}
-              sources={['Proven', 'Unproven']}
+              sources={['Database', 'Telegram', 'Proven', 'Unproven']}
               selectedSources={selectedSources}
               onToggleSource={handleSelectSource}
               onClearFilters={handleClearFilters}
