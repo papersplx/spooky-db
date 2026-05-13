@@ -153,7 +153,18 @@ function getDescendantLeaves(node, leaves) {
 function buildTree(collections) {
   const root = {};
   collections.forEach(coll => {
-    const parts = coll.split('/');
+    const rawParts = coll.split('/');
+    // Trim and collapse consecutive duplicate segments (case-insensitive)
+    const parts = [];
+    for (let i = 0; i < rawParts.length; i++) {
+      const p = rawParts[i].trim();
+      if (!p) continue;
+      if (parts.length > 0 && p.toLowerCase() === parts[parts.length - 1].toLowerCase()) {
+        // Skip duplicate consecutive segment (e.g., "Detox/Detox" -> "Detox")
+        continue;
+      }
+      parts.push(p);
+    }
     let current = root;
     parts.forEach((part, index) => {
       if (!current[part]) {
