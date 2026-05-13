@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """REST API for Spooky2 search using Neon Postgres."""
 import logging
+import subprocess
 from fastapi import FastAPI, Query, HTTPException, Request
 from pathlib import Path
 import json
