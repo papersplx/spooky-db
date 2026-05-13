@@ -236,6 +236,20 @@ export default function FilterPanel({
         </div>
         <div className="filter-options tree" ref={listRef}>
           {tree.map(function(root) {
+            // If root has no children, render as a leaf node directly
+            if (!root.children || root.children.length === 0) {
+              return (
+                <TreeLeaf
+                  key={root.name}
+                  name={root.name}
+                  fullPath={root.fullPath || root.name}
+                  selectedCollections={selectedCollections}
+                  onToggleCollection={onToggleCollection}
+                  count={root.count || 0}
+                />
+              );
+            }
+            // Otherwise render as a parent node
             return (
               <TreeNode
                 key={root.name}
