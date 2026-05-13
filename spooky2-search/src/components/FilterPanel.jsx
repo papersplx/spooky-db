@@ -96,7 +96,7 @@ function TreeNode({
           onChange={() => {
             children.forEach(child => {
               if (child.children && child.children.length) {
-                const descendants = getDescendantLeaves(child, []);
+                const descendants = getDescendantLeaves(child);
                 descendants.forEach(desc => onToggleCollection(desc.fullPath));
               } else {
                 onToggleCollection(child.fullPath);
@@ -141,13 +141,11 @@ function TreeNode({
   );
 }
 
-function getDescendantLeaves(node, leaves) {
+function getDescendantLeaves(node) {
   if (!node.children || !node.children.length) {
-    leaves.push(node.fullPath);
-  } else {
-    node.children.forEach(child => getDescendantLeaves(child, leaves));
+    return [node];
   }
-  return leaves;
+  return node.children.flatMap(child => getDescendantLeaves(child));
 }
 
 function buildTree(collections) {
