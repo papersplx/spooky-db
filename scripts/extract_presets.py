@@ -233,21 +233,31 @@ class PresetParser:
                 continue
             # Extract everything after [Preset] marker
             section_body = section.split('[Preset]', 1)[1]
-            # Parse quoted key=value lines
+            # Parse quoted key=value lines; tolerate missing closing quote
             data = {}
             for line in section_body.splitlines():
                 line = line.strip()
                 if not line:
                     continue
-                # Match "Key=Value" pattern
+                # Match well-formed "Key=Value"
                 m = re.match(r'^"([^"]+)=([^"]*)"$', line)
                 if m:
                     key, value = m.group(1), m.group(2)
-                    if key in data:
-                        # Multiple values for same key (like Loaded_Frequencies) - join with comma
-                        data[key] = data[key] + ',' + value
+                elif line.startswith('"') and '=' in line:
+                    # Malformed: missing closing quote
+                    rest = line[1:]  # strip leading "
+                    if '=' in rest:
+                        key, value = rest.split('=', 1)
+                        if value.endswith('"'):
+                            value = value[:-1]
                     else:
-                        data[key] = value
+                        continue
+                else:
+                    continue
+                if key in data:
+                    data[key] = data[key] + ',' + value
+                else:
+                    data[key] = value
 
             if 'PresetName' not in data:
                 continue

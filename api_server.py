@@ -3,6 +3,7 @@
 import logging
 import subprocess
 import sys
+import urllib.request
 from fastapi import FastAPI, Query, HTTPException, Request
 from pathlib import Path
 import json
@@ -314,12 +315,31 @@ def telegram_tags():
 
 @app.post("/reimport")
 def reimport_data(request: Request):
-    """Re-import presets_all.json to Neon database (admin only)."""
+    """Re-import presets_all.json to Neon database (admin only).
+    Optional query param `url` fetches a fresh presets_all.json before import."""
     token = request.query_params.get("token")
     if not token or token != os.environ.get("REIMPORT_TOKEN", "reimport-secret"):
         raise HTTPException(status_code=403, detail="Invalid or missing token")
-    
+
     try:
+        data_dir = Path(os.environ.get("DATA_DIR", "data/presets"))
+        data_dir.mkdir(parents=True, exist_ok=True)
+        dest_path = data_dir / "presets_all.json"
+
+        # If a data URL is provided, download the updated presets_all.json
+        data_url = request.query_params.get("url")
+        if data_url:
+            logger.info(f"Downloading presets_all.json from {data_url}")
+            try:
+                with urllib.request.urlopen(data_url) as resp:
+                    if resp.status != 200:
+                        raise HTTPException(status_code=400, detail=f"Download failed: HTTP {resp.status}")
+                    content = resp.read()
+                    dest_path.write_bytes(content)
+                logger.info(f"Downloaded {len(content)} bytes to {dest_path}")
+            except Exception as e:
+                raise HTTPException(status_code=400, detail=f"Download error: {e}")
+
         script_path = Path(__file__).parent / "import_to_neon.py"
         result = subprocess.run(
             [sys.executable, str(script_path)],
