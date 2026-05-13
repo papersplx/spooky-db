@@ -96,7 +96,7 @@ function TreeNode({
           onChange={() => {
             children.forEach(child => {
               if (child.children && child.children.length) {
-                const descendants = getDescendantLeaves(child);
+                const descendants = getDescendantLeaves(child, []);
                 descendants.forEach(desc => onToggleCollection(desc.fullPath));
               } else {
                 onToggleCollection(child.fullPath);
