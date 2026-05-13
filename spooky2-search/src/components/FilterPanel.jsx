@@ -70,14 +70,26 @@ function TreeNode({
     setExpanded(!expanded);
   };
 
-  const totalSelected = children.reduce((sum, child) => {
-    if (child.children && child.children.length) {
-      return sum + (child._selectedCount || 0);
+  // Recursively count selected leaf descendants for a given node
+  function countSelected(node) {
+    if (!node.children || node.children.length === 0) {
+      return selectedCollections.includes(node.fullPath) ? 1 : 0;
     }
-    return sum + (selectedCollections.includes(child.fullPath) ? 1 : 0);
-  }, 0);
-  const allSelected = totalSelected === children.length && children.length > 0;
-  const someSelected = totalSelected > 0 && totalSelected < children.length;
+    return node.children.reduce((sum, child) => sum + countSelected(child), 0);
+  }
+
+  // Recursively count total leaf descendants
+  function countLeaves(node) {
+    if (!node.children || node.children.length === 0) {
+      return 1;
+    }
+    return node.children.reduce((sum, child) => sum + countLeaves(child), 0);
+  }
+
+  const totalSelected = children.reduce((sum, child) => sum + countSelected(child), 0);
+  const totalLeaves = children.reduce((sum, child) => sum + countLeaves(child), 0);
+  const allSelected = totalLeaves > 0 && totalSelected === totalLeaves;
+  const someSelected = totalSelected > 0 && totalSelected < totalLeaves;
 
   return (
     <div className="tree-node" style={{ paddingLeft: (depth * 1.2) + 'rem' }}>
