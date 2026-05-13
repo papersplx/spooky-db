@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import './FilterPanel.css';
 
 function computeFolderCounts(tree, collectionCounts) {
