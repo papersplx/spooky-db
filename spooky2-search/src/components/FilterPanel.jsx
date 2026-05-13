@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import './FilterPanel.css';
 
 function computeFolderCounts(tree, collectionCounts) {
@@ -200,8 +200,7 @@ export default function FilterPanel({
    onToggleSource,
    onClearFilters,
  }) {
-  const [expandedRoots, setExpandedRoots] = useState(new Set());
-  const listRef = useRef(null);
+  const [listRef] = useRef(null);
 
   var tree = useMemo(function() {
     var rawTree = computeFolderCounts(buildTree(collections), collectionCounts);
@@ -209,22 +208,6 @@ export default function FilterPanel({
       .map(function(node) { return filterTree(node, 1); })
       .filter(function(node) { return node !== null; });
   }, [collections, collectionCounts]);
-
-  var handleRootToggle = function(rootName) {
-    setExpandedRoots(function(prev) {
-      var next = new Set(prev);
-      if (next.has(rootName)) {
-        next.delete(rootName);
-      } else {
-        next.add(rootName);
-      }
-      return next;
-    });
-  };
-
-  useEffect(function() {
-    setExpandedRoots(new Set());
-  }, [collections]);
 
   return (
     <div className="filter-panel">
@@ -240,31 +223,14 @@ export default function FilterPanel({
         <div className="filter-options tree" ref={listRef}>
           {tree.map(function(root) {
             return (
-              <div key={root.name} className="tree-root">
-                <div
-                  className="tree-item"
-                  onClick={function() { handleRootToggle(root.name); }}
-                >
-                  <span className="tree-toggle">
-                    {expandedRoots.has(root.name) ? '▼' : '▶'}
-                  </span>
-                  <span className="tree-name" title={root.name}>
-                    {root.name}
-                    <span className="tree-count"> ({root.count})</span>
-                  </span>
-                </div>
-                {expandedRoots.has(root.name) && (
-                  <div className="tree-children">
-                    <TreeNode
-                      name={root.name}
-                      children={root.children}
-                      selectedCollections={selectedCollections}
-                      onToggleCollection={onToggleCollection}
-                      depth={0}
-                    />
-                  </div>
-                )}
-              </div>
+              <TreeNode
+                key={root.name}
+                name={root.name}
+                children={root.children}
+                selectedCollections={selectedCollections}
+                onToggleCollection={onToggleCollection}
+                depth={0}
+              />
             );
           })}
         </div>
