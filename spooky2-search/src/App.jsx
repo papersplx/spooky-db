@@ -246,9 +246,18 @@ function App() {
     });
   };
 
-  const handleSelectProgram = (program) => {
-    setSelected(program);
+  const handleSelectProgram = async (program) => {
+    // Update URL immediately for back/forward navigation
     updateURL({ searchQuery, selectedModes, selectedCollections, selectedSources, selectedProgramId: program.id, page: currentPage });
+    // Fetch full program details (including loaded_programs, frequencies, code) for the detail pane
+    try {
+      const full = await getProgram(program.id);
+      setSelected(full);
+    } catch (err) {
+      console.error('Failed to load program details:', err);
+      // Fall back to the partial program from search results
+      setSelected(program);
+    }
   };
 
   const handleSearchForProgram = (programName) => {
