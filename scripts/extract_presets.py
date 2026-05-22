@@ -233,31 +233,60 @@ class PresetParser:
                 continue
             # Extract everything after [Preset] marker
             section_body = section.split('[Preset]', 1)[1]
-            # Parse quoted key=value lines; tolerate missing closing quote
+            # Parse quoted key=value lines; tolerate missing closing quote and
+            # bare continuation lines (e.g. multi-line Loaded_Frequencies where
+            # the value is written on subsequent unquoted lines).
             data = {}
+            prev_key = None          # last key opened with an unclosed "key=..."
             for line in section_body.splitlines():
                 line = line.strip()
                 if not line:
                     continue
-                # Match well-formed "Key=Value"
+
+                # Well-formed "Key=Value"
                 m = re.match(r'^"([^"]+)=([^"]*)"$', line)
                 if m:
                     key, value = m.group(1), m.group(2)
                 elif line.startswith('"') and '=' in line:
-                    # Malformed: missing closing quote
-                    rest = line[1:]  # strip leading "
+                    # Malformed: opening quote but no closing quote.
+                    # Subsequent bare "k=v" lines belong to this key.
+                    rest = line[1:]
                     if '=' in rest:
                         key, value = rest.split('=', 1)
                         if value.endswith('"'):
                             value = value[:-1]
                     else:
-                        continue
+                        key = value = None
+                    if key:
+                        prev_key = key
                 else:
-                    continue
+                    # Bare line (no leading quote). If it looks like a bare
+                    # "key=value" token and a previous unclosed key exists, it
+                    # is a continuation of that key; otherwise skip.
+                    first_eq = line.find('=')
+                    if '=' in line and prev_key is not None:
+                        candidate = line[:first_eq].strip()
+                        # Valid Spooky2 keys are single-word identifiers;
+                        # bare frequency tokens contain digits/dashes/dots so
+                        # `re.match(r'[a-zA-Z_]\w*', candidate)` must NOT
+                        # consume the whole candidate.
+                        if not re.match(r'^[a-zA-Z_]\w*$', candidate):
+                            key, value = prev_key, line
+                        else:
+                            continue
+                    else:
+                        continue
+
                 if key in data:
                     data[key] = data[key] + ',' + value
                 else:
                     data[key] = value
+
+            # Strip any leading comma left when a malformed "Key= entry was
+            # pre-set with an empty value before its first bare line arrived.
+            for k, v in data.items():
+                if v.startswith(','):
+                    data[k] = v[1:]
 
             if 'PresetName' not in data:
                 continue
