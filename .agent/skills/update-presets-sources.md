@@ -2,7 +2,7 @@
 
 Apply this skill when new Spooky2 preset files have been acquired (downloaded or extracted) and need to be fully processed and published to the remote database and search frontend.
 
-This is a **multi-step procedural** guide covering extraction, import, verification, and deployment.
+This guide incorporates fixes for common pitfalls (e.g., missing txt file copying, dependency issues) and provides a streamlined workflow.
 
 ---
 
@@ -26,422 +26,202 @@ export REIMPORT_TOKEN="your-secret-token-here"
 ### Dependencies
 
 ```bash
-# Python packages
-pip install -r requirements.txt        # Root requirements
-pip install -r scripts/requirements.txt # Script-specific (if needed)
+# System packages (Debian/Ubuntu)
+sudo apt update
+sudo apt install -y python3-pip python3-venv wine winetricks unzip p7zip-full
 
-# Node.js dependencies (for frontend rebuild)
-cd spooky2-search && npm install
+# Python virtual environment (if not already present)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+pip install -r scripts/requirements.txt
 
-# Wine (for extracting Windows installers, if needed)
-sudo apt install wine winetricks
+# Node.js (for frontend)
+# Install via nvm or your package manager; ensure npm >= 9
+cd spooky2-search && npm ci
 ```
 
 ---
 
-## Update Pipeline Overview
+## Streamlined Update Pipeline
 
-The complete update process consists of 6 stages:
+The following steps combine extraction, import, and deployment while avoiding the errors encountered earlier.
 
-1. **Acquire** — Download or obtain new Spooky2 installer/database files
-2. **Extract** — Parse `.txt` preset files into structured JSON
-3. **Import** — Load JSON into Neon PostgreSQL database
-4. **Deploy** — Copy JSON to frontend and rebuild static site
-5. **Verify** — Confirm data integrity and search functionality
-6. **Remote Sync** — Trigger remote server reimport (if applicable)
+### 1. Acquire Preset Sources
 
----
-
-## Stage 1: Acquire Preset Sources
-
-### Option A: Download Official Spooky2 Databases
-
-Run the download script to fetch the latest installers from spooky2.com:
-
+#### Option A: Download Official Spooky2 Databases
 ```bash
 ./scripts/download_databases.sh
 ```
+Downloads to `downloads/`:
+- `Spooky2_Presets_*.exe` (Preset Collections)
+- `Main_Database_*.exe` (Main database)
+- `DNA_Database_*.exe` (DNA frequencies)
+- `MW_Database_*.exe` (Molecular weight)
 
-This downloads to `downloads/`:
-- `Spooky2_Presets_*.exe` — Preset Collections
-- `Main_Database_*.exe` — Main database
-- `DNA_Database_*.exe` — DNA frequencies
-- `MW_Database_*.exe` — Molecular weight database
+#### Option B: Process Telegram Archive Presets
+Place archives (or already‑extracted `.txt` files) in `downloads/telegram_presets/`.  
+The extractor will handle nested archives and organize by source tag.
 
-Files are cached; re-run to skip existing downloads.
+### 2. Extract and Post‑Process (Fixed Script)
 
-### Option B: Extract from Existing Wine Installation
-
-If you already have Spooky2 installed under Wine:
-
-```bash
-# The preset source is typically at:
-ls ~/.wine-spooky2/drive_c/Spooky2/Preset\ Collections/
-# Or check:
-ls downloads/wine_spooky/drive_c/Spooky2/Preset\ Collections/
-```
-
-### Option C: Process Telegram Archive Presets
-
-For presets downloaded from Telegram groups:
+Run the corrected post‑processor that **always copies `.txt` files**, even when no archives are present:
 
 ```bash
-# Place archive files in downloads/telegram_presets/ (or custom location)
 python3 scripts/extract_and_postprocess.py \
-  --source ./downloads/telegram_presets \
-  --output data/presets/telegram_raw
+    --source ./downloads/telegram_presets \
+    --output data/presets/telegram_raw
 ```
 
-This extracts nested archives and organizes by source tag (Proven/Unproven).
+**What changed**: The earlier version returned early when no archives were found, skipping the copy step. The fixed version processes:
+-initial `.txt` files into a temporary work directory.
+2. Extract any archives (if present).
+3. Copy the final `.txt` set to the extraction folder.
+4. Organize into `Proven/Contact/`, `Proven/Remote/`, etc.
 
----
+After this step you will see:
+```
+data/presets/telegram_raw/Spooky2_PROVEN_FILES/Proven/Remote/<preset>.txt
+data/presets/telegram_raw/Spooky2_UNPROVEN/.../...
+```
 
-## Stage 2: Extract Presets to JSON
-
-The main extractor handles both legacy (`List2`/`List4`) and modern (`[Preset]`) formats.
-
-### Basic Extraction
+### 3. Extract Presets from All Sources (Wine + Telegram)
 
 ```bash
-# Extract from a preset source directory:
+# Extract from Wine prefix (if you have Spooky2 installed via wine)
 python3 scripts/extract_presets.py \
-  "/path/to/Preset Collections" \
-  --output data/presets
+    "$HOME/.wine-spooky2/drive_c/Spooky2/Preset Collections" \
+    --output data/presets \
+    --skip-fingerprint   # faster if you don't need hashes
+
+# The above creates/updates data/presets/presets_all.json with wine source.
+# Then merge Telegram presets:
+python3 scripts/integrate_telegram.py
 ```
 
-Output files in `data/presets/`:
-- `presets_all.json` — All programs (main output, ~10–60 MB)
-- `extraction_stats.json` — Counts by collection/mode/category
-- `file_hashes.txt` — MD5 hashes for incremental updates
+`integrate_telegram.py`:
+- Deduplicates against existing `presets_all.json`
+- Tags incoming records with `source: telegram` and `tag: Proven`/`Unproven`
+- Writes a new `presets_all.json` (and a backup)
 
-### Extraction Arguments
-
-```
---output DIR        Output directory (default: data/presets)
---skip-fingerprint  Skip fingerprint generation (faster)
---verbose           Print detailed progress
-```
-
-### Post-Extraction: Assign Categories
-
-If `category` fields are empty (common with new sources), run the categorizer skill:
+### 4. Import into Neon Database
 
 ```bash
-# Using the categorize-presets skill, manually or via agent:
-# Read .kilo/skills/categorize-presets.md for the keyword-based rules
-# Apply to all programs where category is null in presets_all.json
-```
-
-Note: The existing `extract_presets.py` already attempts some category inference from folder names, but manual review may be needed.
-
----
-
-## Stage 3: Import to Neon Database
-
-### Full Reimport (Recommended for Updates)
-
-Clears all existing data and re-imports from scratch:
-
-```bash
+# Full refresh (recommended when source set changes)
 python3 import_to_neon.py --clear --verify
-```
 
-Flags:
-- `--clear` — DELETE all rows before import (use for full updates)
-- `--skip-setup` — Skip table/index creation (already exists)
-- `--verify` — Print summary statistics after import
-
-**Important**: `--clear` is recommended when source data changes significantly (new collections, deleted programs). Without it, the script uses UPSERT (on conflict update), which is safe for incremental updates but may leave stale rows if programs are removed from source.
-
-### Selective/Incremental Update
-
-For small updates where you only changed a few files:
-
-```bash
+# For incremental updates (safe if no records were removed):
 python3 import_to_neon.py --verify
 ```
 
-(Uses `ON CONFLICT DO UPDATE` to merge changes by UUID.)
+The script uses `ON CONFLICT (id) DO UPDATE` to upsert by UUID, ensuring idempotency.
 
----
-
-## Stage 4: Deploy to Frontend
-
-### Copy JSON to Frontend
+### 5. Deploy to Frontend
 
 ```bash
-# Ensure the frontend data directory exists:
+# Ensure the frontend data directory exists
 mkdir -p spooky2-search/public/data
 
-# Copy the updated presets file:
+# Copy the updated preset file
 cp data/presets/presets_all.json spooky2-search/public/data/
-```
 
-### Rebuild Frontend Static Assets
-
-```bash
+# Rebuild the SPA
 cd spooky2-search
-npm run build
+npm run build   # produces optimized static files in dist/
 ```
 
-This generates optimized static files in `dist/`. The production build includes:
-- Bundled JavaScript (code-split, tree-shaken)
-- CSS styles
-- `presets_all.json` copied as-is (not bundled, loaded at runtime)
+### 6. Verify
 
-### Preview Locally (Optional)
-
+#### Database
 ```bash
-cd spooky2-search
-npm run preview
-# Opens at http://localhost:4173
-```
-
-Verify search works and data loads correctly.
-
----
-
-## Stage 5: Verify the Update
-
-### Database Verification
-
-```bash
-# Connect to Neon and run queries:
 psql "$NEON_CONN_STRING" -c "
-  SELECT 
-    COUNT(*) as total_programs,
-    COUNT(*) FILTER (WHERE category IS NOT NULL) as categorized,
-    COUNT(DISTINCT collection) as collections,
-    COUNT(DISTINCT mode) as modes
+  SELECT COUNT(*) AS total,
+         COUNT(*) FILTER (WHERE tag = 'Proven') AS proven,
+         COUNT(*) FILTER (WHERE tag = 'Unproven') AS unproven
   FROM programs;
 "
-
-# Sample by collection:
-psql "$NEON_CONN_STRING" -c "
-  SELECT collection, COUNT(*) as cnt
-  FROM programs
-  GROUP BY collection
-  ORDER BY cnt DESC
-  LIMIT 20;
-"
-
-# Check for uncategorized programs:
-psql "$NEON_CONN_STRING" -c "
-  SELECT COUNT(*) as uncategorized
-  FROM programs
-  WHERE category IS NULL OR category = '';
-"
 ```
 
-### Frontend Verification
-
-1. Run `npm run preview` in `spooky2-search/`
-2. Open browser, check console for errors
-3. Test a few searches (e.g., "detox", "cancer")
-4. Verify result count matches database count
-5. Open program detail view, confirm frequencies display
-
-### JSON Validation
-
+#### Frontend
 ```bash
-# Validate JSON structure:
-python3 -c "import json; json.load(open('data/presets/presets_all.json'))" || exit 1
-echo "JSON is valid"
-
-# Check file size:
-du -h data/presets/presets_all.json
-# Typical: 15–100 MB uncompressed
-```
-
----
-
-## Stage 6: Remote Sync (Production Deployment)
-
-If updating the live site (e.g., GitHub Pages, Vercel, Render), you have two paths:
-
-### Option A: Git Push (Static Hosting)
-
-For static hosting (GitHub Pages, Netlify, Vercel):
-
-```bash
-# Commit the updated JSON and rebuilt frontend:
-git add data/presets/presets_all.json
-git add spooky2-search/dist/
-git commit -m "Update presets: YYYY-MM-DD source version"
-git push origin main
-
-# Trigger redeploy (platform-specific):
-# - GitHub Pages: automatic on push to main
-# - Vercel/Netlify: automatic or manual trigger in dashboard
-```
-
-Note: The JSON file may be large (>50 MB). Consider:
-- Using Git LFS if needed
-- Splitting data by collection (future enhancement)
-- Checking platform asset size limits (Vercel: 100 MB total)
-
-### Option B: Remote API Reimport (Neon-only update)
-
-If only the database needs updating (frontend already has latest JSON), use the admin API:
-
-```bash
-# Trigger remote reimport (requires REIMPORT_TOKEN on server):
-curl -X POST "https://your-api-server.com/reimport?token=YOUR_TOKEN"
-
-# With fresh JSON download from URL:
-curl -X POST "https://your-api-server.com/reimport?token=YOUR_TOKEN&url=https://example.com/presets_all.json"
-```
-
-The server will:
-1. Optionally download `presets_all.json` from the URL
-2. Run `import_to_neon.py --clear --skip-setup`
-3. Return status: `{"status": "ok"}` or error details
-
-**Note**: The remote server's `DATA_DIR` determines where the JSON is stored. The frontend must already load from that location.
-
----
-
-## Incremental Update Workflow (Automated)
-
-For routine updates, use `check_update.py` which automates Stages 1–4:
-
-```bash
-./scripts/check_update.sh
-# Or directly:
-python3 scripts/check_update.py
-```
-
-This script:
-1. Finds the current preset source directory
-2. Calculates MD5 hashes of all `.txt` files
-3. Compares against cached `data/presets/file_hashes.txt`
-4. If changes detected, prompts: "Re-extract presets? (y/N)"
-5. On confirmation:
-   - Runs `extract_presets.py`
-   - Updates hash cache
-   - Copies JSON to frontend
-   - Rebuilds frontend (`npm run build`)
-
-Use this for quick iterations when you've added/changed a few preset files.
-
----
-
-## Troubleshooting
-
-### Extraction fails: "No preset source found"
-
-```bash
-# Ensure Spooky2 is installed under Wine or files are in expected location:
-ls ~/.wine-spooky2/drive_c/Spooky2/Preset\ Collections/
-# Or:
-ls downloads/wine_spooky/drive_c/Spooky2/Preset\ Collections/
-```
-
-If missing, run installer through Wine:
-```bash
-wine downloads/Spooky2_Presets_*.exe /VERYSILENT /DIR="C:\\Spooky2"
-```
-
-### Wine installation issues
-
-```bash
-# Set up clean Wine prefix (32-bit):
-export WINEPREFIX="$HOME/.wine-spooky2"
-export WINEARCH=win32
-wineboot -u
-winetricks -q vcrun6 vcrun2015 riched20 comctl32
-```
-
-See `scripts/extract_with_wine.sh` for full procedure.
-
-### Import fails: "NEON_CONN_STRING not set"
-
-```bash
-# Set the environment variable:
-export NEON_CONN_STRING="postgres://..."
-# Or put it in .envrc and reload:
-echo 'export NEON_CONN_STRING="..."' >> .envrc
-direnv allow .
-```
-
-### Frontend build fails: "out of memory"
-
-```bash
-# Increase Node memory:
 cd spooky2-search
-NODE_OPTIONS="--max-old-space-size=4096" npm run build
+npm run preview   # http://localhost:4173
 ```
+Check console for errors, try a few searches, and confirm result counts match the DB.
 
-### JSON too large for platform (exceeds 100 MB)
-
+#### JSON Validity
 ```bash
-# Check size:
-du -h spooky2-search/public/data/presets_all.json
-
-# If >100 MB compressed, consider:
-# 1. Splitting data by collection (future work)
-# 2. Using a CDN to host the JSON separately
-# 3. Enabling gzip/brotli compression on static host
-```
-
-### Database import extremely slow
-
-```bash
-# Ensure indexes exist (import_to_neon.py creates them automatically on first run)
-# For subsequent runs, use --skip-setup to skip index creation.
-# Check pg_stat_progress_create_index in Neon console if stuck.
+python3 -c "import json; json.load(open('data/presets/presets_all.json'))" && echo "JSON OK"
 ```
 
 ---
 
-## Full Clean Update Procedure (From Scratch)
+## Automation Helper Script
 
-When you want a completely fresh rebuild from newly downloaded installers:
+For routine updates, you can use the provided helper (or create your own):
 
 ```bash
-# 1. Clean previous extraction artifacts:
-rm -rf data/presets/
-mkdir -p data/presets
+# scripts/update_all.sh  (example)
+#!/usr/bin/env bash
+set -euo pipefail
 
-# 2. Download fresh installers (optional, skip if you have them):
-./scripts/download_databases.sh
+echo "=== Acquiring latest sources ==="
+./scripts/download_databases.sh   # optional, skip if you already have files
 
-# 3. Extract from the latest installer:
-python3 scripts/extract_presets.py \
-  ~/.wine-spooky2/drive_c/Spooky2/Preset\ Collections \
-  --output data/presets
+echo "=== Processing Telegram presets ==="
+python3 scripts/extract_and_postprocess.py --source ./downloads/telegram_presets
 
-# 4. Assign categories (if needed):
-#    Follow .kilo/skills/categorize-presets.md
+echo "=== Extracting from Wine prefix ==="
+python3 scripts/extract_presets.py "$HOME/.wine-spooky2/drive_c/Spooky2/Preset Collections" --output data/presets --skip-fingerprint
 
-# 5. Import to database (full clear):
+echo "=== Merging Telegram data ==="
+python3 scripts/integrate_telegram.py
+
+echo "=== Importing to Neon (full refresh) ==="
 python3 import_to_neon.py --clear --verify
 
-# 6. Deploy frontend:
+echo "=== Deploying to frontend ==="
+mkdir -p spooky2-search/public/data
 cp data/presets/presets_all.json spooky2-search/public/data/
 cd spooky2-search && npm run build
 
-# 7. Verify:
-psql "$NEON_CONN_STRING" -c "SELECT COUNT(*), mode FROM programs GROUP BY mode;"
+echo "✅ Update complete."
 ```
+
+Make it executable (`chmod +x scripts/update_all.sh`) and run it whenever you have new source material.
+
+---
+
+## Troubleshooting Quick Reference
+
+| Symptom | Fix |
+|---------|-----|
+| `extract_and_postprocess.py` reports "0 files" after run | Ensure you are using the **fixed** version (the one that copies `.txt` files when no archives exist). The skill now references the corrected script. |
+| `ModuleNotFoundError: psycopg` | Install inside the venv: `.venv/bin/pip install psycopg-binary` (or `psycopg` from requirements). |
+| Wine installer fails | Use a clean 32‑bit prefix: `export WINEPREFIX="$HOME/.wine-spooky2"; export WINEARCH=win32; wineboot -u; winetricks vcrun6 vcrun2015`. |
+| Frontend bundle too large (>100 MB) | Enable gzip/brotli on your static host, or consider splitting `presets_all.json` by chunk (future work). |
+| Duplicate entries after import | The import uses `ON CONFLICT DO UPDATE` on `uuid`; duplicates should not appear. If they do, re‑run with `--clear` to start fresh. |
+| JSON syntax error | Validate with `python3 -m json.tool data/presets/presets_all.json > /dev/null`. |
 
 ---
 
 ## Notes
 
-- The `source` field in `programs` table indicates origin: `wine` (Spooky2 installer), `telegram` (community), etc.
-- The `tag` field groups Telegram sources into `Proven` / `Unproven`.
-- `created_at` is set to `NOW()` on each import, allowing timeline queries.
-- All timestamps are UTC (PostgreSQL `TIMESTAMP WITH TIME ZONE`).
-- The extraction process generates deterministic UUIDs based on preset content, enabling idempotent re-imports.
-- For large updates, consider increasing `BATCH_SIZE` in `import_to_neon.py` for faster bulk inserts.
+- The `source` column in `programs` distinguishes `wine` (official installer) from `telegram` (community).
+- The `tag` column marks Telegram provenance as `Proven` or `Unproven`.
+- All timestamps are stored as UTC `TIMESTAMP WITH TIME ZONE`.
+- UUIDs are deterministic based on preset content, enabling safe re‑imports.
 
 ---
 
 ## References
 
-- `AGENTS.md` — Project architecture and data flow
-- `scripts/extract_presets.py` — Parser implementation
-- `import_to_neon.py` — Database import logic
-- `api_server.py` — `/reimport` endpoint (lines 316–359)
-- `.kilo/skills/categorize-presets.md` — Category assignment rules
+- `AGENTS.md` – overall architecture and data flow
+- `scripts/extract_and_postprocess.py` – fixed post‑processor
+- `scripts/extract_presets.py` – legacy/modern parser
+- `scripts/integrate_telegram.py` – deduplication & tagging
+- `import_to_neon.py` – Neon import with UPSERT
+- `api_server.py` – `/reimport` endpoint for remote triggers
+- `.kilo/skills/categorize-presets.md` – keyword‑based category assignment
+

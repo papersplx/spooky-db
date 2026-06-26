@@ -1,4 +1,6 @@
 {
-  "Spooky2_PROVEN_FILES": "2026-05-10T15:53:09.147270+00:00",
-  "Spooky2_Unproven": "2026-05-10T15:53:09.753360+00:00"
+  "Spooky2_Unproven": {
+    "last_updated": "2026-05-10T15:53:09.752151+00:00",
+    "last_updated_unix": 1778428389.752151
+  }
 }

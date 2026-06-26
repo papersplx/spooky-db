@@ -1,5 +1,12 @@
 {
-  "completed_at": "2026-05-13T14:23:36.435926+00:00",
-  "total_files": 0,
-  "organized_by_mode": {}
+  "tag": "Unproven",
+  "description": "Unproven Presets",
+  "total_files": 175,
+  "organized_by_mode": {
+    "Contact": 35,
+    "Remote": 132,
+    "Plasma": 5,
+    "Coil": 3
+  },
+  "unclassified": 0
 }

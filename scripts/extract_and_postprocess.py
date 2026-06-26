@@ -215,8 +215,8 @@ def recursive_extract(source_dir: Path, output_dir: Path, logger: logging.Logger
     # Find all archives
     archives = [f for f in source_dir.rglob("*") if f.is_file() and is_archive(f)]
 
-    if not archives and txt_files:
-        logger.info(f"  No archives to extract, {len(txt_files)} .txt files already present")
+    if not archives and not txt_files:
+        logger.info(f"  No archives or .txt files found")
         return stats
 
     logger.info(f"  Found {len(archives)} archives to extract, {len(txt_files)} existing .txt files")
