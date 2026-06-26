@@ -26,11 +26,12 @@ data/presets/extraction_stats.json
 
 # Telegram raw presets: ignore large binaries, keep small metadata
 data/presets/telegram_raw/*
+!data/presets/telegram_raw/Spooky2_PROVEN_FILES/
+!data/presets/telegram_raw/Spooky2_Unproven/
 !data/presets/telegram_raw/telegram_group_timestamps.json
 !data/presets/telegram_raw/postprocess_manifest.json
 !data/presets/telegram_raw/Spooky2_PROVEN_FILES/postprocess_manifest.json
 !data/presets/telegram_raw/Spooky2_Unproven/postprocess_manifest.json
-
 # Backups (can be large)
 data/presets/backups/
 
