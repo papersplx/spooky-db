@@ -244,7 +244,7 @@ class PresetParser:
                     continue
 
                 # Well-formed "Key=Value"
-                m = re.match(r'^"([^"]+)=([^"]*)"$', line)
+                m = re.match(r'^"(\w+)=([^"]*)"$', line)
                 if m:
                     key, value = m.group(1), m.group(2)
                 elif line.startswith('"') and '=' in line:

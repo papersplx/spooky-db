@@ -141,18 +141,18 @@ def resolve_tag_and_collection(filepath: Path) -> tuple:
     Resolve the tag (Proven/Unproven) and collection hierarchy from the
     postprocessed directory structure.
 
-    Expected structure after extract_and_postprocess.py:
+    Actual structure after extract_and_postprocess.py:
       telegram_raw/
-        Sp2UnofFILES1/
-          extracted/
+        Spooky2_PROVEN_FILES/
+          Proven/
             Contact/
               preset1.txt
             Remote/
               preset2.txt
           postprocess_manifest.json
-        s2_unof_unproven/
-          extracted/
-            Plasma/
+        Spooky2_Unproven/
+          Unproven/
+            Remote/
               preset3.txt
           postprocess_manifest.json
 
@@ -181,21 +181,13 @@ def resolve_tag_and_collection(filepath: Path) -> tuple:
         else:
             tag = "Proven"
 
-    # Find mode from the postprocessed directory structure
-    # The file should be under telegram_raw/<group>/extracted/<mode>/file.txt
-    try:
-        extracted_idx = parts.index("extracted")
-        if extracted_idx + 1 < len(parts):
-            mode_or_file = parts[extracted_idx + 1]
-            # Check if this is a mode directory
-            if mode_or_file in ("Contact", "Remote", "Plasma", "Coil", "Scalar", "Laser", "Other"):
-                collection = f"{tag}/{mode_or_file}"
-            else:
-                collection = tag
-        else:
-            collection = tag
-    except ValueError:
-        collection = tag
+    # Find mode from the directory structure: telegram_raw/<group>/<tag>/<mode>/file.txt
+    # Look for known mode directories after the group slug
+    collection = tag
+    for i, part in enumerate(parts):
+        if i > telegram_raw_idx + 1 and part in ("Contact", "Remote", "Plasma", "Coil", "Scalar", "Laser", "Other"):
+            collection = f"{tag}/{part}"
+            break
 
     return tag, collection, group_slug
 

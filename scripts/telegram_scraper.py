@@ -39,6 +39,8 @@ from typing import Optional, List, Dict, Set
 from telethon import TelegramClient, errors
 from telethon.tl.types import MessageMediaDocument
 
+import hashlib
+
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -66,7 +68,7 @@ DEFAULT_CONFIG = {
 
     # Resumability
     "resume": True,                  # Resume from last saved progress on restart
-    "save_interval": 50,             # Save progress every N messages
+    "save_interval": 5,              # Save progress every N messages
 
     # Rate limiting & retries
     "request_delay": 0.5,           # Delay between batch requests (seconds)
@@ -167,6 +169,15 @@ def setup_logging(log_level: str, log_file: Optional[str] = None) -> logging.Log
 # ---------------------------------------------------------------------------
 # Progress persistence (resumability)
 # ---------------------------------------------------------------------------
+
+def compute_file_hash(filepath: Path) -> str:
+    """Compute MD5 hash of a file's content."""
+    hasher = hashlib.md5()
+    with open(filepath, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
 
 def load_progress(group_slug: str, output_dir: Path) -> Dict:
     """Load progress state from disk for a group."""
@@ -361,12 +372,6 @@ async def download_file(
     sub_path = output_dir / sub_dir if sub_dir else output_dir
     sub_path.mkdir(parents=True, exist_ok=True)
 
-    # Check for duplicates by file reference
-    file_ref = doc.id
-    if file_ref in seen_hashes:
-        logger.debug(f"Skipping duplicate: {filename} (already seen as {seen_hashes[file_ref]})")
-        return None
-
     # Sanitize filename
     safe_name = make_safe_filename(
         re.sub(r'\.(txt|TXT)$', '', filename),
@@ -382,7 +387,13 @@ async def download_file(
                 message,
                 file=str(dest_path),
             )
-            seen_hashes[file_ref] = str(dest_path)
+            # Compute file hash for dedup against previously downloaded files
+            file_hash = compute_file_hash(dest_path)
+            if file_hash in seen_hashes:
+                logger.debug(f"Skipping duplicate by hash: {dest_path.name} (already seen as {seen_hashes[file_hash]})")
+                dest_path.unlink(missing_ok=True)
+                return None
+            seen_hashes[file_hash] = str(dest_path)
             file_size = dest_path.stat().st_size if dest_path.exists() else 0
             logger.info(f"  Downloaded: {dest_path.name} ({file_size:,} bytes)")
             return {
@@ -442,6 +453,14 @@ async def scrape_group(
     seen_message_ids: Set[int] = set(int(x) for x in progress.get("seen_message_ids", []))
     seen_hashes: Dict[str, str] = progress.get("downloaded_hashes", {})
     last_message_id = progress.get("last_message_id")
+
+    # Also compute hashes of existing files on disk to prevent re-downloads
+    group_output_dir = output_dir / group_slug
+    for existing_file in group_output_dir.rglob("*.txt"):
+        if existing_file.is_file():
+            file_hash = compute_file_hash(existing_file)
+            if file_hash not in seen_hashes:
+                seen_hashes[file_hash] = str(existing_file)
 
     stats = {
         "group": group_name,

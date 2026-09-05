@@ -1,10 +1,11 @@
 {
   "tag": "Unproven",
   "description": "Unproven Presets",
-  "total_files": 175,
+  "total_files": 173,
   "organized_by_mode": {
-    "Contact": 35,
-    "Remote": 132,
+    "Scalar": 1,
+    "Remote": 134,
+    "Contact": 30,
     "Plasma": 5,
     "Coil": 3
   },

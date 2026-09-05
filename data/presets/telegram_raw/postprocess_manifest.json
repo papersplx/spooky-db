@@ -1,18 +1,18 @@
 {
-  "started_at": "2026-06-26T12:31:46.949659+00:00",
+  "started_at": "2026-09-05T13:56:35.704930+00:00",
   "groups_processed": [
     {
       "name": "Spooky2_PROVEN_FILES",
       "tag": "Proven",
       "description": "Proven Presets",
-      "total_files": 145,
+      "total_files": 138,
       "organized_by_mode": {
-        "Contact": 30,
-        "Scalar": 1,
+        "Remote": 87,
+        "Contact": 27,
         "Plasma": 16,
-        "Remote": 91,
+        "Laser": 2,
         "Coil": 5,
-        "Laser": 2
+        "Scalar": 1
       },
       "unclassified": 0
     },
@@ -20,17 +20,18 @@
       "name": "Spooky2_Unproven",
       "tag": "Unproven",
       "description": "Unproven Presets",
-      "total_files": 175,
+      "total_files": 173,
       "organized_by_mode": {
-        "Contact": 35,
-        "Remote": 132,
+        "Scalar": 1,
+        "Remote": 134,
+        "Contact": 30,
         "Plasma": 5,
         "Coil": 3
       },
       "unclassified": 0
     }
   ],
-  "total_files": 320,
-  "total_archives_extracted": 0,
-  "completed_at": "2026-06-26T12:31:48.487169+00:00"
+  "total_files": 311,
+  "total_archives_extracted": 16,
+  "completed_at": "2026-09-05T13:56:38.231327+00:00"
 }

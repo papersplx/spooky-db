@@ -1,14 +1,14 @@
 {
   "tag": "Proven",
   "description": "Proven Presets",
-  "total_files": 145,
+  "total_files": 138,
   "organized_by_mode": {
-    "Contact": 30,
-    "Scalar": 1,
+    "Remote": 87,
+    "Contact": 27,
     "Plasma": 16,
-    "Remote": 91,
+    "Laser": 2,
     "Coil": 5,
-    "Laser": 2
+    "Scalar": 1
   },
   "unclassified": 0
 }

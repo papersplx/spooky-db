@@ -25,6 +25,7 @@ import os
 import sys
 import json
 import shutil
+import hashlib
 import zipfile
 import subprocess
 import tempfile
@@ -71,6 +72,15 @@ def setup_logging(log_level: str = "INFO") -> logging.Logger:
     return logger
 
 
+def compute_file_hash(filepath: Path) -> str:
+    """Compute MD5 hash of a file's content."""
+    hasher = hashlib.md5()
+    with open(filepath, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
+
 # ---------------------------------------------------------------------------
 # Archive extraction
 # ---------------------------------------------------------------------------
@@ -80,10 +90,13 @@ def is_archive(filepath: Path) -> bool:
     suffix = filepath.suffix.lower()
     if suffix in ARCHIVE_EXTENSIONS:
         return True
-    # Handle double extensions like .zip.exe
+    # Handle double extensions like .zip.txt, .7z.txt, .rar.txt, .zip_1.txt
     name = filepath.name.lower()
-    if name.endswith(".zip.exe") or name.endswith(".7z.exe"):
-        return True
+    for ext in (".zip", ".7z", ".rar", ".exe"):
+        if name.startswith(ext) and ".txt" in name[len(ext):]:
+            return True
+        if name.endswith(ext + ".txt") or name.endswith(ext + ".exe"):
+            return True
     return False
 
 
@@ -183,17 +196,33 @@ def extract_archive(filepath: Path, dest_dir: Path, logger: logging.Logger) -> i
     suffix = filepath.suffix.lower()
     name = filepath.name.lower()
 
-    if suffix == ".zip" or name.endswith(".zip.exe"):
+    # Check for standard archive extensions
+    if suffix in ARCHIVE_EXTENSIONS:
+        return _dispatch_extract(filepath, dest_dir, logger, suffix)
+    # Handle archive files with .txt extension (e.g., .zip.txt, .zip_1.txt, .rar.txt)
+    for ext in (".zip", ".7z", ".rar", ".exe"):
+        if name.startswith(ext):
+            rest = name[len(ext):]
+            if rest.endswith(".txt") or rest.endswith(".exe"):
+                return _dispatch_extract(filepath, dest_dir, logger, ext)
+    return _unknown_archive(filepath, logger)
+
+
+def _dispatch_extract(filepath: Path, dest_dir: Path, logger: logging.Logger, ext: str) -> int:
+    if ext == ".zip":
         return extract_zip(filepath, dest_dir, logger)
-    elif suffix == ".7z" or name.endswith(".7z.exe"):
+    elif ext == ".7z":
         return extract_7z(filepath, dest_dir, logger)
-    elif suffix == ".rar":
+    elif ext == ".rar":
         return extract_rar(filepath, dest_dir, logger)
-    elif suffix == ".exe":
+    elif ext == ".exe":
         return extract_exe(filepath, dest_dir, logger)
-    else:
-        logger.warning(f"  Unknown archive type: {filepath.name}")
-        return 0
+    return 0
+
+
+def _unknown_archive(filepath: Path, logger: logging.Logger) -> int:
+    logger.warning(f"  Unknown archive type: {filepath.name}")
+    return 0
 
 
 def recursive_extract(source_dir: Path, output_dir: Path, logger: logging.Logger) -> Dict:
@@ -209,7 +238,9 @@ def recursive_extract(source_dir: Path, output_dir: Path, logger: logging.Logger
     }
 
     # First, separate already-extracted .txt files from archives
-    txt_files = list(source_dir.rglob("*.txt"))
+    # Exclude files with archive-like extensions (e.g., .zip.txt) from txt_files
+    all_files = [f for f in source_dir.rglob("*.txt") if not is_archive(f)]
+    txt_files = all_files
     stats["txt_files"] = len(txt_files)
 
     # Find all archives
@@ -406,7 +437,12 @@ def organize_files(
             stats["unclassified"] += 1
 
         if dest.exists():
-            # Handle duplicates by appending number
+            # Handle duplicates by checking content hash
+            existing_hash = compute_file_hash(dest)
+            new_hash = compute_file_hash(filepath)
+            if existing_hash == new_hash:
+                continue  # Skip identical duplicate
+            # Content differs, append number
             stem = dest.stem
             suffix = dest.suffix
             counter = 1
