@@ -129,6 +129,7 @@ def search(
     category: list[str] = Query(default=[]),
     source: list[str] = Query(default=[]),
     tag: list[str] = Query(default=[]),
+    sort: str = Query(default="name"),
     limit: int = Query(default=100),
     offset: int = Query(default=0)
 ):
@@ -160,8 +161,14 @@ def search(
         if tag:
             where.append("tag = ANY(%s)")
             params.append(tag)
-
         where_clause = f"WHERE {' AND '.join(where)}" if where else ""
+
+        # Whitelist allowed sort options to prevent SQL injection
+        sort_options = {
+            "name": "name ASC",
+            "created_at": "created_at DESC",
+        }
+        order_by = sort_options.get(sort, "name ASC")
 
         with conn.cursor() as cur:
             cur.execute(f"""
@@ -175,7 +182,7 @@ def search(
                 SELECT id, name, description, collection, mode, entry_type, source, tag
                 FROM programs
                 {where_clause}
-                ORDER BY name
+                ORDER BY {order_by}
                 LIMIT %s OFFSET %s
             """, [*params, limit, offset])
             results = cur.fetchall()

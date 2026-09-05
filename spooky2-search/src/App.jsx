@@ -16,6 +16,7 @@ function getStateFromURL() {
     selectedSources: params.getAll('source'),
     selectedProgramId: params.get('program') || null,
     page: parseInt(params.get('page') || 1),
+    sort: params.get('sort') || 'name',
   };
   return state;
 }
@@ -31,6 +32,7 @@ function App() {
   const [selectedModes, setSelectedModes] = useState(initialState.selectedModes);
   const [selectedCategories, setSelectedCategories] = useState(initialState.selectedCategories || []);
   const [selectedSources, setSelectedSources] = useState(initialState.selectedSources || []);
+  const [sortBy, setSortBy] = useState(initialState.sort);
   const [collectionsList, setCollectionsList] = useState([]);
   const [collectionCounts, setCollectionCounts] = useState({});
   const [modesList, setModesList] = useState([]);
@@ -47,8 +49,8 @@ function App() {
   const pageSize = 20;
   const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 1 week in ms
 
-  const getCacheKey = (query, modes, collections, sources, page) => {
-    return JSON.stringify({ q: query, modes, collections, sources, page });
+  const getCacheKey = (query, modes, collections, sources, page, sort) => {
+    return JSON.stringify({ q: query, modes, collections, sources, page, sort });
   };
 
   const getCachedResults = (key) => {
@@ -140,7 +142,7 @@ function App() {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
-    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections, selectedSources, currentPage);
+    const cacheKey = getCacheKey(searchQuery, selectedModes, selectedCollections, selectedSources, currentPage, sortBy);
     const cached = getCachedResults(cacheKey);
 
     if (cached) {
@@ -183,6 +185,7 @@ function App() {
            collection: selectedCollections,
            source: apiSource,
            tag: apiTag,
+           sort: sortBy,
            limit: pageSize,
            offset: (currentPage - 1) * pageSize,
          }, controller.signal);
@@ -205,7 +208,7 @@ function App() {
     return () => {
       controller.abort();
     };
-  }, [searchQuery, selectedModes, selectedCollections, selectedSources, currentPage]);
+  }, [searchQuery, selectedModes, selectedCollections, selectedSources, currentPage, sortBy]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -349,7 +352,23 @@ function App() {
         </aside>
 
           <section className="search-results">
-            <SearchBox ref={searchBoxRef} query={searchQuery} onSearch={handleSearch} />
+            <div className="search-controls">
+              <SearchBox ref={searchBoxRef} query={searchQuery} onSearch={handleSearch} />
+              <div className="sort-control">
+                <label htmlFor="sort-select">Sort:</label>
+                <select
+                  id="sort-select"
+                  value={sortBy}
+                  onChange={(e) => {
+                    setSortBy(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                >
+                  <option value="name">Name (A-Z)</option>
+                  <option value="created_at">Recently added</option>
+                </select>
+              </div>
+            </div>
             <ResultsList
             programs={filtered}
             selected={selected}

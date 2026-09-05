@@ -82,6 +82,36 @@ body {
   overflow: hidden;
 }
 
+.search-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.sort-control label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.sort-control select {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
 .results-header {
   display: flex;
   align-items: center;
