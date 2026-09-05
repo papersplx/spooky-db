@@ -63,7 +63,7 @@ function TreeNode({
   onToggleCollection,
   depth = 0,
 }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const hasChildren = children.length > 0;
 
   const handleToggle = () => {
