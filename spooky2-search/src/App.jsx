@@ -433,10 +433,15 @@ function App() {
                      label = 'Unproven (telegram)';
                      break;
                    default:
-                     // For .exe files: strip extension, replace underscores with spaces
-                     // e.g., "Spooky2_Presets_20260422.exe" -> "Spooky2 Presets 20260422"
+                     // For .exe files: strip extension and date suffix, replace underscores with spaces
+                     // e.g., "Spooky2_Presets_20260422.exe" -> name: "Spooky2 Presets", date: "Apr 22, 2026"
                      let cleaned = source.replace(/\.exe$/i, '');
-                     label = cleaned.replace(/_/g, ' ');
+                     const dateMatch = cleaned.match(/_(\d{8,})$/);
+                     let displayName = cleaned;
+                     if (dateMatch) {
+                       displayName = cleaned.replace(/_\d{8,}$/, '');
+                     }
+                     label = displayName.replace(/_/g, ' ');
                  }
                  return (
                    <div key={source} style={{ marginTop: '2px' }}>
