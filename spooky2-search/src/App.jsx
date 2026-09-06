@@ -433,10 +433,9 @@ function App() {
                      label = 'Unproven (telegram)';
                      break;
                    default:
-                     // For .exe files: strip extension and date suffix, replace underscores with spaces
-                     // e.g., "Spooky2_Presets_20260422.exe" -> "Spooky2 Presets"
+                     // For .exe files: strip extension, replace underscores with spaces
+                     // e.g., "Spooky2_Presets_20260422.exe" -> "Spooky2 Presets 20260422"
                      let cleaned = source.replace(/\.exe$/i, '');
-                     cleaned = cleaned.replace(/_\d{8,}$/, ''); // Remove trailing _YYYYMMDD date
                      label = cleaned.replace(/_/g, ' ');
                  }
                  return (
