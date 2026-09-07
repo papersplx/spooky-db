@@ -51,3 +51,5 @@ scripts/telegram_scraper_session.*
 
 # Large Telegram archive containers (exceed GitHub limits)
 *.zip.txt
+package.json
+package-lock.json
