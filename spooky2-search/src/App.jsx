@@ -3,6 +3,7 @@ import SearchBox from './components/SearchBox';
 import FilterPanel from './components/FilterPanel';
 import ResultsList from './components/ResultsList';
 import ProgramDetail from './components/ProgramDetail';
+import HelpPage from './components/HelpPage';
 import { searchPrograms, getProgram, getCollections, getTelegramUpdates } from './data/loader';
 import './App.css';
 
@@ -22,6 +23,28 @@ function getStateFromURL() {
 }
 
 function App() {
+  const [route, setRoute] = useState(window.location.hash);
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  if (route === '#/help') {
+    return (
+      <div className="app">
+        <header className="header">
+          <h1><a href="#/">Spooky2 Frequency Search</a></h1>
+          <nav className="header-nav">
+            <a href="#/">Search</a>
+          </nav>
+        </header>
+        <HelpPage />
+      </div>
+    );
+  }
+
   const initialState = getStateFromURL();
 
   const [loading, setLoading] = useState(true);
@@ -329,9 +352,14 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>Spooky2 Frequency Search</h1>
-          <p className="subtitle">
-            Search {totalPrograms.toLocaleString()} frequency programs from Spooky2 preset collections
-          </p>
+        <nav className="header-nav">
+          <a href="#/">Search</a>
+          <a href="#/">|</a>
+          <a href="#/help">NotebookLM Guide</a>
+        </nav>
+        <p className="subtitle">
+          Search {totalPrograms.toLocaleString()} frequency programs from Spooky2 preset collections
+        </p>
       </header>
 
       <main className="main">
